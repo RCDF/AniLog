@@ -1,5 +1,4 @@
 # Project Proposal
-==================
 
 ## Group Members
 
