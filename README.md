@@ -1,1 +1,1 @@
-# Final_iOS_Project
+# CS 198 - Final Project App
