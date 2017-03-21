@@ -18,6 +18,8 @@ The user starts by creating a to-do list for the day. Each task on the to-do lis
 
 ## Story Board / App Flow Sketch
 
+![Image of Storyboard Sketch]
+(storyboard_sketch.jpg)
 
 ## iOS Frameworks, API's, and SDK's
 
