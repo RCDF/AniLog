@@ -7,7 +7,7 @@
 
 ## GitHub Link
 
-https://github.com/cRui861/Final_iOS_Project
+https://github.com/RCDF/AniLog/
 
 ## Project Description
 
