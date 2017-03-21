@@ -14,6 +14,8 @@
 		075C8E1A1E80A57E00E88763 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 075C8E181E80A57E00E88763 /* LaunchScreen.storyboard */; };
 		075C8E251E80A57E00E88763 /* AniLogTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075C8E241E80A57E00E88763 /* AniLogTests.swift */; };
 		075C8E301E80A57E00E88763 /* AniLogUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075C8E2F1E80A57E00E88763 /* AniLogUITests.swift */; };
+		0785ED1D1E80EB9C00CB261A /* TaskListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0785ED1C1E80EB9C00CB261A /* TaskListViewController.swift */; };
+		0785ED1F1E80EF4900CB261A /* TaskListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0785ED1E1E80EF4900CB261A /* TaskListCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +49,8 @@
 		075C8E2B1E80A57E00E88763 /* AniLogUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AniLogUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		075C8E2F1E80A57E00E88763 /* AniLogUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AniLogUITests.swift; sourceTree = "<group>"; };
 		075C8E311E80A57E00E88763 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0785ED1C1E80EB9C00CB261A /* TaskListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskListViewController.swift; sourceTree = "<group>"; };
+		0785ED1E1E80EF4900CB261A /* TaskListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskListCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,7 +103,9 @@
 			children = (
 				075C8E0F1E80A57E00E88763 /* AppDelegate.swift */,
 				075C8E111E80A57E00E88763 /* ViewController.swift */,
+				0785ED1C1E80EB9C00CB261A /* TaskListViewController.swift */,
 				075C8E131E80A57E00E88763 /* Main.storyboard */,
+				0785ED1E1E80EF4900CB261A /* TaskListCell.swift */,
 				075C8E161E80A57E00E88763 /* Assets.xcassets */,
 				075C8E181E80A57E00E88763 /* LaunchScreen.storyboard */,
 				075C8E1B1E80A57E00E88763 /* Info.plist */,
@@ -262,8 +268,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0785ED1F1E80EF4900CB261A /* TaskListCell.swift in Sources */,
 				075C8E121E80A57E00E88763 /* ViewController.swift in Sources */,
 				075C8E101E80A57E00E88763 /* AppDelegate.swift in Sources */,
+				0785ED1D1E80EB9C00CB261A /* TaskListViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -512,6 +520,7 @@
 				075C8E361E80A57E00E88763 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		075C8E371E80A57E00E88763 /* Build configuration list for PBXNativeTarget "AniLogTests" */ = {
 			isa = XCConfigurationList;
@@ -520,6 +529,7 @@
 				075C8E391E80A57E00E88763 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		075C8E3A1E80A57E00E88763 /* Build configuration list for PBXNativeTarget "AniLogUITests" */ = {
 			isa = XCConfigurationList;
@@ -528,6 +538,7 @@
 				075C8E3C1E80A57E00E88763 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
