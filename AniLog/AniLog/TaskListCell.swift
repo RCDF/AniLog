@@ -10,6 +10,8 @@ import UIKit
 
 class TaskListCell: UITableViewCell {
 
+    @IBOutlet weak var taskName: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
