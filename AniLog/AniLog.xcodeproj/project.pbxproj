@@ -16,6 +16,9 @@
 		075C8E301E80A57E00E88763 /* AniLogUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075C8E2F1E80A57E00E88763 /* AniLogUITests.swift */; };
 		0785ED1D1E80EB9C00CB261A /* TaskListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0785ED1C1E80EB9C00CB261A /* TaskListViewController.swift */; };
 		0785ED1F1E80EF4900CB261A /* TaskListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0785ED1E1E80EF4900CB261A /* TaskListCell.swift */; };
+		1A56E6BD09A5F976F4D88999 /* Pods_AniLogUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8805AEA5BBB13B1A521C0EFC /* Pods_AniLogUITests.framework */; };
+		553CF1D7EDED7080FF3E847C /* Pods_AniLog.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BCFD5DC26AD05F851901501 /* Pods_AniLog.framework */; };
+		9087CD7DB136B0579A08B5BE /* Pods_AniLogTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E307BF2083F388851340DF0A /* Pods_AniLogTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +54,15 @@
 		075C8E311E80A57E00E88763 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0785ED1C1E80EB9C00CB261A /* TaskListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskListViewController.swift; sourceTree = "<group>"; };
 		0785ED1E1E80EF4900CB261A /* TaskListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskListCell.swift; sourceTree = "<group>"; };
+		1F5E94FB716C4FF57C5DA70B /* Pods-AniLogUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AniLogUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AniLogUITests/Pods-AniLogUITests.release.xcconfig"; sourceTree = "<group>"; };
+		2B13AC33F185CBAE28623D09 /* Pods-AniLogTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AniLogTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AniLogTests/Pods-AniLogTests.release.xcconfig"; sourceTree = "<group>"; };
+		2B952FA49D5B8121A4EDF39E /* Pods-AniLog.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AniLog.release.xcconfig"; path = "Pods/Target Support Files/Pods-AniLog/Pods-AniLog.release.xcconfig"; sourceTree = "<group>"; };
+		3BCFD5DC26AD05F851901501 /* Pods_AniLog.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AniLog.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6B1104FECEBA6E72CA531E30 /* Pods-AniLogUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AniLogUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AniLogUITests/Pods-AniLogUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		8805AEA5BBB13B1A521C0EFC /* Pods_AniLogUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AniLogUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E307BF2083F388851340DF0A /* Pods_AniLogTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AniLogTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E589A8E6142AC9AA5474A95C /* Pods-AniLog.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AniLog.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AniLog/Pods-AniLog.debug.xcconfig"; sourceTree = "<group>"; };
+		E63B7C70D123FED560C3A1D9 /* Pods-AniLogTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AniLogTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AniLogTests/Pods-AniLogTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +70,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				553CF1D7EDED7080FF3E847C /* Pods_AniLog.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,6 +78,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9087CD7DB136B0579A08B5BE /* Pods_AniLogTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,12 +86,23 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A56E6BD09A5F976F4D88999 /* Pods_AniLogUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		061F2388E2D5B2935D1E27F4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3BCFD5DC26AD05F851901501 /* Pods_AniLog.framework */,
+				E307BF2083F388851340DF0A /* Pods_AniLogTests.framework */,
+				8805AEA5BBB13B1A521C0EFC /* Pods_AniLogUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		075C8E031E80A57E00E88763 = {
 			isa = PBXGroup;
 			children = (
@@ -85,6 +110,8 @@
 				075C8E231E80A57E00E88763 /* AniLogTests */,
 				075C8E2E1E80A57E00E88763 /* AniLogUITests */,
 				075C8E0D1E80A57E00E88763 /* Products */,
+				A73F1BDD1EBD53582DEC78E6 /* Pods */,
+				061F2388E2D5B2935D1E27F4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -131,6 +158,19 @@
 			path = AniLogUITests;
 			sourceTree = "<group>";
 		};
+		A73F1BDD1EBD53582DEC78E6 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E589A8E6142AC9AA5474A95C /* Pods-AniLog.debug.xcconfig */,
+				2B952FA49D5B8121A4EDF39E /* Pods-AniLog.release.xcconfig */,
+				E63B7C70D123FED560C3A1D9 /* Pods-AniLogTests.debug.xcconfig */,
+				2B13AC33F185CBAE28623D09 /* Pods-AniLogTests.release.xcconfig */,
+				6B1104FECEBA6E72CA531E30 /* Pods-AniLogUITests.debug.xcconfig */,
+				1F5E94FB716C4FF57C5DA70B /* Pods-AniLogUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -138,9 +178,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 075C8E341E80A57E00E88763 /* Build configuration list for PBXNativeTarget "AniLog" */;
 			buildPhases = (
+				479266D2A13FACE99C2F126B /* [CP] Check Pods Manifest.lock */,
 				075C8E081E80A57E00E88763 /* Sources */,
 				075C8E091E80A57E00E88763 /* Frameworks */,
 				075C8E0A1E80A57E00E88763 /* Resources */,
+				75EE7BAB31C510BC3C868ED4 /* [CP] Embed Pods Frameworks */,
+				FCFF351C4D4B957DFE7905AE /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -155,9 +198,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 075C8E371E80A57E00E88763 /* Build configuration list for PBXNativeTarget "AniLogTests" */;
 			buildPhases = (
+				1FCB470AFACE593A75F7FBD5 /* [CP] Check Pods Manifest.lock */,
 				075C8E1C1E80A57E00E88763 /* Sources */,
 				075C8E1D1E80A57E00E88763 /* Frameworks */,
 				075C8E1E1E80A57E00E88763 /* Resources */,
+				0F33EC45D34AF7FC60386220 /* [CP] Embed Pods Frameworks */,
+				E526994E9B18D0F29C1C82EC /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -173,9 +219,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 075C8E3A1E80A57E00E88763 /* Build configuration list for PBXNativeTarget "AniLogUITests" */;
 			buildPhases = (
+				46CB07100E24854760D155AB /* [CP] Check Pods Manifest.lock */,
 				075C8E271E80A57E00E88763 /* Sources */,
 				075C8E281E80A57E00E88763 /* Frameworks */,
 				075C8E291E80A57E00E88763 /* Resources */,
+				9F61EFF03B788093F7D54A65 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -200,17 +248,20 @@
 					075C8E0B1E80A57E00E88763 = {
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = 65MU9YPD2J;
+						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 					};
 					075C8E1F1E80A57E00E88763 = {
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = 65MU9YPD2J;
+						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 075C8E0B1E80A57E00E88763;
 					};
 					075C8E2A1E80A57E00E88763 = {
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = 65MU9YPD2J;
+						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 075C8E0B1E80A57E00E88763;
 					};
@@ -262,6 +313,129 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0F33EC45D34AF7FC60386220 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AniLogTests/Pods-AniLogTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		1FCB470AFACE593A75F7FBD5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		46CB07100E24854760D155AB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		479266D2A13FACE99C2F126B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		75EE7BAB31C510BC3C868ED4 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AniLog/Pods-AniLog-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9F61EFF03B788093F7D54A65 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AniLogUITests/Pods-AniLogUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E526994E9B18D0F29C1C82EC /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AniLogTests/Pods-AniLogTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FCFF351C4D4B957DFE7905AE /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AniLog/Pods-AniLog-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		075C8E081E80A57E00E88763 /* Sources */ = {
@@ -419,6 +593,7 @@
 		};
 		075C8E351E80A57E00E88763 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E589A8E6142AC9AA5474A95C /* Pods-AniLog.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 65MU9YPD2J;
@@ -432,6 +607,7 @@
 		};
 		075C8E361E80A57E00E88763 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2B952FA49D5B8121A4EDF39E /* Pods-AniLog.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 65MU9YPD2J;
@@ -445,6 +621,7 @@
 		};
 		075C8E381E80A57E00E88763 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E63B7C70D123FED560C3A1D9 /* Pods-AniLogTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -460,6 +637,7 @@
 		};
 		075C8E391E80A57E00E88763 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2B13AC33F185CBAE28623D09 /* Pods-AniLogTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -475,6 +653,7 @@
 		};
 		075C8E3B1E80A57E00E88763 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6B1104FECEBA6E72CA531E30 /* Pods-AniLogUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = 65MU9YPD2J;
@@ -489,6 +668,7 @@
 		};
 		075C8E3C1E80A57E00E88763 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1F5E94FB716C4FF57C5DA70B /* Pods-AniLogUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = 65MU9YPD2J;
