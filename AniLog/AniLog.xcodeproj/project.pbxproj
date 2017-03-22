@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		075C8E101E80A57E00E88763 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075C8E0F1E80A57E00E88763 /* AppDelegate.swift */; };
-		075C8E121E80A57E00E88763 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075C8E111E80A57E00E88763 /* ViewController.swift */; };
 		075C8E151E80A57E00E88763 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 075C8E131E80A57E00E88763 /* Main.storyboard */; };
 		075C8E171E80A57E00E88763 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 075C8E161E80A57E00E88763 /* Assets.xcassets */; };
 		075C8E1A1E80A57E00E88763 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 075C8E181E80A57E00E88763 /* LaunchScreen.storyboard */; };
@@ -41,7 +40,6 @@
 /* Begin PBXFileReference section */
 		075C8E0C1E80A57E00E88763 /* AniLog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AniLog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		075C8E0F1E80A57E00E88763 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		075C8E111E80A57E00E88763 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		075C8E141E80A57E00E88763 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		075C8E161E80A57E00E88763 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		075C8E191E80A57E00E88763 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -103,6 +101,32 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		073DB12C1E82F80E0041BF03 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				075C8E0F1E80A57E00E88763 /* AppDelegate.swift */,
+				075C8E181E80A57E00E88763 /* LaunchScreen.storyboard */,
+				075C8E1B1E80A57E00E88763 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		073DB12D1E82F81B0041BF03 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				0785ED1C1E80EB9C00CB261A /* TaskListViewController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		073DB12E1E82F82B0041BF03 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				0785ED1E1E80EF4900CB261A /* TaskListCell.swift */,
+			);
+			name = Cells;
+			sourceTree = "<group>";
+		};
 		075C8E031E80A57E00E88763 = {
 			isa = PBXGroup;
 			children = (
@@ -128,14 +152,11 @@
 		075C8E0E1E80A57E00E88763 /* AniLog */ = {
 			isa = PBXGroup;
 			children = (
-				075C8E0F1E80A57E00E88763 /* AppDelegate.swift */,
-				075C8E111E80A57E00E88763 /* ViewController.swift */,
-				0785ED1C1E80EB9C00CB261A /* TaskListViewController.swift */,
+				073DB12C1E82F80E0041BF03 /* Supporting Files */,
+				073DB12E1E82F82B0041BF03 /* Cells */,
+				073DB12D1E82F81B0041BF03 /* Controllers */,
 				075C8E131E80A57E00E88763 /* Main.storyboard */,
-				0785ED1E1E80EF4900CB261A /* TaskListCell.swift */,
 				075C8E161E80A57E00E88763 /* Assets.xcassets */,
-				075C8E181E80A57E00E88763 /* LaunchScreen.storyboard */,
-				075C8E1B1E80A57E00E88763 /* Info.plist */,
 			);
 			path = AniLog;
 			sourceTree = "<group>";
@@ -443,7 +464,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				0785ED1F1E80EF4900CB261A /* TaskListCell.swift in Sources */,
-				075C8E121E80A57E00E88763 /* ViewController.swift in Sources */,
 				075C8E101E80A57E00E88763 /* AppDelegate.swift in Sources */,
 				0785ED1D1E80EB9C00CB261A /* TaskListViewController.swift in Sources */,
 			);
