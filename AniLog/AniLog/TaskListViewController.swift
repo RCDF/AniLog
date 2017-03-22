@@ -20,10 +20,7 @@ class TaskListViewController: UIViewController, UITableViewDelegate, UITableView
         self.tableView.dataSource = self
         self.tableView.delegate = self
         self.tableView.tableFooterView = UIView(frame: CGRect.zero)
-        
         self.textField.delegate = self
-        self.textField.clearButtonMode = UITextFieldViewMode.whileEditing
-        self.textField.returnKeyType = UIReturnKeyType.done
     }
 
     override func didReceiveMemoryWarning() {
@@ -53,7 +50,8 @@ class TaskListViewController: UIViewController, UITableViewDelegate, UITableView
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-         print(tempTasksList[indexPath.row])
+        print(tempTasksList[indexPath.row])
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 
 
