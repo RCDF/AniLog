@@ -24,10 +24,6 @@ class TaskListViewController: UIViewController, UITableViewDelegate, UITableView
         self.textField.delegate = self
         self.textField.clearButtonMode = UITextFieldViewMode.whileEditing
         self.textField.returnKeyType = UIReturnKeyType.done
-        
-        let tapDismiss: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(TaskListViewController.dismissKeyboard))
-        self.view.addGestureRecognizer(tapDismiss)
-        
     }
 
     override func didReceiveMemoryWarning() {
@@ -46,7 +42,7 @@ class TaskListViewController: UIViewController, UITableViewDelegate, UITableView
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "taskListCell", for: indexPath) as! TaskListCell
+         let cell = tableView.dequeueReusableCell(withIdentifier: "taskListCell", for: indexPath) as! TaskListCell
         cell.taskName.text = tempTasksList[indexPath.row]
         
         cell.preservesSuperviewLayoutMargins = false
@@ -57,7 +53,7 @@ class TaskListViewController: UIViewController, UITableViewDelegate, UITableView
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print(tempTasksList[indexPath.row])
+         print(tempTasksList[indexPath.row])
     }
 
 
@@ -70,7 +66,6 @@ class TaskListViewController: UIViewController, UITableViewDelegate, UITableView
     
     func dismissKeyboard() {
         textField.resignFirstResponder()
-        self.view.endEditing(true)
     }
     
     @IBAction func addTask(_ sender: Any) {
@@ -83,7 +78,6 @@ class TaskListViewController: UIViewController, UITableViewDelegate, UITableView
                 
                 dismissKeyboard()
                 textField.text = ""
-
             }
         }
     }
