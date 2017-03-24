@@ -1,0 +1,6 @@
+framework module Pods_AniLogUITests {
+  umbrella header "Pods-AniLogUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

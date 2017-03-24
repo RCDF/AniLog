@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>SchemeUserState</key>
+	<dict>
+		<key>Pods-AniLog.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-AniLogTests.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-AniLogUITests.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>SideMenu-SideMenu.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>SideMenu.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>1BF17FF89D0F59B1F08C0FA3E57E87AE</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>31EFE043F793051540BEAAC3ECC89318</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>52530944565BE83163B188B10B8DA649</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>69B97690D481B44133567C62101ABE1B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C9AC10BC18E33F618BA35DB71B046F32</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+	</dict>
+</dict>
+</plist>
