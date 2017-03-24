@@ -20,6 +20,8 @@ class TaskListViewController: UIViewController, UITableViewDelegate, UITableView
         self.tableView.dataSource = self
         self.tableView.delegate = self
         self.tableView.tableFooterView = UIView(frame: CGRect.zero)
+        self.tableView.layer.borderWidth = 1.0
+        self.tableView.layer.borderColor = UIColor.icebergBlue.cgColor
         self.textField.delegate = self
         
         let tapDismiss = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
@@ -32,8 +34,6 @@ class TaskListViewController: UIViewController, UITableViewDelegate, UITableView
         super.didReceiveMemoryWarning()
     }
 
-    // A gesture recognizer for tap dismissal to make sure
-    // UITableViewCell selection is not blocked
     func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
         
         if let view = touch.view {
@@ -71,7 +71,18 @@ class TaskListViewController: UIViewController, UITableViewDelegate, UITableView
         print(tempTasksList[indexPath.row])
         tableView.deselectRow(at: indexPath, animated: true)
     }
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
 
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if (editingStyle == .delete) {
+            // Remove the item from your list and update the view
+            tempTasksList.remove(at: indexPath.row)
+            tableView.reloadData()
+        }
+    }
 
     // MARK: - TextField Functions
 
