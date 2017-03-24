@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TaskListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate {
+class TaskListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate, UIGestureRecognizerDelegate {
 
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var tableView: UITableView!
@@ -21,13 +21,31 @@ class TaskListViewController: UIViewController, UITableViewDelegate, UITableView
         self.tableView.delegate = self
         self.tableView.tableFooterView = UIView(frame: CGRect.zero)
         self.textField.delegate = self
+        
+        let tapDismiss = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        tapDismiss.delegate = self
+        view.addGestureRecognizer(tapDismiss)
+        
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
 
+    // A gesture recognizer for tap dismissal to make sure
+    // UITableViewCell selection is not blocked
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
+        
+        if let view = touch.view {
+            if view is UITableViewCell || view.superview is UITableViewCell || view.superview?.superview is UITableViewCell {
+                return false
+            }
+        }
 
+        return true
+    }
+    
+    
     // MARK: - TableView Delegate Functions
 
     func numberOfSections(in tableView: UITableView) -> Int {
