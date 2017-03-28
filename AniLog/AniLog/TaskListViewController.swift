@@ -75,15 +75,29 @@ class TaskListViewController: UIViewController, UITableViewDelegate, UITableView
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         return true
     }
-
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if (editingStyle == .delete) {
-            // Remove the item from your list and update the view
-            tempTasksList.remove(at: indexPath.row)
-            tableView.reloadData()
-        }
+    
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        let deleteAction = UITableViewRowAction(style: .destructive, title: "Delete", handler: deleteTask)
+        
+        let editAction = UITableViewRowAction(style: .normal, title: "Edit", handler: editTask)
+        
+        return [deleteAction, editAction]
     }
 
+    // MARK: - Task Editting Handlers
+    
+    func editTask(action: UITableViewRowAction, indexPath: IndexPath) {
+        // Edit stuff
+        tableView.reloadData()
+    }
+    
+    func deleteTask(action: UITableViewRowAction, indexPath: IndexPath) {
+        tempTasksList.remove(at: indexPath.row)
+        tableView.beginUpdates()
+        tableView.deleteRows(at: [indexPath], with: .fade)
+        tableView.endUpdates()
+    }
+    
     // MARK: - TextField Functions
 
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -100,7 +114,7 @@ class TaskListViewController: UIViewController, UITableViewDelegate, UITableView
             if (text != "") {
                 tempTasksList.insert(text, at: 0)
                 tableView.beginUpdates()
-                tableView.insertRows(at: [IndexPath(row: 0, section: 0)], with: .automatic)
+                tableView.insertRows(at: [IndexPath(row: 0, section: 0)], with: .top)
                 tableView.endUpdates()
                 
                 dismissKeyboard()
