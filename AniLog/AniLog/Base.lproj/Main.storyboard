@@ -14,7 +14,7 @@
         <!--Task List View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="TaskListViewController" customModule="AniLog" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="TaskListViewController" customModule="AniLog" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -24,12 +24,12 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="blE-Zq-xzu">
-                                <rect key="frame" x="329" y="72" width="30" height="30"/>
+                                <rect key="frame" x="329" y="71.5" width="30" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="blE-Zq-xzu" secondAttribute="height" multiplier="1:1" id="7m5-sW-8tH"/>
                                 </constraints>
                                 <connections>
-                                    <action selector="addTask:" destination="BYZ-38-t0r" eventType="touchUpInside" id="P3I-Oq-ptj"/>
+                                    <action selector="willAddTask:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JFJ-2x-jbf"/>
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="1pn-lC-oxm">

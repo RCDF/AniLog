@@ -19,6 +19,7 @@
 		0769272C1E859CC5007F3CE0 /* NavigationMenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0769272B1E859CC5007F3CE0 /* NavigationMenuTableViewController.swift */; };
 		0785ED1D1E80EB9C00CB261A /* TaskListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0785ED1C1E80EB9C00CB261A /* TaskListViewController.swift */; };
 		0785ED1F1E80EF4900CB261A /* TaskListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0785ED1E1E80EF4900CB261A /* TaskListCell.swift */; };
+		07E45B641E9D85850014C045 /* myCore.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 07E45B621E9D85850014C045 /* myCore.xcdatamodeld */; };
 		1A56E6BD09A5F976F4D88999 /* Pods_AniLogUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8805AEA5BBB13B1A521C0EFC /* Pods_AniLogUITests.framework */; };
 		553CF1D7EDED7080FF3E847C /* Pods_AniLog.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BCFD5DC26AD05F851901501 /* Pods_AniLog.framework */; };
 		9087CD7DB136B0579A08B5BE /* Pods_AniLogTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E307BF2083F388851340DF0A /* Pods_AniLogTests.framework */; };
@@ -60,6 +61,7 @@
 		0769272B1E859CC5007F3CE0 /* NavigationMenuTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationMenuTableViewController.swift; sourceTree = "<group>"; };
 		0785ED1C1E80EB9C00CB261A /* TaskListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskListViewController.swift; sourceTree = "<group>"; };
 		0785ED1E1E80EF4900CB261A /* TaskListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskListCell.swift; sourceTree = "<group>"; };
+		07E45B631E9D85850014C045 /* myCore.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = myCore.xcdatamodel; sourceTree = "<group>"; };
 		1F5E94FB716C4FF57C5DA70B /* Pods-AniLogUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AniLogUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AniLogUITests/Pods-AniLogUITests.release.xcconfig"; sourceTree = "<group>"; };
 		2B13AC33F185CBAE28623D09 /* Pods-AniLogTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AniLogTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AniLogTests/Pods-AniLogTests.release.xcconfig"; sourceTree = "<group>"; };
 		2B952FA49D5B8121A4EDF39E /* Pods-AniLog.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AniLog.release.xcconfig"; path = "Pods/Target Support Files/Pods-AniLog/Pods-AniLog.release.xcconfig"; sourceTree = "<group>"; };
@@ -169,6 +171,7 @@
 				073DB12D1E82F81B0041BF03 /* Controllers */,
 				075C8E131E80A57E00E88763 /* Main.storyboard */,
 				075C8E161E80A57E00E88763 /* Assets.xcassets */,
+				07E45B621E9D85850014C045 /* myCore.xcdatamodeld */,
 			);
 			path = AniLog;
 			sourceTree = "<group>";
@@ -477,6 +480,7 @@
 			files = (
 				0769272C1E859CC5007F3CE0 /* NavigationMenuTableViewController.swift in Sources */,
 				076927281E859604007F3CE0 /* Constants.swift in Sources */,
+				07E45B641E9D85850014C045 /* myCore.xcdatamodeld in Sources */,
 				0785ED1F1E80EF4900CB261A /* TaskListCell.swift in Sources */,
 				075C8E101E80A57E00E88763 /* AppDelegate.swift in Sources */,
 				073DB1301E82FA130041BF03 /* ViewController.swift in Sources */,
@@ -757,6 +761,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		07E45B621E9D85850014C045 /* myCore.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				07E45B631E9D85850014C045 /* myCore.xcdatamodel */,
+			);
+			currentVersion = 07E45B631E9D85850014C045 /* myCore.xcdatamodel */;
+			path = myCore.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 075C8E041E80A57E00E88763 /* Project object */;
 }

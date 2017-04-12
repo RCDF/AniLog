@@ -13,7 +13,8 @@ class TaskListViewController: UIViewController, UITableViewDelegate, UITableView
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var tableView: UITableView!
 
-    var tempTasksList: [String] = [String]()
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    var tasksList: [Task] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,7 +33,7 @@ class TaskListViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        tableView.reloadData()
+        fetchTasksFromCoreData()
     }
 
     override func didReceiveMemoryWarning() {
@@ -68,12 +69,12 @@ class TaskListViewController: UIViewController, UITableViewDelegate, UITableView
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return tempTasksList.count
+        return tasksList.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
          let cell = tableView.dequeueReusableCell(withIdentifier: "taskListCell", for: indexPath) as! TaskListCell
-        cell.taskName.text = tempTasksList[indexPath.row]
+        cell.taskName.text = tasksList[indexPath.row].task_description
 
         cell.preservesSuperviewLayoutMargins = false
         cell.separatorInset = UIEdgeInsets.zero
@@ -83,7 +84,7 @@ class TaskListViewController: UIViewController, UITableViewDelegate, UITableView
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print(tempTasksList[indexPath.row])
+        print(tasksList[indexPath.row])
         tableView.deselectRow(at: indexPath, animated: true)
     }
 
@@ -107,16 +108,50 @@ class TaskListViewController: UIViewController, UITableViewDelegate, UITableView
     }
 
     func deleteTask(action: UITableViewRowAction, indexPath: IndexPath) {
-        tempTasksList.remove(at: indexPath.row)
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let task = tasksList[indexPath.row]
+
+        tasksList.remove(at: indexPath.row)
         tableView.beginUpdates()
-        tableView.deleteRows(at: [indexPath], with: .fade)
+        tableView.deleteRows(at: [indexPath], with: .automatic)
         tableView.endUpdates()
+        
+        // Remove from Core Data
+        context.delete(task)
+        appDelegate.saveContext()
+    }
+    
+    func addTask() {
+        if let text = textField.text {
+            if (text != "") {
+                let appDelegate = UIApplication.shared.delegate as! AppDelegate
+                let task = Task(context: context)
+                task.task_description = text
+                task.completed = false
+                task.tag_num = 0
+                
+                appDelegate.saveContext()
+                fetchTasksFromCoreData()
+                tableView.reloadData()
+                
+                dismissKeyboard()
+                textField.text = ""
+            }
+        }
+    }
+    
+    func fetchTasksFromCoreData() {
+        do {
+            tasksList = try context.fetch(Task.fetchRequest())
+        } catch {
+            print("ERROR: Could not fetch tasks from CoreData")
+        }
     }
 
     // MARK: - TextField Functions
 
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        addTask(textField)
+        addTask()
         return true
     }
 
@@ -124,17 +159,7 @@ class TaskListViewController: UIViewController, UITableViewDelegate, UITableView
         textField.resignFirstResponder()
     }
 
-    @IBAction func addTask(_ sender: Any) {
-        if let text = textField.text {
-            if (text != "") {
-                tempTasksList.insert(text, at: 0)
-                tableView.beginUpdates()
-                tableView.insertRows(at: [IndexPath(row: 0, section: 0)], with: .top)
-                tableView.endUpdates()
-                
-                dismissKeyboard()
-                textField.text = ""
-            }
-        }
+    @IBAction func willAddTask(_ sender: Any) {
+        addTask()
     }
 }
