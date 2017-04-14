@@ -84,8 +84,8 @@ class TaskListViewController: UIViewController, UITableViewDelegate, UITableView
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print(tasksList[indexPath.row])
-        tableView.deselectRow(at: indexPath, animated: true)
+        // print(tasksList[indexPath.row])
+        // tableView.deselectRow(at: indexPath, animated: true)
     }
 
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
@@ -126,6 +126,7 @@ class TaskListViewController: UIViewController, UITableViewDelegate, UITableView
             if (text != "") {
                 let appDelegate = UIApplication.shared.delegate as! AppDelegate
                 let task = Task(context: context)
+                task.duration = 30      // default minutes
                 task.task_description = text
                 task.completed = false
                 task.tag_num = 0
@@ -147,6 +148,7 @@ class TaskListViewController: UIViewController, UITableViewDelegate, UITableView
             print("ERROR: Could not fetch tasks from CoreData")
         }
     }
+
 
     // MARK: - TextField Functions
 
