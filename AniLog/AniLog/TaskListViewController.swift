@@ -84,8 +84,8 @@ class TaskListViewController: UIViewController, UITableViewDelegate, UITableView
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        // print(tasksList[indexPath.row])
-        // tableView.deselectRow(at: indexPath, animated: true)
+         print(tasksList[indexPath.row])
+         tableView.deselectRow(at: indexPath, animated: true)
     }
 
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
@@ -130,10 +130,12 @@ class TaskListViewController: UIViewController, UITableViewDelegate, UITableView
                 task.task_description = text
                 task.completed = false
                 task.tag_num = 0
-                
                 appDelegate.saveContext()
-                fetchTasksFromCoreData()
-                tableView.reloadData()
+                
+                tasksList.insert(task, at: 0)
+                tableView.beginUpdates()
+                tableView.insertRows(at: [IndexPath(row: 0, section: 0)], with: .automatic)
+                tableView.endUpdates()
                 
                 dismissKeyboard()
                 textField.text = ""
@@ -143,7 +145,7 @@ class TaskListViewController: UIViewController, UITableViewDelegate, UITableView
     
     func fetchTasksFromCoreData() {
         do {
-            tasksList = try context.fetch(Task.fetchRequest())
+            tasksList = try context.fetch(Task.fetchRequest()).reversed()
         } catch {
             print("ERROR: Could not fetch tasks from CoreData")
         }
