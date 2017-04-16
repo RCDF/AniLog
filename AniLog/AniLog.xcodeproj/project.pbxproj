@@ -20,6 +20,7 @@
 		0769272C1E859CC5007F3CE0 /* NavigationMenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0769272B1E859CC5007F3CE0 /* NavigationMenuTableViewController.swift */; };
 		0785ED1D1E80EB9C00CB261A /* TaskListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0785ED1C1E80EB9C00CB261A /* TaskListViewController.swift */; };
 		0785ED1F1E80EF4900CB261A /* TaskListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0785ED1E1E80EF4900CB261A /* TaskListCell.swift */; };
+		078A62051EA3560700840131 /* AniTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078A62041EA3560700840131 /* AniTimer.swift */; };
 		07CF26CA1EA06FEF00618F61 /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CF26C91EA06FEF00618F61 /* TimerViewController.swift */; };
 		07E45B641E9D85850014C045 /* myCore.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 07E45B621E9D85850014C045 /* myCore.xcdatamodeld */; };
 		1A56E6BD09A5F976F4D88999 /* Pods_AniLogUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8805AEA5BBB13B1A521C0EFC /* Pods_AniLogUITests.framework */; };
@@ -64,6 +65,7 @@
 		0769272B1E859CC5007F3CE0 /* NavigationMenuTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationMenuTableViewController.swift; sourceTree = "<group>"; };
 		0785ED1C1E80EB9C00CB261A /* TaskListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskListViewController.swift; sourceTree = "<group>"; };
 		0785ED1E1E80EF4900CB261A /* TaskListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskListCell.swift; sourceTree = "<group>"; };
+		078A62041EA3560700840131 /* AniTimer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AniTimer.swift; sourceTree = "<group>"; };
 		07CF26C91EA06FEF00618F61 /* TimerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
 		07E45B631E9D85850014C045 /* myCore.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = myCore.xcdatamodel; sourceTree = "<group>"; };
 		1F5E94FB716C4FF57C5DA70B /* Pods-AniLogUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AniLogUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AniLogUITests/Pods-AniLogUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -182,6 +184,7 @@
 				073DB12E1E82F82B0041BF03 /* Cells */,
 				073DB12D1E82F81B0041BF03 /* Controllers */,
 				072799B71EA0684300E01ADD /* Designables */,
+				078A62061EA3562000840131 /* Models */,
 				073DB12C1E82F80E0041BF03 /* Supporting Files */,
 				075C8E131E80A57E00E88763 /* Main.storyboard */,
 				075C8E161E80A57E00E88763 /* Assets.xcassets */,
@@ -206,6 +209,14 @@
 				075C8E311E80A57E00E88763 /* Info.plist */,
 			);
 			path = AniLogUITests;
+			sourceTree = "<group>";
+		};
+		078A62061EA3562000840131 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				078A62041EA3560700840131 /* AniTimer.swift */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 		A73F1BDD1EBD53582DEC78E6 /* Pods */ = {
@@ -500,6 +511,7 @@
 				0785ED1F1E80EF4900CB261A /* TaskListCell.swift in Sources */,
 				075C8E101E80A57E00E88763 /* AppDelegate.swift in Sources */,
 				073DB1301E82FA130041BF03 /* ViewController.swift in Sources */,
+				078A62051EA3560700840131 /* AniTimer.swift in Sources */,
 				0769272A1E859786007F3CE0 /* CustomColors.swift in Sources */,
 				0785ED1D1E80EB9C00CB261A /* TaskListViewController.swift in Sources */,
 			);

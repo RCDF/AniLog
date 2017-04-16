@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Fug-y4-zLO">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="e8e-YK-MeL">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -102,10 +102,10 @@
             </objects>
             <point key="canvasLocation" x="1697" y="313"/>
         </scene>
-        <!--View Controller-->
+        <!--Timer View Controller-->
         <scene sceneID="OIL-ac-2mz">
             <objects>
-                <viewController id="e8e-YK-MeL" sceneMemberID="viewController">
+                <viewController id="e8e-YK-MeL" customClass="TimerViewController" customModule="AniLog" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="2VG-0H-Qn4"/>
                         <viewControllerLayoutGuide type="bottom" id="7BP-Ek-QN1"/>
@@ -128,7 +128,10 @@
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="2et-sq-9Bh" secondAttribute="height" multiplier="1:1" id="ctb-q2-aop"/>
                                         </constraints>
-                                        <state key="normal" title="Start"/>
+                                        <state key="normal" title="X"/>
+                                        <connections>
+                                            <action selector="abortTask:" destination="e8e-YK-MeL" eventType="touchUpInside" id="PLO-tT-4vj"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -150,6 +153,9 @@
                             <constraint firstAttribute="trailingMargin" secondItem="vgb-AC-Ipi" secondAttribute="trailing" id="dvf-So-wBp"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="timerLabel" destination="9eP-X5-wWl" id="O25-sQ-tem"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4fk-Ao-zEK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

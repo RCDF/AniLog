@@ -10,14 +10,48 @@ import UIKit
 
 class TimerViewController: UIViewController {
 
+    @IBOutlet weak var timerLabel: UILabel!
+    
+    var updateTimer: Timer = Timer()
+    var aniTimer: AniTimer!
+    var timerDuration: UInt16!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        timerDuration = 93
+        initTimer()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func initTimer() {
+        aniTimer = AniTimer(duration: timerDuration)
+        updateTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateAniTimer), userInfo: nil, repeats: true)
+    }
+    
+    func updateAniTimer() {
+        if (aniTimer.isComplete()) {
+            endAniTimer()
+        }
+        
+        print("Yee")
+        
+        aniTimer.updateRemainingTime()
+        timerLabel.text = aniTimer.getTimeString()
+    }
+    
+    func endAniTimer() {
+        if (aniTimer.isComplete()) {
+            // handle complete
+            print("You are done!")
+        }
+        updateTimer.invalidate()
+    }
+    
+    @IBAction func abortTask(_ sender: Any) {
+        endAniTimer()
     }
 }
