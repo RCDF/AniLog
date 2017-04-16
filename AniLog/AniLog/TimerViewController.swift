@@ -18,7 +18,7 @@ class TimerViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        timerDuration = 93
+        timerDuration = 61
         initTimer()
     }
 
@@ -36,8 +36,6 @@ class TimerViewController: UIViewController {
         if (aniTimer.isComplete()) {
             endAniTimer()
         }
-        
-        print("Yee")
         
         aniTimer.updateRemainingTime()
         timerLabel.text = aniTimer.getTimeString()

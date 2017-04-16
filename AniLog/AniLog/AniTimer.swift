@@ -26,19 +26,19 @@ class AniTimer {
     
     func updateRemainingTime() {
         if (!complete) {
-
             if (secondsRemaining == 0) {
-                minutesRemaining -= 1
                 secondsRemaining = 59
+                if (minutesRemaining == 0 && hoursRemaining != 0) {
+                    hoursRemaining -= 1
+                    minutesRemaining = 59
+                } else {
+                    minutesRemaining -= 1
+                }
+                
             } else {
                 secondsRemaining -= 1
             }
-            
-            if (minutesRemaining == 0) {
-                hoursRemaining -= 1
-                minutesRemaining = 59
-            }
-            
+
             complete = (hoursRemaining == 0 && minutesRemaining == 0 && secondsRemaining == 0)
         }
     }
