@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="e8e-YK-MeL">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Fug-y4-zLO">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -95,6 +95,7 @@
                     <connections>
                         <outlet property="tableView" destination="1pn-lC-oxm" id="5Ux-fH-Dug"/>
                         <outlet property="textField" destination="cQX-Zv-Lz6" id="ruY-Ln-1iQ"/>
+                        <segue destination="e8e-YK-MeL" kind="showDetail" identifier="segueToTimer" id="nEd-SR-gMX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -133,6 +134,7 @@
                                         </state>
                                         <connections>
                                             <action selector="abortTask:" destination="e8e-YK-MeL" eventType="touchUpInside" id="PLO-tT-4vj"/>
+                                            <segue destination="Xjz-6N-BFI" kind="unwind" identifier="timerToTaskList" unwindAction="unwindToTaskListWithSegue:" id="exN-oa-O21"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -159,6 +161,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4fk-Ao-zEK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="Xjz-6N-BFI" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1696.8" y="1061.9190404797603"/>
         </scene>

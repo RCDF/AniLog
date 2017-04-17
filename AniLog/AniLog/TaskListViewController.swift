@@ -15,6 +15,7 @@ class TaskListViewController: UIViewController, UITableViewDelegate, UITableView
 
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     var tasksList: [Task] = []
+    var selectedRow: Int?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -84,8 +85,9 @@ class TaskListViewController: UIViewController, UITableViewDelegate, UITableView
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-         print(tasksList[indexPath.row])
-         tableView.deselectRow(at: indexPath, animated: true)
+        selectedRow = indexPath.row
+        tableView.deselectRow(at: indexPath, animated: true)
+        performSegue(withIdentifier: "segueToTimer", sender: self)
     }
 
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
@@ -93,24 +95,25 @@ class TaskListViewController: UIViewController, UITableViewDelegate, UITableView
     }
 
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
-        let deleteAction = UITableViewRowAction(style: .destructive, title: "Delete", handler: deleteTask)
+        let deleteAction = UITableViewRowAction(style: .destructive, title: "Delete", handler: deleteTaskAction)
 
-        let editAction = UITableViewRowAction(style: .normal, title: "Edit", handler: editTask)
+        let editAction = UITableViewRowAction(style: .normal, title: "Edit", handler: editTaskAction)
 
         return [deleteAction, editAction]
     }
 
+    
     // MARK: - Task Editting Handlers
-
-    func editTask(action: UITableViewRowAction, indexPath: IndexPath) {
-        // Edit stuff
+    
+    func editTask(row: Int) {
         tableView.reloadData()
     }
-
-    func deleteTask(action: UITableViewRowAction, indexPath: IndexPath) {
+    
+    func deleteTask(row: Int) {
+        let indexPath = IndexPath(row: row, section: 0)
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let task = tasksList[indexPath.row]
-
+        
         tasksList.remove(at: indexPath.row)
         tableView.beginUpdates()
         tableView.deleteRows(at: [indexPath], with: .automatic)
@@ -150,6 +153,14 @@ class TaskListViewController: UIViewController, UITableViewDelegate, UITableView
             print("ERROR: Could not fetch tasks from CoreData")
         }
     }
+    
+    func editTaskAction(action: UITableViewRowAction, indexPath: IndexPath) {
+        editTask(row: indexPath.row)
+    }
+    
+    func deleteTaskAction(action: UITableViewRowAction, indexPath: IndexPath) {
+        deleteTask(row: indexPath.row)
+    }
 
 
     // MARK: - TextField Functions
@@ -166,4 +177,29 @@ class TaskListViewController: UIViewController, UITableViewDelegate, UITableView
     @IBAction func willAddTask(_ sender: Any) {
         addTask()
     }
+    
+    
+    // MARK: - Navigation
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "segueToTimer" {
+            if let dest = segue.destination as? TimerViewController {
+                if let cellRow = selectedRow {
+                    let task = tasksList[cellRow]
+                    dest.timerDuration = task.duration
+                }
+            }
+        }
+    }
+    
+    @IBAction func unwindToTaskList(segue: UIStoryboardSegue) {
+        if (segue.identifier == "timerToTaskList") {
+            if let src = segue.source as? TimerViewController {
+                if src.aniTimer.isComplete() {
+                    deleteTask(row: selectedRow!)
+                }
+            }
+        }
+    }
+    
 }

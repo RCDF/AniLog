@@ -14,11 +14,10 @@ class TimerViewController: UIViewController {
     
     var updateTimer: Timer = Timer()
     var aniTimer: AniTimer!
-    var timerDuration: UInt16!
+    var timerDuration: Int16!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        timerDuration = 61
         initTimer()
     }
 
@@ -29,6 +28,7 @@ class TimerViewController: UIViewController {
     
     func initTimer() {
         aniTimer = AniTimer(duration: timerDuration)
+        timerLabel.text = aniTimer.getTimeString()
         updateTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateAniTimer), userInfo: nil, repeats: true)
     }
     

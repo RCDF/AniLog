@@ -10,13 +10,13 @@ import Foundation
 
 class AniTimer {
     
-    var timerDuration: UInt16
-    var hoursRemaining: UInt16
-    var minutesRemaining: UInt16
-    var secondsRemaining: UInt16
-    var complete: Bool
+    private var timerDuration: Int16
+    private var hoursRemaining: Int16
+    private var minutesRemaining: Int16
+    private var secondsRemaining: Int16
+    private var complete: Bool
     
-    init(duration: UInt16) {
+    init(duration: Int16) {
         self.timerDuration = duration
         self.hoursRemaining = duration / 60
         self.minutesRemaining = duration - (60 * hoursRemaining)
