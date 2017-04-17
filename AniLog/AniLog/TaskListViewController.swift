@@ -24,13 +24,6 @@ class TaskListViewController: UIViewController, UITableViewDelegate, UITableView
         tableView.tableFooterView = UIView(frame: CGRect.zero)
         tableView.layer.borderWidth = 1.0
         tableView.layer.borderColor = UIColor.icebergBlue.cgColor
-
-        textField.delegate = self
-        textField.inputAccessoryView = initializeKeyboard()
-
-        let tapDismiss = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
-        tapDismiss.delegate = self
-        view.addGestureRecognizer(tapDismiss)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -39,27 +32,6 @@ class TaskListViewController: UIViewController, UITableViewDelegate, UITableView
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-    }
-
-    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
-        if let view = touch.view {
-            if view is UITableViewCell || view.superview is UITableViewCell || view.superview?.superview is UITableViewCell {
-                return false
-            }
-        }
-
-        return true
-    }
-
-    func initializeKeyboard() -> UIToolbar {
-        let keyboardToolbar = UIToolbar(frame: CGRect(x: 0, y: 0, width: 320, height: 50))
-        let closeButton = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(dismissKeyboard))
-
-        keyboardToolbar.barStyle = .default
-        keyboardToolbar.items = [closeButton]
-        keyboardToolbar.sizeToFit()
-
-        return keyboardToolbar
     }
 
 
@@ -124,26 +96,11 @@ class TaskListViewController: UIViewController, UITableViewDelegate, UITableView
         appDelegate.saveContext()
     }
     
-    func addTask() {
-        if let text = textField.text {
-            if (text != "") {
-                let appDelegate = UIApplication.shared.delegate as! AppDelegate
-                let task = Task(context: context)
-                task.duration = 30      // default minutes
-                task.task_description = text
-                task.completed = false
-                task.tag_num = 0
-                appDelegate.saveContext()
-                
-                tasksList.insert(task, at: 0)
-                tableView.beginUpdates()
-                tableView.insertRows(at: [IndexPath(row: 0, section: 0)], with: .automatic)
-                tableView.endUpdates()
-                
-                dismissKeyboard()
-                textField.text = ""
-            }
-        }
+    func addTask(task: Task) {
+        tasksList.insert(task, at: 0)
+        tableView.beginUpdates()
+        tableView.insertRows(at: [IndexPath(row: 0, section: 0)], with: .none)
+        tableView.endUpdates()
     }
     
     func fetchTasksFromCoreData() {
@@ -162,27 +119,15 @@ class TaskListViewController: UIViewController, UITableViewDelegate, UITableView
         deleteTask(row: indexPath.row)
     }
 
-
-    // MARK: - TextField Functions
-
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        addTask()
-        return true
-    }
-
-    func dismissKeyboard() {
-        textField.resignFirstResponder()
-    }
-
-    @IBAction func willAddTask(_ sender: Any) {
-        addTask()
-    }
-    
     
     // MARK: - Navigation
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "segueToTimer" {
+        if segue.identifier == "segueToTaskInfo" {
+            if let dest = segue.destination as? TaskInfoViewController {
+                dest.inEditMode = false
+            }
+        } else if segue.identifier == "segueToTimer" {
             if let dest = segue.destination as? TimerViewController {
                 if let cellRow = selectedRow {
                     let task = tasksList[cellRow]
@@ -197,6 +142,16 @@ class TaskListViewController: UIViewController, UITableViewDelegate, UITableView
             if let src = segue.source as? TimerViewController {
                 if src.aniTimer.isComplete() {
                     deleteTask(row: selectedRow!)
+                }
+            }
+        } else if (segue.identifier == "taskInfoToList") {
+            if let src = segue.source as? TaskInfoViewController {
+                if let editMode = src.inEditMode {
+                    if (!editMode) {
+                        addTask(task: src.task!)
+                    } else {
+                        
+                    }
                 }
             }
         }

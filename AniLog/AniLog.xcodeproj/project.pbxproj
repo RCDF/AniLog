@@ -18,6 +18,7 @@
 		076927281E859604007F3CE0 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076927271E859604007F3CE0 /* Constants.swift */; };
 		0769272A1E859786007F3CE0 /* CustomColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076927291E859786007F3CE0 /* CustomColors.swift */; };
 		0769272C1E859CC5007F3CE0 /* NavigationMenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0769272B1E859CC5007F3CE0 /* NavigationMenuTableViewController.swift */; };
+		077A9F181EA5536D007414FE /* TaskInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077A9F171EA5536D007414FE /* TaskInfoViewController.swift */; };
 		0785ED1D1E80EB9C00CB261A /* TaskListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0785ED1C1E80EB9C00CB261A /* TaskListViewController.swift */; };
 		0785ED1F1E80EF4900CB261A /* TaskListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0785ED1E1E80EF4900CB261A /* TaskListCell.swift */; };
 		078A62051EA3560700840131 /* AniTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078A62041EA3560700840131 /* AniTimer.swift */; };
@@ -64,6 +65,7 @@
 		076927271E859604007F3CE0 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		076927291E859786007F3CE0 /* CustomColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomColors.swift; sourceTree = "<group>"; };
 		0769272B1E859CC5007F3CE0 /* NavigationMenuTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationMenuTableViewController.swift; sourceTree = "<group>"; };
+		077A9F171EA5536D007414FE /* TaskInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskInfoViewController.swift; sourceTree = "<group>"; };
 		0785ED1C1E80EB9C00CB261A /* TaskListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskListViewController.swift; sourceTree = "<group>"; };
 		0785ED1E1E80EF4900CB261A /* TaskListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskListCell.swift; sourceTree = "<group>"; };
 		078A62041EA3560700840131 /* AniTimer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AniTimer.swift; sourceTree = "<group>"; };
@@ -144,6 +146,7 @@
 			isa = PBXGroup;
 			children = (
 				0769272B1E859CC5007F3CE0 /* NavigationMenuTableViewController.swift */,
+				077A9F171EA5536D007414FE /* TaskInfoViewController.swift */,
 				0785ED1C1E80EB9C00CB261A /* TaskListViewController.swift */,
 				07CF26C91EA06FEF00618F61 /* TimerViewController.swift */,
 				073DB12F1E82FA130041BF03 /* ViewController.swift */,
@@ -518,6 +521,7 @@
 				0769272A1E859786007F3CE0 /* CustomColors.swift in Sources */,
 				0785ED1D1E80EB9C00CB261A /* TaskListViewController.swift in Sources */,
 				07D69A371EA42CE200863148 /* Utils.swift in Sources */,
+				077A9F181EA5536D007414FE /* TaskInfoViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
