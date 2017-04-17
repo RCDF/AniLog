@@ -22,13 +22,10 @@ class TaskInfoViewController: UIViewController, UITextFieldDelegate, UIGestureRe
         super.viewDidLoad()
 
         textField.delegate = self
-        textField.inputAccessoryView = initializeKeyboard()
         
         let tapDismiss = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
         tapDismiss.delegate = self
         view.addGestureRecognizer(tapDismiss)
-        
-        textField.becomeFirstResponder()
     }
 
     override func didReceiveMemoryWarning() {
@@ -42,17 +39,6 @@ class TaskInfoViewController: UIViewController, UITextFieldDelegate, UIGestureRe
     
     func initForNewTaskMode() {
         
-    }
-    
-    func initializeKeyboard() -> UIToolbar {
-        let keyboardToolbar = UIToolbar(frame: CGRect(x: 0, y: 0, width: 320, height: 50))
-        let closeButton = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(dismissKeyboard))
-        
-        keyboardToolbar.barStyle = .default
-        keyboardToolbar.items = [closeButton]
-        keyboardToolbar.sizeToFit()
-        
-        return keyboardToolbar
     }
     
     func dismissKeyboard() {
@@ -75,8 +61,6 @@ class TaskInfoViewController: UIViewController, UITextFieldDelegate, UIGestureRe
                         task?.duration = 0
                         task?.tagNum = tagNum
                         appDelegate.saveContext()
-                        
-                        // performSegue
                     } else {
                         // Alert that there must be a field
                     }
@@ -105,9 +89,7 @@ class TaskInfoViewController: UIViewController, UITextFieldDelegate, UIGestureRe
     // MARK: - Textfield Functions
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        
-        // Add what you want the Done button to do
-        
+        dismissKeyboard()
         return true
     }
     

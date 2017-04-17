@@ -22,8 +22,6 @@ class TaskListViewController: UIViewController, UITableViewDelegate, UITableView
         tableView.dataSource = self
         tableView.delegate = self
         tableView.tableFooterView = UIView(frame: CGRect.zero)
-        tableView.layer.borderWidth = 1.0
-        tableView.layer.borderColor = UIColor.icebergBlue.cgColor
     }
     
     override func viewWillAppear(_ animated: Bool) {
