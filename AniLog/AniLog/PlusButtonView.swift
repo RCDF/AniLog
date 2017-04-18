@@ -48,7 +48,9 @@ class PlusButtonView: UIButton {
     
     override var isHighlighted: Bool {
         didSet {
-            alpha = isHighlighted ? 0.6 : 1.0
+            UIView.animate(withDuration: 0.2, animations: { _ in
+                self.alpha = self.isHighlighted ? 0.6 : 1.0
+            })
         }
     }
     
