@@ -12,7 +12,12 @@ import QuartzCore
 class TaskListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var tableView: FadingTableView!
-    
+    @IBOutlet weak var numTasksLabel: UILabel!
+    @IBOutlet weak var dayLabel: UILabel!
+    @IBOutlet weak var monthLabel: UILabel!
+    @IBOutlet weak var yearLabel: UILabel!
+    @IBOutlet weak var weekdayLabel: UILabel!
+
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     var tasksList: [Task] = []
     var selectedRow: Int?
@@ -27,9 +32,12 @@ class TaskListViewController: UIViewController, UITableViewDelegate, UITableView
         tableView.dataSource = self
         tableView.delegate = self
         tableView.tableFooterView = UIView(frame: CGRect.zero)
+        
+        updateDateLabels()
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        updateDateLabels()
         fetchTasksFromCoreData()
     }
 
@@ -37,6 +45,20 @@ class TaskListViewController: UIViewController, UITableViewDelegate, UITableView
         super.didReceiveMemoryWarning()
     }
     
+    func updateDateLabels() {
+        let date = Date()
+        let calendar = Calendar.current
+        let dateFormatter = DateFormatter()
+
+        dayLabel.text = String(calendar.component(.day, from: date))
+        monthLabel.text = dateFormatter.shortMonthSymbols[calendar.component(.month, from: date) - 1].uppercased()
+        yearLabel.text = String(calendar.component(.year, from: date))
+        weekdayLabel.text = dateFormatter.weekdaySymbols[calendar.component(.weekday, from: date) - 1]
+    }
+    
+    func updateNumTasks() {
+        numTasksLabel.text = String(tasksList.count)
+    }
 
     // MARK: - TableView Delegate Functions
 
@@ -99,6 +121,7 @@ class TaskListViewController: UIViewController, UITableViewDelegate, UITableView
         
         context.delete(task)
         appDelegate.saveContext()
+        updateNumTasks()
     }
     
     func addTask(task: Task) {
@@ -106,16 +129,18 @@ class TaskListViewController: UIViewController, UITableViewDelegate, UITableView
         tableView.beginUpdates()
         tableView.insertRows(at: [IndexPath(row: 0, section: 0)], with: .none)
         tableView.endUpdates()
+        updateNumTasks()
     }
     
     func fetchTasksFromCoreData() {
         do {
             tasksList = try context.fetch(Task.fetchRequest()).reversed()
+            updateNumTasks()
         } catch {
             print("ERROR: Could not fetch tasks from CoreData")
         }
     }
-    
+
     func editTaskAction(action: UITableViewRowAction, indexPath: IndexPath) {
         editTask(row: indexPath.row)
     }
@@ -161,11 +186,4 @@ class TaskListViewController: UIViewController, UITableViewDelegate, UITableView
             }
         }
     }
-    
-    @IBAction func hideFade(_ sender: Any) {
-        
-        tableView.hideMask()
-    }
-    
-    
 }
