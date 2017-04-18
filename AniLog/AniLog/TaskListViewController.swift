@@ -7,18 +7,28 @@
 //
 
 import UIKit
+import QuartzCore
 
-class TaskListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate, UIGestureRecognizerDelegate {
+class TaskListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var tableView: UITableView!
 
+    var gradientMaskLayer: CAGradientLayer?
+    
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     var tasksList: [Task] = []
     var selectedRow: Int?
-
+    
+    override var prefersStatusBarHidden: Bool {
+        return true
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        
+        
         tableView.dataSource = self
         tableView.delegate = self
         tableView.tableFooterView = UIView(frame: CGRect.zero)
@@ -31,7 +41,7 @@ class TaskListViewController: UIViewController, UITableViewDelegate, UITableView
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-
+    
 
     // MARK: - TableView Delegate Functions
 
@@ -71,7 +81,6 @@ class TaskListViewController: UIViewController, UITableViewDelegate, UITableView
 
         return [deleteAction, editAction]
     }
-
     
     // MARK: - Task Editting Handlers
     

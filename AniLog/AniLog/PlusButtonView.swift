@@ -16,6 +16,13 @@ class PlusButtonView: UIButton {
     
     override func draw(_ rect: CGRect) {
         
+        // Set up drop shadow
+        
+        self.layer.shadowColor = UIColor.lightGray.cgColor
+        self.layer.shadowOpacity = 1
+        self.layer.shadowOffset = CGSize(width: 0, height: 5)
+        self.layer.shadowRadius = 5
+        
         // Create the circle
         
         let path = UIBezierPath(ovalIn: rect)
