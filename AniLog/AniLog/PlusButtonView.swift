@@ -24,7 +24,7 @@ class PlusButtonView: UIButton {
         
         // Create the plus
         
-        let plusHeight: CGFloat = 1.0
+        let plusHeight: CGFloat = 1.5
         let plusWidth: CGFloat = min(bounds.width, bounds.height) * 0.6
         let plusPath = UIBezierPath()
 
@@ -46,5 +46,10 @@ class PlusButtonView: UIButton {
         plusPath.stroke()
     }
     
+    override var isHighlighted: Bool {
+        didSet {
+            alpha = isHighlighted ? 0.6 : 1.0
+        }
+    }
     
 }
