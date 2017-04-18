@@ -16,6 +16,10 @@ class TimerViewController: UIViewController {
     var aniTimer: AniTimer!
     var timerDuration: Int16!
     
+    override var prefersStatusBarHidden: Bool {
+        return true
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         initTimer()

@@ -17,6 +17,9 @@ class TaskInfoViewController: UIViewController, UITextFieldDelegate, UIGestureRe
     var tagNum: Int16 = 0   // default
     var inEditMode: Bool?
     
+    override var prefersStatusBarHidden: Bool {
+        return true
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

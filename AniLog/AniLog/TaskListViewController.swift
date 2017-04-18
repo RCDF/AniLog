@@ -71,8 +71,10 @@ class TaskListViewController: UIViewController, UITableViewDelegate, UITableView
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-         let cell = tableView.dequeueReusableCell(withIdentifier: "taskListCell", for: indexPath) as! TaskListCell
-        cell.taskName.text = tasksList[indexPath.row].task_description
+        let cell = tableView.dequeueReusableCell(withIdentifier: "taskListCell", for: indexPath) as! TaskListCell
+        let task = tasksList[indexPath.row]
+        cell.taskName.text = task.task_description
+        cell.taskTag.backgroundColor = getTagColor(task.tagNum)
 
         cell.preservesSuperviewLayoutMargins = false
         cell.separatorInset = UIEdgeInsets.zero
