@@ -216,12 +216,21 @@
                                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5cE-z3-Aip">
+                                        <rect key="frame" x="164" y="11" width="46" height="30"/>
+                                        <state key="normal" title="Button"/>
+                                        <connections>
+                                            <action selector="hideFade:" destination="BYZ-38-t0r" eventType="touchUpInside" id="76Y-dP-LhP"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="6I2-hx-fgz" firstAttribute="leading" secondItem="RZ3-DJ-ZVR" secondAttribute="leading" constant="16" id="0ZI-KY-nEl"/>
+                                    <constraint firstItem="5cE-z3-Aip" firstAttribute="centerX" secondItem="RZ3-DJ-ZVR" secondAttribute="centerX" id="Bdq-OP-MeK"/>
                                     <constraint firstItem="fQ9-Tl-O8U" firstAttribute="leading" secondItem="6I2-hx-fgz" secondAttribute="trailing" constant="4" id="MBB-xX-w8p"/>
                                     <constraint firstItem="fQ9-Tl-O8U" firstAttribute="centerY" secondItem="6I2-hx-fgz" secondAttribute="centerY" id="UP1-68-sZw"/>
+                                    <constraint firstItem="5cE-z3-Aip" firstAttribute="centerY" secondItem="RZ3-DJ-ZVR" secondAttribute="centerY" id="Y6v-Co-who"/>
                                     <constraint firstItem="6I2-hx-fgz" firstAttribute="centerY" secondItem="RZ3-DJ-ZVR" secondAttribute="centerY" id="xnh-pq-Pz5"/>
                                 </constraints>
                             </view>

@@ -11,7 +11,7 @@ import QuartzCore
 
 class TaskListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var tableView: FadingTableView!
     
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     var tasksList: [Task] = []
@@ -75,6 +75,10 @@ class TaskListViewController: UIViewController, UITableViewDelegate, UITableView
         let editAction = UITableViewRowAction(style: .normal, title: "Edit", handler: editTaskAction)
 
         return [deleteAction, editAction]
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        tableView.updateGradients()
     }
     
     // MARK: - Task Editting Handlers
@@ -157,5 +161,11 @@ class TaskListViewController: UIViewController, UITableViewDelegate, UITableView
             }
         }
     }
+    
+    @IBAction func hideFade(_ sender: Any) {
+        
+        tableView.hideMask()
+    }
+    
     
 }
