@@ -11,10 +11,7 @@ import QuartzCore
 
 class TaskListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
-    @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var tableView: UITableView!
-
-    var gradientMaskLayer: CAGradientLayer?
     
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     var tasksList: [Task] = []
@@ -27,8 +24,6 @@ class TaskListViewController: UIViewController, UITableViewDelegate, UITableView
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
-        
         tableView.dataSource = self
         tableView.delegate = self
         tableView.tableFooterView = UIView(frame: CGRect.zero)
@@ -98,7 +93,6 @@ class TaskListViewController: UIViewController, UITableViewDelegate, UITableView
         tableView.deleteRows(at: [indexPath], with: .automatic)
         tableView.endUpdates()
         
-        // Remove from Core Data
         context.delete(task)
         appDelegate.saveContext()
     }

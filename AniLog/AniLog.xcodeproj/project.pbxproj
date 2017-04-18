@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		072799B91EA0686B00E01ADD /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072799B81EA0686B00E01ADD /* RoundButton.swift */; };
+		0727C98E1EA5E0CF00DBD413 /* FadingTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0727C98D1EA5E0CF00DBD413 /* FadingTableView.swift */; };
 		073DB1301E82FA130041BF03 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073DB12F1E82FA130041BF03 /* ViewController.swift */; };
 		075C8E101E80A57E00E88763 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075C8E0F1E80A57E00E88763 /* AppDelegate.swift */; };
 		075C8E151E80A57E00E88763 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 075C8E131E80A57E00E88763 /* Main.storyboard */; };
@@ -51,6 +52,7 @@
 
 /* Begin PBXFileReference section */
 		072799B81EA0686B00E01ADD /* RoundButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
+		0727C98D1EA5E0CF00DBD413 /* FadingTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FadingTableView.swift; sourceTree = "<group>"; };
 		073DB12F1E82FA130041BF03 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		075C8E0C1E80A57E00E88763 /* AniLog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AniLog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		075C8E0F1E80A57E00E88763 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -128,6 +130,7 @@
 		072799B71EA0684300E01ADD /* Designables */ = {
 			isa = PBXGroup;
 			children = (
+				0727C98D1EA5E0CF00DBD413 /* FadingTableView.swift */,
 				072799B81EA0686B00E01ADD /* RoundButton.swift */,
 				077A9F191EA5855A007414FE /* PlusButtonView.swift */,
 			);
@@ -519,6 +522,7 @@
 				07CF26CA1EA06FEF00618F61 /* TimerViewController.swift in Sources */,
 				072799B91EA0686B00E01ADD /* RoundButton.swift in Sources */,
 				0769272C1E859CC5007F3CE0 /* NavigationMenuTableViewController.swift in Sources */,
+				0727C98E1EA5E0CF00DBD413 /* FadingTableView.swift in Sources */,
 				076927281E859604007F3CE0 /* Constants.swift in Sources */,
 				07E45B641E9D85850014C045 /* myCore.xcdatamodeld in Sources */,
 				0785ED1F1E80EF4900CB261A /* TaskListCell.swift in Sources */,
