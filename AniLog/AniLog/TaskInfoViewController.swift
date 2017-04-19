@@ -18,6 +18,10 @@ class TaskInfoViewController: UIViewController, UITextFieldDelegate, UIGestureRe
     var tagNum: Int16 = 0   // default
     var inEditMode: Bool?
     
+    override var prefersStatusBarHidden: Bool {
+        return true
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -27,7 +31,7 @@ class TaskInfoViewController: UIViewController, UITextFieldDelegate, UIGestureRe
         tapDismiss.delegate = self
         view.addGestureRecognizer(tapDismiss)
         
-        getCurrentButton().isSelected = true
+        getCurrentButton()?.isSelected = true
     }
 
     override func didReceiveMemoryWarning() {
@@ -77,13 +81,18 @@ class TaskInfoViewController: UIViewController, UITextFieldDelegate, UIGestureRe
     }
 
     @IBAction func setTagNum(sender: RoundButton) {
-        getCurrentButton().isSelected = false
+        getCurrentButton()?.isSelected = false
         sender.isSelected = true
         tagNum = Int16(sender.tag)
     }
     
-    func getCurrentButton() -> RoundButton {
-        return buttonCollection[Int(tagNum)]
+    func getCurrentButton() -> RoundButton? {
+        for button in buttonCollection {
+            if button.tag == Int(tagNum) {
+                return button
+            }
+        }
+        return nil
     }
 
     // MARK: - Gesture Recognizer Delegates
