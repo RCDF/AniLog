@@ -75,6 +75,7 @@ class TaskListViewController: UIViewController, UITableViewDelegate, UITableView
         let task = tasksList[indexPath.row]
         cell.taskName.text = task.task_description
         cell.taskTag.backgroundColor = getTagColor(task.tagNum)
+        cell.taskColor = getTagColor(task.tagNum)
 
         cell.preservesSuperviewLayoutMargins = false
         cell.separatorInset = UIEdgeInsets.zero

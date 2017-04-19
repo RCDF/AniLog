@@ -12,16 +12,28 @@ class TaskListCell: UITableViewCell {
 
     @IBOutlet weak var taskName: UILabel!
     @IBOutlet weak var taskTag: TaskTagView!
+    var taskColor: UIColor!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
 
+    // Implement to maintain view consistency when selected
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+        
+        if(selected) {
+            taskTag.backgroundColor = taskColor
+        }
     }
-
+    
+    // Implement to maintain view consistency when highlighted
+    override func setHighlighted(_ highlighted: Bool, animated: Bool) {
+        super.setHighlighted(highlighted, animated: animated)
+        
+        if (highlighted) {
+            taskTag.backgroundColor = taskColor
+        }
+    }
 }
