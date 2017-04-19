@@ -12,7 +12,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Task Info View Controller-->
+        <!--New Task-->
         <scene sceneID="7XP-K0-FkK">
             <objects>
                 <viewController id="MQA-PU-gfe" customClass="TaskInfoViewController" customModule="AniLog" customModuleProvider="target" sceneMemberID="viewController">
@@ -29,72 +29,120 @@
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Nc-gt-Vmf" userLabel="B0" customClass="RoundButton" customModule="AniLog" customModuleProvider="target">
                                         <rect key="frame" x="8" y="7.5" width="46" height="46"/>
-                                        <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="9Nc-gt-Vmf" secondAttribute="height" multiplier="1:1" id="l5F-yP-piN"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="tintColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                        <state key="normal" title="B">
-                                            <color key="titleColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <state key="normal">
+                                            <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="outerCircleColor">
+                                                <color key="value" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="innerCircleCircleColor">
+                                                <color key="value" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="setTagNumWithSender:" destination="MQA-PU-gfe" eventType="touchUpInside" id="1kf-fC-sta"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xqp-xe-BXN" userLabel="B1" customClass="RoundButton" customModule="AniLog" customModuleProvider="target">
                                         <rect key="frame" x="64" y="8" width="46.5" height="46"/>
-                                        <color key="backgroundColor" red="0.25154358939999999" green="0.57909091020000003" blue="0.78892769610000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="tintColor" red="0.25154358939999999" green="0.57909091020000003" blue="0.78892769610000002" alpha="1" colorSpace="calibratedRGB"/>
-                                        <state key="normal" title="B">
-                                            <color key="titleColor" red="0.25154358939999999" green="0.57909091020000003" blue="0.78892769610000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <state key="normal">
+                                            <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="outerCircleColor">
+                                                <color key="value" red="0.25154358939999999" green="0.57909091020000003" blue="0.78892769610000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="innerCircleCircleColor">
+                                                <color key="value" red="0.25154358939999999" green="0.57909091020000003" blue="0.78892769610000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="setTagNumWithSender:" destination="MQA-PU-gfe" eventType="touchUpInside" id="rmh-ix-Uye"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I29-YR-edM" userLabel="B2" customClass="RoundButton" customModule="AniLog" customModuleProvider="target">
                                         <rect key="frame" x="120.5" y="8" width="46" height="46"/>
-                                        <color key="backgroundColor" red="1" green="0.3582689195" blue="0.27383968559999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="tintColor" red="1" green="0.3582689195" blue="0.27383968559999999" alpha="1" colorSpace="calibratedRGB"/>
-                                        <state key="normal" title="B">
-                                            <color key="titleColor" red="1" green="0.3582689195" blue="0.27383968559999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <state key="normal">
+                                            <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="outerCircleColor">
+                                                <color key="value" red="1" green="0.3582689195" blue="0.27383968559999999" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="innerCircleCircleColor">
+                                                <color key="value" red="1" green="0.3582689195" blue="0.27383968559999999" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="setTagNumWithSender:" destination="MQA-PU-gfe" eventType="touchUpInside" id="Tg4-lk-R7p"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n4t-gf-ifE" userLabel="B3" customClass="RoundButton" customModule="AniLog" customModuleProvider="target">
                                         <rect key="frame" x="176" y="7.5" width="46" height="46"/>
-                                        <color key="backgroundColor" red="0.58743351060000004" green="0.49534386250000001" blue="0.73308083209999997" alpha="1" colorSpace="calibratedRGB"/>
-                                        <color key="tintColor" red="0.58743351060000004" green="0.49534386250000001" blue="0.73308083209999997" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <state key="normal">
-                                            <color key="titleColor" red="0.58743351063829785" green="0.49534386245922868" blue="0.73308083206686925" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="outerCircleColor">
+                                                <color key="value" red="0.58743351060000004" green="0.49534386250000001" blue="0.73308083209999997" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="innerCircleCircleColor">
+                                                <color key="value" red="0.58743351060000004" green="0.49534386250000001" blue="0.73308083209999997" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="setTagNumWithSender:" destination="MQA-PU-gfe" eventType="touchUpInside" id="V5c-ic-FWV"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xV8-t1-mjg" userLabel="B4" customClass="RoundButton" customModule="AniLog" customModuleProvider="target">
                                         <rect key="frame" x="232" y="7.5" width="46.5" height="46"/>
-                                        <color key="backgroundColor" red="0.1278020517" green="0.43181278499999998" blue="0.2492163754" alpha="1" colorSpace="calibratedRGB"/>
-                                        <color key="tintColor" red="0.1278020517" green="0.43181278499999998" blue="0.2492163754" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <state key="normal">
-                                            <color key="titleColor" red="0.1278020517" green="0.43181278499999998" blue="0.2492163754" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="outerCircleColor">
+                                                <color key="value" red="0.1278020517" green="0.43181278499999998" blue="0.2492163754" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="innerCircleCircleColor">
+                                                <color key="value" red="0.1278020517" green="0.43181278499999998" blue="0.2492163754" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="setTagNumWithSender:" destination="MQA-PU-gfe" eventType="touchUpInside" id="1i9-Fg-kVb"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hyy-sh-o30" userLabel="B5" customClass="RoundButton" customModule="AniLog" customModuleProvider="target">
                                         <rect key="frame" x="289" y="8" width="46" height="46"/>
-                                        <color key="backgroundColor" red="1" green="0.84623147799999998" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                        <color key="tintColor" red="1" green="0.84623147799999998" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <state key="normal">
-                                            <color key="titleColor" red="1" green="0.84623147796352582" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="outerCircleColor">
+                                                <color key="value" red="1" green="0.84623147799999998" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="innerCircleCircleColor">
+                                                <color key="value" red="1" green="0.84623147799999998" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="setTagNumWithSender:" destination="MQA-PU-gfe" eventType="touchUpInside" id="9uW-6Z-vQ4"/>
                                         </connections>
@@ -131,63 +179,89 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cQa-52-1ht">
-                                <rect key="frame" x="0.0" y="221.5" width="375" height="41"/>
+                                <rect key="frame" x="0.0" y="208.5" width="375" height="54"/>
                                 <subviews>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Add a new task" adjustsFontSizeToFit="NO" minimumFontSize="10" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="sSL-Yb-Ll4">
-                                        <rect key="frame" x="20" y="8" width="335" height="24"/>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Description" adjustsFontSizeToFit="NO" minimumFontSize="10" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="sSL-Yb-Ll4">
+                                        <rect key="frame" x="20" y="16" width="335" height="22"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="18"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="no" spellCheckingType="no" returnKeyType="done"/>
                                     </textField>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="sSL-Yb-Ll4" firstAttribute="leading" secondItem="cQa-52-1ht" secondAttribute="leading" constant="20" symbolic="YES" id="20M-Tn-a1Y"/>
-                                    <constraint firstItem="sSL-Yb-Ll4" firstAttribute="top" secondItem="cQa-52-1ht" secondAttribute="top" constant="8" id="7Rq-Aq-7E1"/>
-                                    <constraint firstAttribute="bottom" secondItem="sSL-Yb-Ll4" secondAttribute="bottom" constant="9" id="eDR-JK-po2"/>
+                                    <constraint firstItem="sSL-Yb-Ll4" firstAttribute="top" secondItem="cQa-52-1ht" secondAttribute="top" constant="16" id="7Rq-Aq-7E1"/>
+                                    <constraint firstAttribute="bottom" secondItem="sSL-Yb-Ll4" secondAttribute="bottom" constant="16" id="eDR-JK-po2"/>
                                     <constraint firstAttribute="trailing" secondItem="sSL-Yb-Ll4" secondAttribute="trailing" constant="20" symbolic="YES" id="fQb-nR-Sz1"/>
                                     <constraint firstItem="sSL-Yb-Ll4" firstAttribute="centerY" secondItem="cQa-52-1ht" secondAttribute="centerY" id="meu-ra-4RD"/>
                                     <constraint firstItem="sSL-Yb-Ll4" firstAttribute="centerX" secondItem="cQa-52-1ht" secondAttribute="centerX" id="mx4-8j-QJd"/>
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Eer-8g-YRU">
-                                <rect key="frame" x="16" y="340" width="343" height="30"/>
+                                <rect key="frame" x="16" y="340" width="343" height="46"/>
                                 <color key="backgroundColor" red="0.25154358939999999" green="0.57909091020000003" blue="0.78892769610000002" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="v64-72-hCm"/>
-                                </constraints>
-                                <state key="normal" title="Button">
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                <inset key="contentEdgeInsets" minX="0.0" minY="12" maxX="0.0" maxY="12"/>
+                                <state key="normal" title="Add Task">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                        <integer key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="layer.borderColor">
+                                        <color key="value" red="0.25098039215686274" green="0.58039215686274503" blue="0.78823529411764703" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="willCommitTaskWithSender:" destination="MQA-PU-gfe" eventType="touchUpInside" id="XKS-wK-S9r"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pencil" translatesAutoresizingMaskIntoConstraints="NO" id="zuw-un-1Eh">
+                                <rect key="frame" x="153" y="72" width="69" height="66.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="zuw-un-1Eh" secondAttribute="height" multiplier="125:121" id="gVc-aF-CFC"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <constraints>
                             <constraint firstAttribute="leadingMargin" secondItem="VFB-UA-Chw" secondAttribute="leading" id="1lp-PJ-IR1"/>
+                            <constraint firstItem="zuw-un-1Eh" firstAttribute="centerX" secondItem="kAB-XM-o1a" secondAttribute="centerX" id="2yg-Nu-fqY"/>
                             <constraint firstItem="VFB-UA-Chw" firstAttribute="centerY" secondItem="kAB-XM-o1a" secondAttribute="centerY" constant="-32.5" id="7cr-wU-xMZ"/>
                             <constraint firstItem="VFB-UA-Chw" firstAttribute="centerX" secondItem="kAB-XM-o1a" secondAttribute="centerX" id="8c2-i4-PTr"/>
                             <constraint firstAttribute="trailing" secondItem="cQa-52-1ht" secondAttribute="trailing" id="F3O-L5-l2G"/>
                             <constraint firstItem="cQa-52-1ht" firstAttribute="leading" secondItem="kAB-XM-o1a" secondAttribute="leading" id="Ihg-ul-BUN"/>
+                            <constraint firstItem="zuw-un-1Eh" firstAttribute="top" secondItem="ML9-Bi-WzE" secondAttribute="bottom" constant="8" symbolic="YES" id="LLv-1c-bya"/>
                             <constraint firstItem="Eer-8g-YRU" firstAttribute="top" secondItem="VFB-UA-Chw" secondAttribute="bottom" constant="8" symbolic="YES" id="T0y-by-vh9"/>
+                            <constraint firstItem="zuw-un-1Eh" firstAttribute="height" secondItem="kAB-XM-o1a" secondAttribute="height" multiplier="1/10" id="Wjy-vr-NWy"/>
                             <constraint firstItem="VFB-UA-Chw" firstAttribute="top" secondItem="cQa-52-1ht" secondAttribute="bottom" constant="8" id="jlr-5t-Tir"/>
                             <constraint firstItem="Eer-8g-YRU" firstAttribute="leading" secondItem="VFB-UA-Chw" secondAttribute="leading" id="mb6-bg-E1l"/>
                             <constraint firstAttribute="trailingMargin" secondItem="VFB-UA-Chw" secondAttribute="trailing" id="pEg-Rl-hoB"/>
                             <constraint firstItem="Eer-8g-YRU" firstAttribute="trailing" secondItem="VFB-UA-Chw" secondAttribute="trailing" id="zdd-wC-UUY"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="New Task" id="ig1-JZ-Y2d"/>
                     <connections>
                         <outlet property="textField" destination="sSL-Yb-Ll4" id="mmG-oq-JDq"/>
+                        <outletCollection property="buttonCollection" destination="9Nc-gt-Vmf" collectionClass="NSMutableArray" id="Iov-xb-yah"/>
+                        <outletCollection property="buttonCollection" destination="xqp-xe-BXN" collectionClass="NSMutableArray" id="Cxw-Wf-dla"/>
+                        <outletCollection property="buttonCollection" destination="I29-YR-edM" collectionClass="NSMutableArray" id="wRV-Ac-fIj"/>
+                        <outletCollection property="buttonCollection" destination="n4t-gf-ifE" collectionClass="NSMutableArray" id="K3O-Fh-LIi"/>
+                        <outletCollection property="buttonCollection" destination="xV8-t1-mjg" collectionClass="NSMutableArray" id="Wnu-4z-yNe"/>
+                        <outletCollection property="buttonCollection" destination="hyy-sh-o30" collectionClass="NSMutableArray" id="FKk-TC-ZhO"/>
                         <segue destination="MOS-p3-RZ4" kind="unwind" identifier="taskInfoToList" unwindAction="unwindToTaskListWithSegue:" id="DWS-HF-ntk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Uz6-za-rXD" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="MOS-p3-RZ4" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="479" y="1488"/>
+            <point key="canvasLocation" x="477.60000000000002" y="1487.4062968515743"/>
         </scene>
         <!--Task List View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -276,7 +350,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="55"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gDH-pX-sDf" id="hvT-Ki-8sX">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="54"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="55"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="w4P-sx-bWE" customClass="TaskTagView" customModule="AniLog" customModuleProvider="target">
@@ -361,6 +435,7 @@
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="1DC-Kj-VEo">
+                        <barButtonItem key="backBarButtonItem" title=" " id="27k-YN-y5x"/>
                         <barButtonItem key="leftBarButtonItem" systemItem="reply" id="CG5-oQ-Hy6">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
@@ -516,4 +591,7 @@
             <point key="canvasLocation" x="1058" y="636"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="pencil" width="512" height="512"/>
+    </resources>
 </document>

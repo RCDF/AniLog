@@ -11,15 +11,12 @@ import UIKit
 class TaskInfoViewController: UIViewController, UITextFieldDelegate, UIGestureRecognizerDelegate {
 
     @IBOutlet weak var textField: UITextField!
+    @IBOutlet var buttonCollection: [RoundButton]!    
     
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     var task: Task?
     var tagNum: Int16 = 0   // default
     var inEditMode: Bool?
-    
-    override var prefersStatusBarHidden: Bool {
-        return true
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +26,8 @@ class TaskInfoViewController: UIViewController, UITextFieldDelegate, UIGestureRe
         let tapDismiss = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
         tapDismiss.delegate = self
         view.addGestureRecognizer(tapDismiss)
+        
+        getCurrentButton().isSelected = true
     }
 
     override func didReceiveMemoryWarning() {
@@ -51,7 +50,7 @@ class TaskInfoViewController: UIViewController, UITextFieldDelegate, UIGestureRe
     
     // MARK: - Task Adding/Editting Services
     
-    func commitTask() {
+    func commitTask() -> Bool {
         if let editMode = inEditMode {
             if (!editMode) {
                 if let text = textField.text {
@@ -64,17 +63,27 @@ class TaskInfoViewController: UIViewController, UITextFieldDelegate, UIGestureRe
                         task?.duration = 0
                         task?.tagNum = tagNum
                         appDelegate.saveContext()
+                        
+                        return true
                     } else {
-                        // Alert that there must be a field
+                        // Have alert that task cannot be empty
                     }
                 }
                 
             }
         }
+
+        return false
     }
 
-    @IBAction func setTagNum(sender: UIButton) {
+    @IBAction func setTagNum(sender: RoundButton) {
+        getCurrentButton().isSelected = false
+        sender.isSelected = true
         tagNum = Int16(sender.tag)
+    }
+    
+    func getCurrentButton() -> RoundButton {
+        return buttonCollection[Int(tagNum)]
     }
 
     // MARK: - Gesture Recognizer Delegates
@@ -107,9 +116,8 @@ class TaskInfoViewController: UIViewController, UITextFieldDelegate, UIGestureRe
     */
     
     @IBAction func willCommitTask(sender: UIButton) {
-        commitTask()
-        performSegue(withIdentifier: "taskInfoToList", sender: sender)
-    } 
-    
-
+        if (commitTask()) {
+            performSegue(withIdentifier: "taskInfoToList", sender: sender)
+        }
+    }
 }
