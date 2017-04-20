@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		072799B91EA0686B00E01ADD /* RadioButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072799B81EA0686B00E01ADD /* RadioButton.swift */; };
 		0727C98E1EA5E0CF00DBD413 /* FadingTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0727C98D1EA5E0CF00DBD413 /* FadingTableView.swift */; };
+		07345ACF1EA941680040E6B9 /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07345ACC1EA941310040E6B9 /* Charts.framework */; };
+		07345AD01EA941680040E6B9 /* Charts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 07345ACC1EA941310040E6B9 /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		073DB1301E82FA130041BF03 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073DB12F1E82FA130041BF03 /* ViewController.swift */; };
 		075C8E101E80A57E00E88763 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075C8E0F1E80A57E00E88763 /* AppDelegate.swift */; };
 		075C8E151E80A57E00E88763 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 075C8E131E80A57E00E88763 /* Main.storyboard */; };
@@ -36,6 +38,27 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		07345ACB1EA941310040E6B9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 07345AC61EA941300040E6B9 /* Charts.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 06165F241D8110E600722320;
+			remoteInfo = Charts;
+		};
+		07345ACD1EA941310040E6B9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 07345AC61EA941300040E6B9 /* Charts.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 06165F2E1D8110E600722320;
+			remoteInfo = ChartsTests;
+		};
+		07345AD11EA941680040E6B9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 07345AC61EA941300040E6B9 /* Charts.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 06165F231D8110E600722320;
+			remoteInfo = Charts;
+		};
 		075C8E211E80A57E00E88763 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 075C8E041E80A57E00E88763 /* Project object */;
@@ -52,9 +75,24 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		07345AD31EA941680040E6B9 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				07345AD01EA941680040E6B9 /* Charts.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		072799B81EA0686B00E01ADD /* RadioButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RadioButton.swift; sourceTree = "<group>"; };
 		0727C98D1EA5E0CF00DBD413 /* FadingTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FadingTableView.swift; sourceTree = "<group>"; };
+		07345AC61EA941300040E6B9 /* Charts.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Charts.xcodeproj; path = "../../../Downloads/Charts-master/Charts.xcodeproj"; sourceTree = "<group>"; };
 		073DB12F1E82FA130041BF03 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		075C8E0C1E80A57E00E88763 /* AniLog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AniLog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		075C8E0F1E80A57E00E88763 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -99,6 +137,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				553CF1D7EDED7080FF3E847C /* Pods_AniLog.framework in Frameworks */,
+				07345ACF1EA941680040E6B9 /* Charts.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -143,6 +182,15 @@
 			name = Designables;
 			sourceTree = "<group>";
 		};
+		07345AC71EA941300040E6B9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				07345ACC1EA941310040E6B9 /* Charts.framework */,
+				07345ACE1EA941310040E6B9 /* ChartsTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		073DB12C1E82F80E0041BF03 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -180,6 +228,7 @@
 		075C8E031E80A57E00E88763 = {
 			isa = PBXGroup;
 			children = (
+				07345AC61EA941300040E6B9 /* Charts.xcodeproj */,
 				075C8E0E1E80A57E00E88763 /* AniLog */,
 				075C8E231E80A57E00E88763 /* AniLogTests */,
 				075C8E2E1E80A57E00E88763 /* AniLogUITests */,
@@ -266,10 +315,12 @@
 				075C8E0A1E80A57E00E88763 /* Resources */,
 				75EE7BAB31C510BC3C868ED4 /* [CP] Embed Pods Frameworks */,
 				FCFF351C4D4B957DFE7905AE /* [CP] Copy Pods Resources */,
+				07345AD31EA941680040E6B9 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				07345AD21EA941680040E6B9 /* PBXTargetDependency */,
 			);
 			name = AniLog;
 			productName = AniLog;
@@ -360,6 +411,12 @@
 			mainGroup = 075C8E031E80A57E00E88763;
 			productRefGroup = 075C8E0D1E80A57E00E88763 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 07345AC71EA941300040E6B9 /* Products */;
+					ProjectRef = 07345AC61EA941300040E6B9 /* Charts.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				075C8E0B1E80A57E00E88763 /* AniLog */,
@@ -368,6 +425,23 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		07345ACC1EA941310040E6B9 /* Charts.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Charts.framework;
+			remoteRef = 07345ACB1EA941310040E6B9 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		07345ACE1EA941310040E6B9 /* ChartsTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = ChartsTests.xctest;
+			remoteRef = 07345ACD1EA941310040E6B9 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		075C8E0A1E80A57E00E88763 /* Resources */ = {
@@ -564,6 +638,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		07345AD21EA941680040E6B9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Charts;
+			targetProxy = 07345AD11EA941680040E6B9 /* PBXContainerItemProxy */;
+		};
 		075C8E221E80A57E00E88763 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 075C8E0B1E80A57E00E88763 /* AniLog */;
@@ -691,6 +770,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = E589A8E6142AC9AA5474A95C /* Pods-AniLog.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 65MU9YPD2J;
 				INFOPLIST_FILE = AniLog/Info.plist;
@@ -705,6 +785,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2B952FA49D5B8121A4EDF39E /* Pods-AniLog.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 65MU9YPD2J;
 				INFOPLIST_FILE = AniLog/Info.plist;
