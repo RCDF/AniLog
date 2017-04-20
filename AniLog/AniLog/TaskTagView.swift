@@ -18,6 +18,4 @@ class TaskTagView: UIView {
         self.layer.borderWidth = 1
         self.layer.borderColor = self.backgroundColor?.cgColor
     }
-
-
 }

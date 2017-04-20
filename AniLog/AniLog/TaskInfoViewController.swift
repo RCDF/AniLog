@@ -11,7 +11,7 @@ import UIKit
 class TaskInfoViewController: UIViewController, UITextFieldDelegate, UIGestureRecognizerDelegate {
 
     @IBOutlet weak var textField: UITextField!
-    @IBOutlet var buttonCollection: [RoundButton]!    
+    @IBOutlet var buttonCollection: [RadioButton]!
     
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     var task: Task?
@@ -29,11 +29,15 @@ class TaskInfoViewController: UIViewController, UITextFieldDelegate, UIGestureRe
         
         let tapDismiss = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
         tapDismiss.delegate = self
-        view.addGestureRecognizer(tapDismiss)
+        // view.addGestureRecognizer(tapDismiss)
         
         getCurrentButton()?.isSelected = true
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        textField.becomeFirstResponder()
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -80,13 +84,13 @@ class TaskInfoViewController: UIViewController, UITextFieldDelegate, UIGestureRe
         return false
     }
 
-    @IBAction func setTagNum(sender: RoundButton) {
+    @IBAction func setTagNum(sender: RadioButton) {
         getCurrentButton()?.isSelected = false
         sender.isSelected = true
         tagNum = Int16(sender.tag)
     }
     
-    func getCurrentButton() -> RoundButton? {
+    func getCurrentButton() -> RadioButton? {
         for button in buttonCollection {
             if button.tag == Int(tagNum) {
                 return button
@@ -110,7 +114,7 @@ class TaskInfoViewController: UIViewController, UITextFieldDelegate, UIGestureRe
     // MARK: - Textfield Functions
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        dismissKeyboard()
+        // dismissKeyboard()
         return true
     }
     

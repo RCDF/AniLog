@@ -25,9 +25,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VFB-UA-Chw">
-                                <rect key="frame" x="8" y="216" width="359" height="65"/>
+                                <rect key="frame" x="8" y="269.5" width="359" height="65"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Nc-gt-Vmf" userLabel="B0" customClass="RoundButton" customModule="AniLog" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Nc-gt-Vmf" userLabel="B0" customClass="RadioButton" customModule="AniLog" customModuleProvider="target">
                                         <rect key="frame" x="8" y="7.5" width="49.5" height="49.5"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
@@ -50,7 +50,7 @@
                                             <action selector="setTagNumWithSender:" destination="MQA-PU-gfe" eventType="touchUpInside" id="1kf-fC-sta"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xqp-xe-BXN" userLabel="B1" customClass="RoundButton" customModule="AniLog" customModuleProvider="target">
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xqp-xe-BXN" userLabel="B1" customClass="RadioButton" customModule="AniLog" customModuleProvider="target">
                                         <rect key="frame" x="66.5" y="8" width="49.5" height="49.5"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -70,7 +70,7 @@
                                             <action selector="setTagNumWithSender:" destination="MQA-PU-gfe" eventType="touchUpInside" id="rmh-ix-Uye"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I29-YR-edM" userLabel="B2" customClass="RoundButton" customModule="AniLog" customModuleProvider="target">
+                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I29-YR-edM" userLabel="B2" customClass="RadioButton" customModule="AniLog" customModuleProvider="target">
                                         <rect key="frame" x="125" y="8" width="50" height="49.5"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -90,7 +90,7 @@
                                             <action selector="setTagNumWithSender:" destination="MQA-PU-gfe" eventType="touchUpInside" id="Tg4-lk-R7p"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n4t-gf-ifE" userLabel="B3" customClass="RoundButton" customModule="AniLog" customModuleProvider="target">
+                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n4t-gf-ifE" userLabel="B3" customClass="RadioButton" customModule="AniLog" customModuleProvider="target">
                                         <rect key="frame" x="184.5" y="7.5" width="49.5" height="49.5"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -109,7 +109,7 @@
                                             <action selector="setTagNumWithSender:" destination="MQA-PU-gfe" eventType="touchUpInside" id="V5c-ic-FWV"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xV8-t1-mjg" userLabel="B4" customClass="RoundButton" customModule="AniLog" customModuleProvider="target">
+                                    <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xV8-t1-mjg" userLabel="B4" customClass="RadioButton" customModule="AniLog" customModuleProvider="target">
                                         <rect key="frame" x="243" y="7.5" width="49.5" height="49.5"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -128,7 +128,7 @@
                                             <action selector="setTagNumWithSender:" destination="MQA-PU-gfe" eventType="touchUpInside" id="1i9-Fg-kVb"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hyy-sh-o30" userLabel="B5" customClass="RoundButton" customModule="AniLog" customModuleProvider="target">
+                                    <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hyy-sh-o30" userLabel="B5" customClass="RadioButton" customModule="AniLog" customModuleProvider="target">
                                         <rect key="frame" x="301.5" y="8" width="49.5" height="49.5"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -179,7 +179,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cQa-52-1ht">
-                                <rect key="frame" x="0.0" y="163.5" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="213.5" width="375" height="44"/>
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Task description" adjustsFontSizeToFit="NO" minimumFontSize="10" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="sSL-Yb-Ll4">
                                         <rect key="frame" x="20" y="8" width="335" height="28"/>
@@ -200,13 +200,13 @@
                                 </constraints>
                             </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pencil" translatesAutoresizingMaskIntoConstraints="NO" id="zuw-un-1Eh">
-                                <rect key="frame" x="146" y="64" width="83.5" height="83.5"/>
+                                <rect key="frame" x="121" y="64" width="133.5" height="133.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="zuw-un-1Eh" secondAttribute="height" multiplier="1:1" id="gVc-aF-CFC"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Eer-8g-YRU">
-                                <rect key="frame" x="8" y="289" width="359" height="44"/>
+                                <rect key="frame" x="8" y="344.5" width="359" height="44"/>
                                 <color key="backgroundColor" red="0.25154358939999999" green="0.57909091020000003" blue="0.78892769610000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
                                 <inset key="contentEdgeInsets" minX="0.0" minY="11" maxX="0.0" maxY="11"/>
@@ -233,13 +233,13 @@
                         <constraints>
                             <constraint firstItem="zuw-un-1Eh" firstAttribute="centerX" secondItem="kAB-XM-o1a" secondAttribute="centerX" id="2yg-Nu-fqY"/>
                             <constraint firstItem="VFB-UA-Chw" firstAttribute="centerX" secondItem="kAB-XM-o1a" secondAttribute="centerX" id="8c2-i4-PTr"/>
-                            <constraint firstItem="Eer-8g-YRU" firstAttribute="top" secondItem="VFB-UA-Chw" secondAttribute="bottom" constant="8" symbolic="YES" id="Anc-OY-Cld"/>
+                            <constraint firstItem="Eer-8g-YRU" firstAttribute="top" secondItem="VFB-UA-Chw" secondAttribute="bottom" constant="10" id="Anc-OY-Cld"/>
                             <constraint firstAttribute="trailing" secondItem="cQa-52-1ht" secondAttribute="trailing" id="F3O-L5-l2G"/>
                             <constraint firstItem="cQa-52-1ht" firstAttribute="leading" secondItem="kAB-XM-o1a" secondAttribute="leading" id="Ihg-ul-BUN"/>
                             <constraint firstItem="zuw-un-1Eh" firstAttribute="top" secondItem="ML9-Bi-WzE" secondAttribute="bottom" id="LLv-1c-bya"/>
-                            <constraint firstItem="zuw-un-1Eh" firstAttribute="height" secondItem="kAB-XM-o1a" secondAttribute="height" multiplier="1/8" id="Wjy-vr-NWy"/>
+                            <constraint firstItem="zuw-un-1Eh" firstAttribute="height" secondItem="kAB-XM-o1a" secondAttribute="height" multiplier="1/5" id="Wjy-vr-NWy"/>
                             <constraint firstItem="VFB-UA-Chw" firstAttribute="leading" secondItem="kAB-XM-o1a" secondAttribute="leading" constant="8" id="Xks-cc-ZTu"/>
-                            <constraint firstItem="VFB-UA-Chw" firstAttribute="top" secondItem="cQa-52-1ht" secondAttribute="bottom" constant="8" id="jlr-5t-Tir"/>
+                            <constraint firstItem="VFB-UA-Chw" firstAttribute="top" secondItem="cQa-52-1ht" secondAttribute="bottom" constant="12" id="jlr-5t-Tir"/>
                             <constraint firstItem="Eer-8g-YRU" firstAttribute="leading" secondItem="VFB-UA-Chw" secondAttribute="leading" id="mb6-bg-E1l"/>
                             <constraint firstAttribute="trailing" secondItem="VFB-UA-Chw" secondAttribute="trailing" constant="8" id="oye-3D-sKP"/>
                             <constraint firstItem="cQa-52-1ht" firstAttribute="height" secondItem="Eer-8g-YRU" secondAttribute="height" id="rjA-si-Gy5"/>
@@ -351,7 +351,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="55"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gDH-pX-sDf" id="hvT-Ki-8sX">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="54"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="55"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="w4P-sx-bWE" customClass="TaskTagView" customModule="AniLog" customModuleProvider="target">
@@ -489,6 +489,14 @@
                                         <state key="normal" title="X">
                                             <color key="titleColor" red="1" green="0.35826891945011019" blue="0.27383968559011174" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" red="1" green="0.3582689195" blue="0.27383968559999999" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="2"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="abortTask:" destination="e8e-YK-MeL" eventType="touchUpInside" id="PLO-tT-4vj"/>
                                             <segue destination="Xjz-6N-BFI" kind="unwind" identifier="timerToTaskList" unwindAction="unwindToTaskListWithSegue:" id="exN-oa-O21"/>
@@ -535,7 +543,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="BS2-g6-lf0" id="Yea-JL-9BB">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
