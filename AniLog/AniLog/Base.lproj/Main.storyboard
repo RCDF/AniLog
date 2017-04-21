@@ -523,11 +523,14 @@
             </objects>
             <point key="canvasLocation" x="678" y="1398"/>
         </scene>
-        <!--Item-->
+        <!--Ani Log Navigation Controller-->
         <scene sceneID="nmI-7G-6N4">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Fug-y4-zLO" customClass="AniLogNavigationController" customModule="AniLog" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="yvL-sL-kKJ"/>
+                    <tabBarItem key="tabBarItem" title="" image="todo" id="yvL-sL-kKJ">
+                        <inset key="imageInsets" minX="0.0" minY="7" maxX="0.0" maxY="-7"/>
+                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="1"/>
+                    </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="KNY-Hc-N1f">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -614,11 +617,14 @@
             </objects>
             <point key="canvasLocation" x="1574" y="-856"/>
         </scene>
-        <!--Item-->
+        <!--Ani Log Navigation Controller-->
         <scene sceneID="afe-Eu-N1i">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ewn-H3-rP2" customClass="AniLogNavigationController" customModule="AniLog" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="PEW-Tc-bY0"/>
+                    <tabBarItem key="tabBarItem" title="" image="chart" id="PEW-Tc-bY0">
+                        <inset key="imageInsets" minX="0.0" minY="6" maxX="0.0" maxY="-6"/>
+                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="1"/>
+                    </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="MaK-cW-qjY">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -635,6 +641,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="chart" width="30" height="30"/>
         <image name="pencil" width="512" height="512"/>
+        <image name="todo" width="30" height="30"/>
     </resources>
 </document>
