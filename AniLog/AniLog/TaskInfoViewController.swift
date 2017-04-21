@@ -18,10 +18,6 @@ class TaskInfoViewController: UIViewController, UITextFieldDelegate, UIGestureRe
     var tagNum: Int16 = 0   // default
     var inEditMode: Bool?
     
-    override var prefersStatusBarHidden: Bool {
-        return true
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -35,6 +31,7 @@ class TaskInfoViewController: UIViewController, UITextFieldDelegate, UIGestureRe
     }
 
     override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.setNavigationBarHidden(false, animated: false)
         textField.becomeFirstResponder()
     }
     
@@ -66,8 +63,7 @@ class TaskInfoViewController: UIViewController, UITextFieldDelegate, UIGestureRe
                         let appDelegate = UIApplication.shared.delegate as! AppDelegate
                         
                         task = Task(context: context)
-                        task?.task_description = text
-                        task?.completed = false
+                        task?.taskDescription = text
                         task?.duration = 0
                         task?.tagNum = tagNum
                         appDelegate.saveContext()

@@ -27,6 +27,7 @@
 		0785ED1F1E80EF4900CB261A /* TaskListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0785ED1E1E80EF4900CB261A /* TaskListCell.swift */; };
 		078A62051EA3560700840131 /* AniTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078A62041EA3560700840131 /* AniTimer.swift */; };
 		078C25E21EA69CAD00B31E91 /* TaskTagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078C25E11EA69CAD00B31E91 /* TaskTagView.swift */; };
+		079172221EAAAA5600FDDD36 /* AniLogTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079172211EAAAA5600FDDD36 /* AniLogTabBarController.swift */; };
 		079856A91EA5A74F0027E9B2 /* AniLogNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079856A81EA5A74F0027E9B2 /* AniLogNavigationController.swift */; };
 		07B4E8571EA9E2BD0012AC9C /* ChartDisplayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B4E8561EA9E2BD0012AC9C /* ChartDisplayViewController.swift */; };
 		07CF26CA1EA06FEF00618F61 /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CF26C91EA06FEF00618F61 /* TimerViewController.swift */; };
@@ -116,6 +117,7 @@
 		0785ED1E1E80EF4900CB261A /* TaskListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskListCell.swift; sourceTree = "<group>"; };
 		078A62041EA3560700840131 /* AniTimer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AniTimer.swift; sourceTree = "<group>"; };
 		078C25E11EA69CAD00B31E91 /* TaskTagView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskTagView.swift; sourceTree = "<group>"; };
+		079172211EAAAA5600FDDD36 /* AniLogTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AniLogTabBarController.swift; sourceTree = "<group>"; };
 		079856A81EA5A74F0027E9B2 /* AniLogNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AniLogNavigationController.swift; sourceTree = "<group>"; };
 		07B4E8561EA9E2BD0012AC9C /* ChartDisplayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartDisplayViewController.swift; sourceTree = "<group>"; };
 		07CF26C91EA06FEF00618F61 /* TimerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
@@ -216,6 +218,7 @@
 				079856A81EA5A74F0027E9B2 /* AniLogNavigationController.swift */,
 				07CF26C91EA06FEF00618F61 /* TimerViewController.swift */,
 				073DB12F1E82FA130041BF03 /* ViewController.swift */,
+				079172211EAAAA5600FDDD36 /* AniLogTabBarController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -606,6 +609,7 @@
 				07CF26CA1EA06FEF00618F61 /* TimerViewController.swift in Sources */,
 				072799B91EA0686B00E01ADD /* RadioButton.swift in Sources */,
 				078C25E21EA69CAD00B31E91 /* TaskTagView.swift in Sources */,
+				079172221EAAAA5600FDDD36 /* AniLogTabBarController.swift in Sources */,
 				0769272C1E859CC5007F3CE0 /* NavigationMenuTableViewController.swift in Sources */,
 				0727C98E1EA5E0CF00DBD413 /* FadingTableView.swift in Sources */,
 				076927281E859604007F3CE0 /* Constants.swift in Sources */,

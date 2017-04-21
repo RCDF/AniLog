@@ -22,10 +22,6 @@ class TaskListViewController: UIViewController, UITableViewDelegate, UITableView
     var tasksList: [Task] = []
     var selectedRow: Int?
     
-    override var prefersStatusBarHidden: Bool {
-        return true
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -37,12 +33,17 @@ class TaskListViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.setNavigationBarHidden(true, animated: false)
         updateDateLabels()
         fetchTasksFromCoreData()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
     }
     
     func updateDateLabels() {
@@ -73,7 +74,7 @@ class TaskListViewController: UIViewController, UITableViewDelegate, UITableView
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "taskListCell", for: indexPath) as! TaskListCell
         let task = tasksList[indexPath.row]
-        cell.taskName.text = task.task_description
+        cell.taskName.text = task.taskDescription
         cell.taskTag.backgroundColor = getTagColor(task.tagNum)
         cell.taskColor = getTagColor(task.tagNum)
 
