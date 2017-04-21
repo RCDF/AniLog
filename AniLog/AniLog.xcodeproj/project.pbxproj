@@ -28,6 +28,7 @@
 		078A62051EA3560700840131 /* AniTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078A62041EA3560700840131 /* AniTimer.swift */; };
 		078C25E21EA69CAD00B31E91 /* TaskTagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078C25E11EA69CAD00B31E91 /* TaskTagView.swift */; };
 		079856A91EA5A74F0027E9B2 /* AniLogNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079856A81EA5A74F0027E9B2 /* AniLogNavigationController.swift */; };
+		07B4E8571EA9E2BD0012AC9C /* ChartDisplayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B4E8561EA9E2BD0012AC9C /* ChartDisplayViewController.swift */; };
 		07CF26CA1EA06FEF00618F61 /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CF26C91EA06FEF00618F61 /* TimerViewController.swift */; };
 		07D69A371EA42CE200863148 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D69A361EA42CE200863148 /* Utils.swift */; };
 		07E45B641E9D85850014C045 /* myCore.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 07E45B621E9D85850014C045 /* myCore.xcdatamodeld */; };
@@ -116,6 +117,7 @@
 		078A62041EA3560700840131 /* AniTimer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AniTimer.swift; sourceTree = "<group>"; };
 		078C25E11EA69CAD00B31E91 /* TaskTagView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskTagView.swift; sourceTree = "<group>"; };
 		079856A81EA5A74F0027E9B2 /* AniLogNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AniLogNavigationController.swift; sourceTree = "<group>"; };
+		07B4E8561EA9E2BD0012AC9C /* ChartDisplayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartDisplayViewController.swift; sourceTree = "<group>"; };
 		07CF26C91EA06FEF00618F61 /* TimerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
 		07D69A361EA42CE200863148 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		07E45B631E9D85850014C045 /* myCore.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = myCore.xcdatamodel; sourceTree = "<group>"; };
@@ -208,6 +210,7 @@
 			isa = PBXGroup;
 			children = (
 				0769272B1E859CC5007F3CE0 /* NavigationMenuTableViewController.swift */,
+				07B4E8561EA9E2BD0012AC9C /* ChartDisplayViewController.swift */,
 				077A9F171EA5536D007414FE /* TaskInfoViewController.swift */,
 				0785ED1C1E80EB9C00CB261A /* TaskListViewController.swift */,
 				079856A81EA5A74F0027E9B2 /* AniLogNavigationController.swift */,
@@ -611,6 +614,7 @@
 				075C8E101E80A57E00E88763 /* AppDelegate.swift in Sources */,
 				073DB1301E82FA130041BF03 /* ViewController.swift in Sources */,
 				079856A91EA5A74F0027E9B2 /* AniLogNavigationController.swift in Sources */,
+				07B4E8571EA9E2BD0012AC9C /* ChartDisplayViewController.swift in Sources */,
 				078A62051EA3560700840131 /* AniTimer.swift in Sources */,
 				0769272A1E859786007F3CE0 /* CustomColors.swift in Sources */,
 				0785ED1D1E80EB9C00CB261A /* TaskListViewController.swift in Sources */,
