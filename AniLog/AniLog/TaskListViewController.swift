@@ -33,7 +33,7 @@ class TaskListViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        self.navigationController?.setNavigationBarHidden(true, animated: false)
+        self.navigationController?.setNavigationBarHidden(true, animated: true)
         updateDateLabels()
         fetchTasksFromCoreData()
     }
@@ -45,7 +45,7 @@ class TaskListViewController: UIViewController, UITableViewDelegate, UITableView
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
-    
+
     func updateDateLabels() {
         let date = Date()
         let calendar = Calendar.current
@@ -97,7 +97,6 @@ class TaskListViewController: UIViewController, UITableViewDelegate, UITableView
 
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         let deleteAction = UITableViewRowAction(style: .destructive, title: "Delete", handler: deleteTaskAction)
-
         let editAction = UITableViewRowAction(style: .normal, title: "Edit", handler: editTaskAction)
 
         return [deleteAction, editAction]
@@ -165,7 +164,7 @@ class TaskListViewController: UIViewController, UITableViewDelegate, UITableView
             if let dest = segue.destination as? TimerViewController {
                 if let cellRow = selectedRow {
                     let task = tasksList[cellRow]
-                    dest.timerDuration = task.duration
+                    dest.task = task
                 }
             }
         }

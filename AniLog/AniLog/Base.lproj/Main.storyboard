@@ -25,10 +25,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VFB-UA-Chw">
-                                <rect key="frame" x="8" y="263.5" width="359" height="65"/>
+                                <rect key="frame" x="8" y="264" width="359" height="65.5"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Nc-gt-Vmf" userLabel="B0" customClass="RadioButton" customModule="AniLog" customModuleProvider="target">
-                                        <rect key="frame" x="8" y="7.5" width="49.5" height="49.5"/>
+                                        <rect key="frame" x="8" y="8" width="49.5" height="49.5"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="9Nc-gt-Vmf" secondAttribute="height" multiplier="1:1" id="l5F-yP-piN"/>
@@ -51,7 +51,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xqp-xe-BXN" userLabel="B1" customClass="RadioButton" customModule="AniLog" customModuleProvider="target">
-                                        <rect key="frame" x="66.5" y="8" width="49.5" height="49.5"/>
+                                        <rect key="frame" x="66.5" y="8.5" width="50" height="49.5"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -71,7 +71,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I29-YR-edM" userLabel="B2" customClass="RadioButton" customModule="AniLog" customModuleProvider="target">
-                                        <rect key="frame" x="125" y="8" width="50" height="49.5"/>
+                                        <rect key="frame" x="125.5" y="8.5" width="49.5" height="49.5"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -91,7 +91,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n4t-gf-ifE" userLabel="B3" customClass="RadioButton" customModule="AniLog" customModuleProvider="target">
-                                        <rect key="frame" x="184.5" y="7.5" width="49.5" height="49.5"/>
+                                        <rect key="frame" x="184" y="8" width="49.5" height="49.5"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <state key="normal">
@@ -110,7 +110,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xV8-t1-mjg" userLabel="B4" customClass="RadioButton" customModule="AniLog" customModuleProvider="target">
-                                        <rect key="frame" x="243" y="7.5" width="49.5" height="49.5"/>
+                                        <rect key="frame" x="242.5" y="8" width="50" height="49.5"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <state key="normal">
@@ -179,7 +179,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cQa-52-1ht">
-                                <rect key="frame" x="0.0" y="213.5" width="375" height="38"/>
+                                <rect key="frame" x="0.0" y="214" width="375" height="38"/>
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Task description" adjustsFontSizeToFit="NO" minimumFontSize="10" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="sSL-Yb-Ll4">
                                         <rect key="frame" x="20" y="8" width="335" height="22"/>
@@ -200,13 +200,13 @@
                                 </constraints>
                             </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pencil" translatesAutoresizingMaskIntoConstraints="NO" id="zuw-un-1Eh">
-                                <rect key="frame" x="121" y="64" width="133.5" height="133.5"/>
+                                <rect key="frame" x="121" y="64" width="134" height="134"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="zuw-un-1Eh" secondAttribute="height" multiplier="1:1" id="gVc-aF-CFC"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Eer-8g-YRU">
-                                <rect key="frame" x="8" y="338.5" width="359" height="36"/>
+                                <rect key="frame" x="8" y="339.5" width="359" height="36"/>
                                 <color key="backgroundColor" red="0.25154358939999999" green="0.57909091020000003" blue="0.78892769610000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
                                 <inset key="contentEdgeInsets" minX="0.0" minY="7" maxX="0.0" maxY="7"/>
@@ -279,13 +279,13 @@
                                 <rect key="frame" x="0.0" y="560" width="375" height="63"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fQ9-Tl-O8U">
-                                        <rect key="frame" x="64.5" y="23.5" width="14.5" height="17"/>
+                                        <rect key="frame" x="65" y="23" width="15" height="17"/>
                                         <fontDescription key="fontDescription" type="system" weight="light" pointSize="14"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TASKS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6I2-hx-fgz">
-                                        <rect key="frame" x="16" y="23" width="44.5" height="17"/>
+                                        <rect key="frame" x="16" y="23" width="45" height="17"/>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
                                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
@@ -303,7 +303,7 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="64"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Monday" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nWz-87-CbZ">
-                                        <rect key="frame" x="294.5" y="21.5" width="64.5" height="21.5"/>
+                                        <rect key="frame" x="294" y="21" width="65" height="22"/>
                                         <fontDescription key="fontDescription" type="system" weight="light" pointSize="18"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
@@ -315,13 +315,13 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="APR" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kbt-AK-xbI">
-                                        <rect key="frame" x="67" y="8" width="36" height="24.5"/>
+                                        <rect key="frame" x="67" y="8" width="36" height="24"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
                                         <color key="textColor" red="0.98039215690000003" green="0.98039215690000003" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2017" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="MQs-od-dHH">
-                                        <rect key="frame" x="67" y="32.5" width="39.5" height="24.5"/>
+                                        <rect key="frame" x="67" y="32" width="40" height="24"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <color key="textColor" red="0.98039215690000003" green="0.98039215690000003" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -452,7 +452,7 @@
             </objects>
             <point key="canvasLocation" x="1044" y="636"/>
         </scene>
-        <!--Timer View Controller-->
+        <!--Title-->
         <scene sceneID="OIL-ac-2mz">
             <objects>
                 <viewController id="e8e-YK-MeL" customClass="TimerViewController" customModule="AniLog" customModuleProvider="target" sceneMemberID="viewController">
@@ -464,64 +464,85 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vgb-AC-Ipi">
-                                <rect key="frame" x="16" y="233.5" width="343" height="200"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create the most awesome app ever" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fzn-gU-GgO">
+                                <rect key="frame" x="88.5" y="52" width="198" height="15"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2et-sq-9Bh" customClass="RoundButton" customModule="AniLog" customModuleProvider="target">
+                                <rect key="frame" x="157" y="442" width="60" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="2et-sq-9Bh" secondAttribute="height" multiplier="1:1" id="ctb-q2-aop"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <state key="normal" title="X">
+                                    <color key="titleColor" red="1" green="0.35826891945011019" blue="0.27383968559011174" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="1" green="0.3582689195" blue="0.27383968559999999" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="abortTask:" destination="e8e-YK-MeL" eventType="touchUpInside" id="PLO-tT-4vj"/>
+                                    <segue destination="Xjz-6N-BFI" kind="unwind" identifier="timerToTaskList" unwindAction="unwindToTaskListWithSegue:" id="exN-oa-O21"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZAg-BT-Qps" customClass="KDCircularProgress" customModule="AniLog" customModuleProvider="target">
+                                <rect key="frame" x="16" y="91" width="343" height="343"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="60" translatesAutoresizingMaskIntoConstraints="NO" id="9eP-X5-wWl">
-                                        <rect key="frame" x="33" y="20" width="277" height="84"/>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="71"/>
+                                        <rect key="frame" x="93" y="148" width="156" height="47.5"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="40"/>
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2et-sq-9Bh" customClass="RoundButton" customModule="AniLog" customModuleProvider="target">
-                                        <rect key="frame" x="141.5" y="120" width="60" height="60"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" secondItem="2et-sq-9Bh" secondAttribute="height" multiplier="1:1" id="ctb-q2-aop"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="40"/>
-                                        <state key="normal" title="X">
-                                            <color key="titleColor" red="1" green="0.35826891945011019" blue="0.27383968559011174" alpha="1" colorSpace="calibratedRGB"/>
-                                        </state>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                <color key="value" red="1" green="0.3582689195" blue="0.27383968559999999" alpha="1" colorSpace="calibratedRGB"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                <real key="value" value="2"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                        <connections>
-                                            <action selector="abortTask:" destination="e8e-YK-MeL" eventType="touchUpInside" id="PLO-tT-4vj"/>
-                                            <segue destination="Xjz-6N-BFI" kind="unwind" identifier="timerToTaskList" unwindAction="unwindToTaskListWithSegue:" id="exN-oa-O21"/>
-                                        </connections>
-                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstItem="2et-sq-9Bh" firstAttribute="centerX" secondItem="vgb-AC-Ipi" secondAttribute="centerX" id="2Cd-2W-Mbp"/>
-                                    <constraint firstAttribute="bottom" secondItem="2et-sq-9Bh" secondAttribute="bottom" constant="20" symbolic="YES" id="EHK-Ff-zWD"/>
-                                    <constraint firstItem="9eP-X5-wWl" firstAttribute="centerX" secondItem="vgb-AC-Ipi" secondAttribute="centerX" id="M0h-cQ-cPC"/>
-                                    <constraint firstItem="9eP-X5-wWl" firstAttribute="top" secondItem="vgb-AC-Ipi" secondAttribute="top" constant="20" symbolic="YES" id="QS9-CR-8BV"/>
-                                    <constraint firstItem="2et-sq-9Bh" firstAttribute="top" secondItem="9eP-X5-wWl" secondAttribute="bottom" constant="16" id="XX8-ia-c0b"/>
+                                    <constraint firstItem="9eP-X5-wWl" firstAttribute="centerX" secondItem="ZAg-BT-Qps" secondAttribute="centerX" id="3ir-qD-5dJ"/>
+                                    <constraint firstAttribute="width" secondItem="ZAg-BT-Qps" secondAttribute="height" multiplier="1:1" id="QNd-i9-CzZ"/>
+                                    <constraint firstItem="9eP-X5-wWl" firstAttribute="centerY" secondItem="ZAg-BT-Qps" secondAttribute="centerY" id="iMK-tT-Bof"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="progressThickness">
+                                        <real key="value" value="0.20000000000000001"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="trackThickness">
+                                        <real key="value" value="0.20000000000000001"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="trackColor">
+                                        <color key="value" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="vgb-AC-Ipi" firstAttribute="centerX" secondItem="kb7-2Q-vXT" secondAttribute="centerX" id="DBc-GJ-aR2"/>
-                            <constraint firstItem="vgb-AC-Ipi" firstAttribute="centerY" secondItem="kb7-2Q-vXT" secondAttribute="centerY" id="HW2-G1-MHG"/>
-                            <constraint firstAttribute="leadingMargin" secondItem="vgb-AC-Ipi" secondAttribute="leading" id="Wxp-jd-7Im"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="vgb-AC-Ipi" secondAttribute="trailing" id="dvf-So-wBp"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ZAg-BT-Qps" secondAttribute="trailing" id="1Q2-g8-BKz"/>
+                            <constraint firstItem="ZAg-BT-Qps" firstAttribute="centerX" secondItem="kb7-2Q-vXT" secondAttribute="centerX" id="2pu-pr-c5t"/>
+                            <constraint firstItem="2et-sq-9Bh" firstAttribute="top" secondItem="ZAg-BT-Qps" secondAttribute="bottom" constant="8" id="4X0-2m-Mv2"/>
+                            <constraint firstItem="ZAg-BT-Qps" firstAttribute="top" secondItem="fzn-gU-GgO" secondAttribute="bottom" constant="24" id="7st-TO-t9f"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="ZAg-BT-Qps" secondAttribute="leading" id="JvK-gt-vkb"/>
+                            <constraint firstItem="2et-sq-9Bh" firstAttribute="centerX" secondItem="kb7-2Q-vXT" secondAttribute="centerX" id="YrY-zx-ASF"/>
+                            <constraint firstItem="fzn-gU-GgO" firstAttribute="centerX" secondItem="kb7-2Q-vXT" secondAttribute="centerX" id="hk6-kc-74Z"/>
+                            <constraint firstItem="fzn-gU-GgO" firstAttribute="top" secondItem="2VG-0H-Qn4" secondAttribute="bottom" constant="32" id="yif-Xv-fBb"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Title" id="s6m-N7-5My"/>
                     <connections>
+                        <outlet property="progressView" destination="ZAg-BT-Qps" id="ezo-tc-PAJ"/>
                         <outlet property="timerLabel" destination="9eP-X5-wWl" id="O25-sQ-tem"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4fk-Ao-zEK" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="Xjz-6N-BFI" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="678" y="1398"/>
+            <point key="canvasLocation" x="677.60000000000002" y="1396.5517241379312"/>
         </scene>
         <!--Ani Log Navigation Controller-->
         <scene sceneID="nmI-7G-6N4">

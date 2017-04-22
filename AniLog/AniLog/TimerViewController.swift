@@ -11,17 +11,17 @@ import UIKit
 class TimerViewController: UIViewController {
 
     @IBOutlet weak var timerLabel: UILabel!
+    @IBOutlet weak var progressView: KDCircularProgress!
     
     var updateTimer: Timer = Timer()
     var aniTimer: AniTimer!
-    var timerDuration: Int16!
-    
-    override var prefersStatusBarHidden: Bool {
-        return true
-    }
+    var task: Task!
+    var timerDuration: Int16?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        timerDuration = 1
+        initProgressView()
         initTimer()
     }
 
@@ -30,17 +30,29 @@ class TimerViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    func initProgressView() {
+        progressView.startAngle = -90
+        progressView.progressThickness = 0.2
+        progressView.trackThickness = 0.2
+        progressView.roundedCorners = true
+        progressView.trackColor = UIColor.lightGray
+        progressView.set(colors: UIColor.peach)
+    }
+    
     func initTimer() {
-        aniTimer = AniTimer(duration: timerDuration)
-        timerLabel.text = aniTimer.getTimeString()
-        updateTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateAniTimer), userInfo: nil, repeats: true)
+        if let timerDuration = timerDuration {
+            aniTimer = AniTimer(duration: timerDuration)
+            timerLabel.text = aniTimer.getTimeString()
+            updateTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateAniTimer), userInfo: nil, repeats: true)
+            progressView.animate(toAngle: 360.0, duration: TimeInterval(Int(timerDuration) * 60), completion: nil)
+        }
     }
     
     func updateAniTimer() {
         if (aniTimer.isComplete()) {
             endAniTimer()
         }
-        
+
         aniTimer.updateRemainingTime()
         timerLabel.text = aniTimer.getTimeString()
     }
