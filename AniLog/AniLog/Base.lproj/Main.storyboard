@@ -465,13 +465,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create the most awesome app ever" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fzn-gU-GgO">
-                                <rect key="frame" x="89" y="52" width="198" height="14.5"/>
+                                <rect key="frame" x="89" y="52" width="198" height="15"/>
                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="12"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZAg-BT-Qps" customClass="KDCircularProgress" customModule="AniLog" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="90.5" width="375" height="375"/>
+                                <rect key="frame" x="0.0" y="91" width="375" height="375"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9eP-X5-wWl">
                                         <rect key="frame" x="104" y="164" width="156" height="48"/>
@@ -498,65 +498,34 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Beo-q0-5Bu">
-                                <rect key="frame" x="115" y="481.5" width="144" height="60"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2et-sq-9Bh" userLabel="Abort button" customClass="RoundButton" customModule="AniLog" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" secondItem="2et-sq-9Bh" secondAttribute="height" multiplier="1:1" id="ctb-q2-aop"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="40"/>
-                                        <state key="normal" title="X">
-                                            <color key="titleColor" red="1" green="0.35826891945011019" blue="0.27383968559011174" alpha="1" colorSpace="calibratedRGB"/>
-                                        </state>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                <color key="value" red="1" green="0.3582689195" blue="0.27383968559999999" alpha="1" colorSpace="calibratedRGB"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                <real key="value" value="2"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                        <connections>
-                                            <action selector="abortTask:" destination="e8e-YK-MeL" eventType="touchUpInside" id="PLO-tT-4vj"/>
-                                            <segue destination="Xjz-6N-BFI" kind="unwind" identifier="timerToTaskList" unwindAction="unwindToTaskListWithSegue:" id="exN-oa-O21"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T0o-dI-tux" customClass="RoundButton" customModule="AniLog" customModuleProvider="target">
-                                        <rect key="frame" x="84" y="0.0" width="60" height="60"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="40"/>
-                                        <state key="normal" title="O">
-                                            <color key="titleColor" red="0.1278020517" green="0.43181278499999998" blue="0.2492163754" alpha="1" colorSpace="calibratedRGB"/>
-                                        </state>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                <color key="value" red="0.1278020517" green="0.43181278499999998" blue="0.2492163754" alpha="1" colorSpace="calibratedRGB"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                <real key="value" value="2"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstItem="T0o-dI-tux" firstAttribute="centerY" secondItem="2et-sq-9Bh" secondAttribute="centerY" id="3dT-AK-H2b"/>
-                                    <constraint firstItem="T0o-dI-tux" firstAttribute="height" secondItem="2et-sq-9Bh" secondAttribute="height" id="8fw-hC-SNJ"/>
-                                    <constraint firstItem="2et-sq-9Bh" firstAttribute="top" secondItem="Beo-q0-5Bu" secondAttribute="top" id="F8n-Ec-QkI"/>
-                                    <constraint firstAttribute="bottom" secondItem="2et-sq-9Bh" secondAttribute="bottom" id="L2x-ee-tVx"/>
-                                    <constraint firstItem="T0o-dI-tux" firstAttribute="width" secondItem="2et-sq-9Bh" secondAttribute="width" id="M1E-rR-IvA"/>
-                                    <constraint firstItem="2et-sq-9Bh" firstAttribute="leading" secondItem="Beo-q0-5Bu" secondAttribute="leading" id="Rpt-Dz-PCX"/>
-                                    <constraint firstItem="T0o-dI-tux" firstAttribute="leading" secondItem="2et-sq-9Bh" secondAttribute="trailing" constant="24" id="bO4-kU-HhZ"/>
-                                    <constraint firstAttribute="trailing" secondItem="T0o-dI-tux" secondAttribute="trailing" id="tWL-1Z-UU1"/>
-                                </constraints>
-                            </view>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="countDownTimer" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="yUQ-bg-yiH">
                                 <rect key="frame" x="28" y="226" width="320" height="216"/>
                                 <date key="date" timeIntervalSinceReferenceDate="514526190.24113399">
                                     <!--2017-04-22 03:56:30 +0000-->
                                 </date>
                             </datePicker>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2et-sq-9Bh" userLabel="Abort button" customClass="RoundButton" customModule="AniLog" customModuleProvider="target">
+                                <rect key="frame" x="158" y="474" width="60" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="2et-sq-9Bh" secondAttribute="height" multiplier="1:1" id="ctb-q2-aop"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <state key="normal" title="X">
+                                    <color key="titleColor" red="1" green="0.35826891945011019" blue="0.27383968559011174" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="1" green="0.3582689195" blue="0.27383968559999999" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="abortTask:" destination="e8e-YK-MeL" eventType="touchUpInside" id="PLO-tT-4vj"/>
+                                    <segue destination="Xjz-6N-BFI" kind="unwind" identifier="timerToTaskList" unwindAction="unwindToTaskListWithSegue:" id="exN-oa-O21"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -565,16 +534,16 @@
                             <constraint firstItem="yUQ-bg-yiH" firstAttribute="centerX" secondItem="kb7-2Q-vXT" secondAttribute="centerX" id="7XA-ZP-qLH"/>
                             <constraint firstItem="ZAg-BT-Qps" firstAttribute="top" secondItem="fzn-gU-GgO" secondAttribute="bottom" constant="24" id="7st-TO-t9f"/>
                             <constraint firstAttribute="trailing" secondItem="ZAg-BT-Qps" secondAttribute="trailing" id="AH3-Qw-ffy"/>
-                            <constraint firstItem="Beo-q0-5Bu" firstAttribute="centerX" secondItem="kb7-2Q-vXT" secondAttribute="centerX" id="gMm-UF-PpD"/>
+                            <constraint firstItem="2et-sq-9Bh" firstAttribute="top" secondItem="ZAg-BT-Qps" secondAttribute="bottom" constant="8" id="eTB-IY-003"/>
                             <constraint firstItem="fzn-gU-GgO" firstAttribute="centerX" secondItem="kb7-2Q-vXT" secondAttribute="centerX" id="hk6-kc-74Z"/>
-                            <constraint firstItem="Beo-q0-5Bu" firstAttribute="top" secondItem="ZAg-BT-Qps" secondAttribute="bottom" constant="16" id="pG3-mU-bnX"/>
                             <constraint firstItem="ZAg-BT-Qps" firstAttribute="leading" secondItem="kb7-2Q-vXT" secondAttribute="leading" id="vIJ-Tb-iJU"/>
+                            <constraint firstItem="2et-sq-9Bh" firstAttribute="centerX" secondItem="yUQ-bg-yiH" secondAttribute="centerX" id="wtt-TC-0ce"/>
                             <constraint firstItem="fzn-gU-GgO" firstAttribute="top" secondItem="2VG-0H-Qn4" secondAttribute="bottom" constant="32" id="yif-Xv-fBb"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Title" id="s6m-N7-5My"/>
                     <connections>
-                        <outlet property="buttonView" destination="Beo-q0-5Bu" id="SIP-hf-5YH"/>
+                        <outlet property="pickerView" destination="yUQ-bg-yiH" id="JPd-oh-lHY"/>
                         <outlet property="progressView" destination="ZAg-BT-Qps" id="ezo-tc-PAJ"/>
                         <outlet property="timerLabel" destination="9eP-X5-wWl" id="O25-sQ-tem"/>
                     </connections>

@@ -10,6 +10,7 @@ import UIKit
 
 class TimerViewController: UIViewController {
 
+    @IBOutlet weak var pickerView: UIDatePicker!
     @IBOutlet weak var buttonView: UIView!
     @IBOutlet weak var timerLabel: UILabel!
     @IBOutlet weak var progressView: KDCircularProgress!
@@ -22,7 +23,8 @@ class TimerViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        progressView.isHidden = true
+        pickerView.isHidden = true
+        // progressView.isHidden = true
         
         timerDuration = 1
         initProgressView()
