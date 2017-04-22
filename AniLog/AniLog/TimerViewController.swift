@@ -10,9 +10,10 @@ import UIKit
 
 class TimerViewController: UIViewController {
 
+    @IBOutlet weak var buttonView: UIView!
     @IBOutlet weak var timerLabel: UILabel!
     @IBOutlet weak var progressView: KDCircularProgress!
-    
+
     var updateTimer: Timer = Timer()
     var aniTimer: AniTimer!
     var task: Task!
@@ -20,6 +21,9 @@ class TimerViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        progressView.isHidden = true
+        
         timerDuration = 1
         initProgressView()
         initTimer()
