@@ -72,8 +72,7 @@ class TaskInfoViewController: UIViewController, UITextFieldDelegate, UIGestureRe
                     } else {
                         // Have alert that task cannot be empty
                     }
-                }
-                
+                }  
             }
         }
 

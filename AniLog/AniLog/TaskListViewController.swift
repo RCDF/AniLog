@@ -28,7 +28,7 @@ class TaskListViewController: UIViewController, UITableViewDelegate, UITableView
         tableView.dataSource = self
         tableView.delegate = self
         tableView.tableFooterView = UIView(frame: CGRect.zero)
-        
+
         updateDateLabels()
     }
     
