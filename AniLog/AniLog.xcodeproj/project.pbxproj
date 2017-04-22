@@ -11,6 +11,8 @@
 		0727C98E1EA5E0CF00DBD413 /* FadingTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0727C98D1EA5E0CF00DBD413 /* FadingTableView.swift */; };
 		073DB1301E82FA130041BF03 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073DB12F1E82FA130041BF03 /* ViewController.swift */; };
 		074C1CD81EAAE316009FA0F7 /* KDCircularProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074C1CD71EAAE316009FA0F7 /* KDCircularProgress.swift */; };
+		074C1CE21EAAED3D009FA0F7 /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 074C1CDF1EAAED20009FA0F7 /* Charts.framework */; };
+		074C1CE31EAAED3D009FA0F7 /* Charts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 074C1CDF1EAAED20009FA0F7 /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		075C8E101E80A57E00E88763 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075C8E0F1E80A57E00E88763 /* AppDelegate.swift */; };
 		075C8E151E80A57E00E88763 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 075C8E131E80A57E00E88763 /* Main.storyboard */; };
 		075C8E171E80A57E00E88763 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 075C8E161E80A57E00E88763 /* Assets.xcassets */; };
@@ -39,6 +41,27 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		074C1CDE1EAAED20009FA0F7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 074C1CD91EAAED20009FA0F7 /* Charts.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 06165F241D8110E600722320;
+			remoteInfo = Charts;
+		};
+		074C1CE01EAAED20009FA0F7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 074C1CD91EAAED20009FA0F7 /* Charts.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 06165F2E1D8110E600722320;
+			remoteInfo = ChartsTests;
+		};
+		074C1CE41EAAED3D009FA0F7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 074C1CD91EAAED20009FA0F7 /* Charts.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 06165F231D8110E600722320;
+			remoteInfo = Charts;
+		};
 		075C8E211E80A57E00E88763 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 075C8E041E80A57E00E88763 /* Project object */;
@@ -62,6 +85,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				074C1CE31EAAED3D009FA0F7 /* Charts.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -71,9 +95,9 @@
 /* Begin PBXFileReference section */
 		072799B81EA0686B00E01ADD /* RadioButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RadioButton.swift; sourceTree = "<group>"; };
 		0727C98D1EA5E0CF00DBD413 /* FadingTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FadingTableView.swift; sourceTree = "<group>"; };
-		07345AC61EA941300040E6B9 /* Charts-master */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "Charts-master"; sourceTree = "<group>"; };
 		073DB12F1E82FA130041BF03 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		074C1CD71EAAE316009FA0F7 /* KDCircularProgress.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KDCircularProgress.swift; sourceTree = "<group>"; };
+		074C1CD91EAAED20009FA0F7 /* Charts.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Charts.xcodeproj; path = "Charts-master/Charts.xcodeproj"; sourceTree = "<group>"; };
 		075C8E0C1E80A57E00E88763 /* AniLog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AniLog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		075C8E0F1E80A57E00E88763 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		075C8E141E80A57E00E88763 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -119,6 +143,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				553CF1D7EDED7080FF3E847C /* Pods_AniLog.framework in Frameworks */,
+				074C1CE21EAAED3D009FA0F7 /* Charts.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -200,10 +225,19 @@
 			name = Cells;
 			sourceTree = "<group>";
 		};
+		074C1CDA1EAAED20009FA0F7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				074C1CDF1EAAED20009FA0F7 /* Charts.framework */,
+				074C1CE11EAAED20009FA0F7 /* ChartsTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		075C8E031E80A57E00E88763 = {
 			isa = PBXGroup;
 			children = (
-				07345AC61EA941300040E6B9 /* Charts-master */,
+				074C1CD91EAAED20009FA0F7 /* Charts.xcodeproj */,
 				075C8E0E1E80A57E00E88763 /* AniLog */,
 				075C8E231E80A57E00E88763 /* AniLogTests */,
 				075C8E2E1E80A57E00E88763 /* AniLogUITests */,
@@ -295,6 +329,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				074C1CE51EAAED3D009FA0F7 /* PBXTargetDependency */,
 			);
 			name = AniLog;
 			productName = AniLog;
@@ -385,6 +420,12 @@
 			mainGroup = 075C8E031E80A57E00E88763;
 			productRefGroup = 075C8E0D1E80A57E00E88763 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 074C1CDA1EAAED20009FA0F7 /* Products */;
+					ProjectRef = 074C1CD91EAAED20009FA0F7 /* Charts.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				075C8E0B1E80A57E00E88763 /* AniLog */,
@@ -393,6 +434,23 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		074C1CDF1EAAED20009FA0F7 /* Charts.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Charts.framework;
+			remoteRef = 074C1CDE1EAAED20009FA0F7 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		074C1CE11EAAED20009FA0F7 /* ChartsTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = ChartsTests.xctest;
+			remoteRef = 074C1CE01EAAED20009FA0F7 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		075C8E0A1E80A57E00E88763 /* Resources */ = {
@@ -592,6 +650,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		074C1CE51EAAED3D009FA0F7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Charts;
+			targetProxy = 074C1CE41EAAED3D009FA0F7 /* PBXContainerItemProxy */;
+		};
 		075C8E221E80A57E00E88763 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 075C8E0B1E80A57E00E88763 /* AniLog */;
