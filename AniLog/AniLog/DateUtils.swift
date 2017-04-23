@@ -33,6 +33,17 @@ func getDateString(date: Date) -> String {
     return dateFormatter.string(from: date)
 }
 
+func dateStringPretty(_ dateString: String) -> String {
+    let monthIndexEnd = dateString.index(dateString.startIndex, offsetBy: 2)
+    let dayIndexEnd = dateString.index(monthIndexEnd, offsetBy: 2)
+    let dayIndexRange = monthIndexEnd..<dayIndexEnd
+    
+    let month = dateString.substring(to: monthIndexEnd)
+    let day = dateString.substring(with: dayIndexRange)
+    
+    return "\(month).\(day)"
+}
+
 /**
     Returns an array of date strings for the last specified
     days
@@ -51,7 +62,7 @@ func getDateStringsFor(days: Int) -> [String] {
         date = calendar.date(byAdding: .day, value: -1, to: date)!
     }
     
-    return dateStrings
+    return dateStrings.reversed()
 }
 
 /** Returns an array of date strings for the last seven days */

@@ -81,9 +81,9 @@ class TimerViewController: UIViewController {
         if (aniTimer.isComplete()) {
             if let dayLog = getLogFor(date: Date()) {
                 let appDelegate = UIApplication.shared.delegate as! AppDelegate
-                let numMinutes = dayLog.totalMinutes
+                let numHours = dayLog.totalHours
 
-                dayLog.totalMinutes = numMinutes + timerDuration!
+                dayLog.totalHours = numHours + Double(timerDuration! / 60)
                 appDelegate.saveContext()
             }
         }
