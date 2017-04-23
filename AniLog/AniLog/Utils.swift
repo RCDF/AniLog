@@ -33,15 +33,15 @@ func getTagColor(_ tag_num: Int16) -> UIColor {
     }
 }
 
-func getDateString() -> String {
+func getDateString(date: Date) -> String {
     let dateFormatter = DateFormatter()
     dateFormatter.dateFormat = "MMddyyyy"
 
-    return dateFormatter.string(from: Date())
+    return dateFormatter.string(from: date)
 }
 
-func getTodayLog() -> Log? {
-    let dateString = getDateString()
+func getLogFor(date: Date) -> Log? {
+    let dateString = getDateString(date: date)
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     let filterPred = NSPredicate(format: "date == %@", argumentArray: [dateString])
     let fetchRequest: NSFetchRequest<Log> = Log.fetchRequest()

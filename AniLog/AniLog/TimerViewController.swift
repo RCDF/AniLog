@@ -79,7 +79,7 @@ class TimerViewController: UIViewController {
      */
     func endAniTimer() {
         if (aniTimer.isComplete()) {
-            if let dayLog = getTodayLog() {
+            if let dayLog = getLogFor(date: Date()) {
                 let appDelegate = UIApplication.shared.delegate as! AppDelegate
                 let numMinutes = dayLog.totalMinutes
                 
