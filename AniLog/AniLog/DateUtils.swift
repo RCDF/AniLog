@@ -9,7 +9,7 @@
 import Foundation
 
 let daysInWeek: Int = 7
-let daysInMonth: Int = 30
+let daysInMonth: Int = 31
 
 extension Date {
     struct Gregorian {

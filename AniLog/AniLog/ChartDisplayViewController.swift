@@ -17,7 +17,7 @@ class ChartDisplayViewController: UIViewController, ChartViewDelegate {
         super.viewDidLoad()
         
         /* TESTING: REMOVE BEFORE DEPLOYMENT */
-        createWeekTestLogs()
+        createMonthTestLogs()
 
         initializeChart()
     }
@@ -97,15 +97,12 @@ class ChartDisplayViewController: UIViewController, ChartViewDelegate {
 
         /* Set up x-axis labels */
         var prettyDateStrings: [String] = []
-//        for i in 0...2 {
-//            prettyDateStrings.append(dateStringPretty(dateStrings[i * 3]))
-//        }
         for string in dateStrings {
             prettyDateStrings.append(dateStringPretty(string))
         }
 
         lineChartView.xAxis.valueFormatter = IndexAxisValueFormatter(values: prettyDateStrings)
-        lineChartView.xAxis.granularity = 3.0
+        lineChartView.xAxis.granularity = Double((daysInWeek - 1) / 2)
         
         /* Plot chart */
         let lineChartData = LineChartData(dataSet: lineChartDataSet)
@@ -114,32 +111,49 @@ class ChartDisplayViewController: UIViewController, ChartViewDelegate {
     }
     
     func plotMonth() {
-        let months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
-        let unitsSold = [17.3, 17.0, 10.0, 7.0, 3.0, 3.0, 3.0, 2.0, 1.0, 6.0, 3.0, 13.0]
-        
+
+        /* Get data */
+        let dateStrings = getMonthDateStrings()
+        let monthLogs = getLogsFromStrings(dateStrings: dateStrings)
+        var minutesCommitted: [Double] = []
+
+        for log in monthLogs {
+            minutesCommitted.append(log.totalHours)
+        }
+
         var dataEntries: [ChartDataEntry] = []
-        
-        for i in 0..<months.count {
-            let dataEntry = ChartDataEntry(x: Double(i), y: unitsSold[i])
+        for i in 0..<dateStrings.count {
+            let dataEntry = ChartDataEntry(x: Double(i), y: Double(minutesCommitted[i]))
             dataEntries.append(dataEntry)
         }
-        
-        let lineChartDataSet = LineChartDataSet(values: dataEntries, label: "Units sold")
+
+        /* Set up data set */
+        let lineChartDataSet = LineChartDataSet(values: dataEntries, label: "Hours committed")
         lineChartDataSet.setColor(UIColor.peach)
         lineChartDataSet.drawCirclesEnabled = false
         lineChartDataSet.drawValuesEnabled = false
         lineChartDataSet.lineWidth = 1.5
+
+        /* Create gradient fill layer */
+        let gradientColors = [UIColor.peach.cgColor, UIColor.white.cgColor] as CFArray
+        let colorLocations: [CGFloat] = [1.0, 0.0]
+        let gradient = CGGradient.init(colorsSpace: CGColorSpaceCreateDeviceRGB(), colors: gradientColors, locations: colorLocations)
+        lineChartDataSet.fill = Fill.fillWithLinearGradient(gradient!, angle: 90.0)
+        lineChartDataSet.drawFilledEnabled = true
+
+        /* Set up x-axis labels */
+        var prettyDateStrings: [String] = []
+        for string in dateStrings {
+            prettyDateStrings.append(dateStringPretty(string))
+        }
+
+        lineChartView.xAxis.valueFormatter = IndexAxisValueFormatter(values: prettyDateStrings)
+        lineChartView.xAxis.granularity = Double((daysInMonth - 1) / 2)
         
-        let gradientColors = [UIColor.peach.cgColor, UIColor.white.cgColor] as CFArray // Colors of the gradient
-        let colorLocations:[CGFloat] = [1.0, 0.0] // Positioning of the gradient
-        let gradient = CGGradient.init(colorsSpace: CGColorSpaceCreateDeviceRGB(), colors: gradientColors, locations: colorLocations) // Gradient Object
-        lineChartDataSet.fill = Fill.fillWithLinearGradient(gradient!, angle: 90.0) // Set the Gradient
-        lineChartDataSet.drawFilledEnabled = true // Draw the Gradient
-        
+        /* Plot chart */
         let lineChartData = LineChartData(dataSet: lineChartDataSet)
         lineChartView.data = lineChartData
-        lineChartView.animate(xAxisDuration: 1.5, yAxisDuration: 1.5)
-
+        lineChartView.animate(yAxisDuration: 1.2)
     }
 
     @IBAction func willChangeRange(_ sender: UISegmentedControl) {
