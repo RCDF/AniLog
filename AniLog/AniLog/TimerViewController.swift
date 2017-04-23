@@ -66,11 +66,11 @@ class TimerViewController: UIViewController {
     func updateAniTimer() {
         if (aniTimer.isComplete()) {
             endAniTimer()
+        } else {
+            aniTimer.updateRemainingTime()
+            progressView.animate(toAngle: aniTimer.getPercentCompleted() * 360.0, duration: 1, completion: nil)
+            timerLabel.text = aniTimer.getTimeString()
         }
-        
-        aniTimer.updateRemainingTime()
-        progressView.animate(toAngle: aniTimer.getPercentCompleted() * 360.0, duration: 1, completion: nil)
-        timerLabel.text = aniTimer.getTimeString()
     }
 
     /**
@@ -83,9 +83,7 @@ class TimerViewController: UIViewController {
                 let appDelegate = UIApplication.shared.delegate as! AppDelegate
                 let numMinutes = dayLog.totalMinutes
                 
-                print("Minutes: \(numMinutes)")
-                
-                dayLog.totalMinutes = numMinutes + Double(timerDuration!)
+                dayLog.totalMinutes = numMinutes + timerDuration!
                 appDelegate.saveContext()
             }
         }
@@ -99,6 +97,6 @@ class TimerViewController: UIViewController {
         - Parameter sender: button for force abort
      */
     @IBAction func abortTask(_ sender: UIButton) {
-        endAniTimer()
+        updateTimer.invalidate()
     }
 }

@@ -52,15 +52,13 @@ func getTodayLog() -> Log? {
         let fetchResults = try context.fetch(fetchRequest)
         var dayLog: Log?
         
-        if (fetchResults.count == 0) {
-            print("Creating new one")
+        if (fetchResults.count < 1) {
             let appDelegate = UIApplication.shared.delegate as! AppDelegate
             dayLog = Log(context: context)
             dayLog?.setValue(dateString, forKey: "date")
             appDelegate.saveContext()
             
         } else {
-            print("Found existing one")
             dayLog = fetchResults[0]
         }
         
