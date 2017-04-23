@@ -1,11 +1,11 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="eyk-PY-oeV">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="eyk-PY-oeV">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
@@ -526,14 +526,37 @@
                                     <segue destination="Xjz-6N-BFI" kind="unwind" identifier="timerToTaskList" unwindAction="unwindToTaskListWithSegue:" id="exN-oa-O21"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fI1-WP-TXi" userLabel="Abort button" customClass="RoundButton" customModule="AniLog" customModuleProvider="target">
+                                <rect key="frame" x="158" y="474" width="60" height="60"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <state key="normal" title="O">
+                                    <color key="titleColor" red="0.20245933220000001" green="0.78558128240000002" blue="0.17075578850000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="0.20245933218767379" green="0.78558128238341962" blue="0.17075578854002466" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="abortTask:" destination="e8e-YK-MeL" eventType="touchUpInside" id="IzN-lh-jD1"/>
+                                    <action selector="startTask:" destination="e8e-YK-MeL" eventType="touchUpInside" id="Nt9-TZ-zqT"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="fI1-WP-TXi" firstAttribute="centerY" secondItem="2et-sq-9Bh" secondAttribute="centerY" id="1dC-h5-ZDa"/>
                             <constraint firstItem="yUQ-bg-yiH" firstAttribute="centerY" secondItem="kb7-2Q-vXT" secondAttribute="centerY" id="20b-mj-4pz"/>
                             <constraint firstItem="ZAg-BT-Qps" firstAttribute="centerX" secondItem="kb7-2Q-vXT" secondAttribute="centerX" id="2pu-pr-c5t"/>
                             <constraint firstItem="yUQ-bg-yiH" firstAttribute="centerX" secondItem="kb7-2Q-vXT" secondAttribute="centerX" id="7XA-ZP-qLH"/>
                             <constraint firstItem="ZAg-BT-Qps" firstAttribute="top" secondItem="fzn-gU-GgO" secondAttribute="bottom" constant="24" id="7st-TO-t9f"/>
                             <constraint firstAttribute="trailing" secondItem="ZAg-BT-Qps" secondAttribute="trailing" id="AH3-Qw-ffy"/>
+                            <constraint firstItem="fI1-WP-TXi" firstAttribute="width" secondItem="2et-sq-9Bh" secondAttribute="width" id="PWh-3H-D0J"/>
+                            <constraint firstItem="fI1-WP-TXi" firstAttribute="height" secondItem="2et-sq-9Bh" secondAttribute="height" id="U88-Pn-4yH"/>
+                            <constraint firstItem="fI1-WP-TXi" firstAttribute="centerX" secondItem="2et-sq-9Bh" secondAttribute="centerX" id="eFc-2m-ucp"/>
                             <constraint firstItem="2et-sq-9Bh" firstAttribute="top" secondItem="ZAg-BT-Qps" secondAttribute="bottom" constant="8" id="eTB-IY-003"/>
                             <constraint firstItem="fzn-gU-GgO" firstAttribute="centerX" secondItem="kb7-2Q-vXT" secondAttribute="centerX" id="hk6-kc-74Z"/>
                             <constraint firstItem="ZAg-BT-Qps" firstAttribute="leading" secondItem="kb7-2Q-vXT" secondAttribute="leading" id="vIJ-Tb-iJU"/>
@@ -543,8 +566,11 @@
                     </view>
                     <navigationItem key="navigationItem" title="Title" id="s6m-N7-5My"/>
                     <connections>
+                        <outlet property="abortButton" destination="2et-sq-9Bh" id="YIy-ww-jbi"/>
                         <outlet property="pickerView" destination="yUQ-bg-yiH" id="JPd-oh-lHY"/>
                         <outlet property="progressView" destination="ZAg-BT-Qps" id="ezo-tc-PAJ"/>
+                        <outlet property="startButton" destination="fI1-WP-TXi" id="kge-nZ-avQ"/>
+                        <outlet property="taskToComplete" destination="fzn-gU-GgO" id="Dhh-uf-w3e"/>
                         <outlet property="timerLabel" destination="9eP-X5-wWl" id="O25-sQ-tem"/>
                     </connections>
                 </viewController>
