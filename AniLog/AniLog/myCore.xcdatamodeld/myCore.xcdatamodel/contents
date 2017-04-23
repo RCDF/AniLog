@@ -7,9 +7,10 @@
         <relationship name="log" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Log" inverseName="tasks" inverseEntity="Log" syncable="YES"/>
     </entity>
     <entity name="Log" representedClassName="Log" syncable="YES" codeGenerationType="class">
-        <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
-        <attribute name="tasksCompleted" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
-        <attribute name="totalHours" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="date" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="numAborted" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="tasksCompleted" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="totalHours" attributeType="Double" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <relationship name="tasks" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CompletedTask" inverseName="log" inverseEntity="CompletedTask" syncable="YES"/>
     </entity>
     <entity name="Task" representedClassName="Task" syncable="YES" codeGenerationType="class">
@@ -19,7 +20,7 @@
     </entity>
     <elements>
         <element name="CompletedTask" positionX="-92" positionY="153" width="128" height="105"/>
-        <element name="Log" positionX="-279" positionY="153" width="117" height="105"/>
+        <element name="Log" positionX="-279" positionY="153" width="117" height="120"/>
         <element name="Task" positionX="-92" positionY="29" width="128" height="88"/>
     </elements>
 </model>

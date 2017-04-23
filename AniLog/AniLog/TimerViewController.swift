@@ -65,12 +65,15 @@ class TimerViewController: UIViewController {
         progressView.set(colors: UIColor.peach)
     }
     
+    /**
+        Creates a new timer with the given timerDuration, initializes
+        the text, and starts the timer
+     */
     func initTimer() {
         if let timerDuration = timerDuration {
             aniTimer = AniTimer(duration: timerDuration)
             timerLabel.text = aniTimer.getTimeString()
             updateTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateAniTimer), userInfo: nil, repeats: true)
-            progressView.animate(toAngle: 360.0, duration: TimeInterval(Int(timerDuration) * 60), completion: nil)
         }
     }
     
@@ -95,21 +98,37 @@ class TimerViewController: UIViewController {
     func updateAniTimer() {
         if (aniTimer.isComplete()) {
             endAniTimer()
+        } else {
+            aniTimer.updateRemainingTime()
+            progressView.animate(toAngle: aniTimer.getPercentCompleted() * 360.0, duration: 1, completion: nil)
+            timerLabel.text = aniTimer.getTimeString()
         }
-
-        aniTimer.updateRemainingTime()
-        timerLabel.text = aniTimer.getTimeString()
     }
-    
+
+    /**
+        Invalidates the timer. If the timer was completed (not an abort),
+        adds the number of minutes completed to the daily log
+     */
     func endAniTimer() {
         if (aniTimer.isComplete()) {
-            // handle complete
-            print("You are done!")
+            if let dayLog = getLogFor(date: Date()) {
+                let appDelegate = UIApplication.shared.delegate as! AppDelegate
+                let numHours = dayLog.totalHours
+
+                dayLog.totalHours = numHours + Double(timerDuration! / 60)
+                appDelegate.saveContext()
+            }
         }
+
         updateTimer.invalidate()
     }
-    
-    @IBAction func abortTask(_ sender: Any) {
-        endAniTimer()
+
+    /**
+        Force aborts the timer; for user
+     
+        - Parameter sender: button for force abort
+     */
+    @IBAction func abortTask(_ sender: UIButton) {
+        updateTimer.invalidate()
     }
 }

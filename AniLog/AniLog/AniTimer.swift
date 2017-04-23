@@ -47,6 +47,15 @@ class AniTimer {
         return String(format: "%02d:%02d:%02d", hoursRemaining, minutesRemaining, secondsRemaining)
     }
     
+    func getPercentCompleted() -> Double {
+        var remaining: Double = 0
+        remaining += Double(secondsRemaining)
+        remaining += Double(minutesRemaining * 60)
+        remaining += Double(hoursRemaining * 3600)
+        
+        return 1 - (remaining / Double(timerDuration * 60))
+    }
+    
     func isComplete() -> Bool {
         return complete
     }
