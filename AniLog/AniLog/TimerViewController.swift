@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class TimerViewController: UIViewController {
 
@@ -36,6 +37,7 @@ class TimerViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    /** Initializes the progress view with default view settings */
     func initProgressView() {
         progressView.startAngle = -90
         progressView.progressThickness = 0.2
@@ -45,33 +47,58 @@ class TimerViewController: UIViewController {
         progressView.set(colors: UIColor.peach)
     }
     
+    /**
+        Creates a new timer with the given timerDuration, initializes
+        the text, and starts the timer
+     */
     func initTimer() {
         if let timerDuration = timerDuration {
             aniTimer = AniTimer(duration: timerDuration)
             timerLabel.text = aniTimer.getTimeString()
             updateTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateAniTimer), userInfo: nil, repeats: true)
-            progressView.animate(toAngle: 360.0, duration: TimeInterval(Int(timerDuration) * 60), completion: nil)
         }
     }
-    
+
+    /**
+        Updates the timer, updates the label, and moves the progress
+        view appropriately
+     */
     func updateAniTimer() {
         if (aniTimer.isComplete()) {
             endAniTimer()
         }
-
+        
         aniTimer.updateRemainingTime()
+        progressView.animate(toAngle: aniTimer.getPercentCompleted() * 360.0, duration: 1, completion: nil)
         timerLabel.text = aniTimer.getTimeString()
     }
-    
+
+    /**
+        Invalidates the timer. If the timer was completed (not an abort),
+        adds the number of minutes completed to the daily log
+     */
     func endAniTimer() {
         if (aniTimer.isComplete()) {
-            // handle complete
-            print("You are done!")
+            if let dayLog = getTodayLog() {
+                let appDelegate = UIApplication.shared.delegate as! AppDelegate
+                let numMinutes = dayLog.totalMinutes
+                
+                print("Minutes: \(numMinutes)")
+                
+                dayLog.totalMinutes = numMinutes + Double(timerDuration!)
+                appDelegate.saveContext()
+            }
         }
+
         updateTimer.invalidate()
     }
-    
-    @IBAction func abortTask(_ sender: Any) {
+
+    /**
+        Force aborts the timer; for user
+     
+        - Parameter sender: button for force abort
+     */
+    @IBAction func abortTask(_ sender: UIButton) {
         endAniTimer()
     }
 }
