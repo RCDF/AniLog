@@ -39,7 +39,6 @@ class TimerViewController: UIViewController {
         timerDuration = 1
         initPickerView()
         initProgressView()
-        initTimer()
     }
 
     override func didReceiveMemoryWarning() {
@@ -74,7 +73,6 @@ class TimerViewController: UIViewController {
         if let timerDuration = timerDuration {
             aniTimer = AniTimer(duration: timerDuration)
             timerLabel.text = aniTimer.getTimeString()
-            updateTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateAniTimer), userInfo: nil, repeats: true)
         }
     }
     
@@ -87,16 +85,27 @@ class TimerViewController: UIViewController {
         }, completion: {
             (finished: Bool) -> Void in
             //Fade In
+            // set the timerDuration value
+            self.initTimer()
             UIView.animate(withDuration: 0.8, delay: 0.3, options: UIViewAnimationOptions.curveEaseIn, animations: {
                 self.progressView.alpha = 1
                 self.abortButton.alpha = 1
                 self.abortButton.isUserInteractionEnabled = true
-            }, completion: nil)
+            }, completion: {
+                (finished: Bool) -> Void in
+                self.startAniTimer()
+            })
         })
-        initTimer()
     }
     
 
+    /**
+        Fires off the updateTimer that runs our AniTimer
+    */
+    func startAniTimer() {
+        updateTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateAniTimer), userInfo: nil, repeats: true)
+    }
+    
     /**
         Updates the timer, updates the label, and moves the progress
         view appropriately
