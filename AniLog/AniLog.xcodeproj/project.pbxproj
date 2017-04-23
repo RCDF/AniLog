@@ -12,6 +12,7 @@
 		073DB1301E82FA130041BF03 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073DB12F1E82FA130041BF03 /* ViewController.swift */; };
 		073EBB0C1EAC50F7009D02C9 /* DateUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073EBB0B1EAC50F7009D02C9 /* DateUtils.swift */; };
 		073EBB0F1EAC58A1009D02C9 /* LogUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073EBB0E1EAC58A1009D02C9 /* LogUtils.swift */; };
+		073EBB111EAC6354009D02C9 /* Testing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073EBB101EAC6354009D02C9 /* Testing.swift */; };
 		074C1CD81EAAE316009FA0F7 /* KDCircularProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074C1CD71EAAE316009FA0F7 /* KDCircularProgress.swift */; };
 		074C1CE21EAAED3D009FA0F7 /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 074C1CDF1EAAED20009FA0F7 /* Charts.framework */; };
 		074C1CE31EAAED3D009FA0F7 /* Charts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 074C1CDF1EAAED20009FA0F7 /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -100,6 +101,7 @@
 		073DB12F1E82FA130041BF03 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		073EBB0B1EAC50F7009D02C9 /* DateUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateUtils.swift; sourceTree = "<group>"; };
 		073EBB0E1EAC58A1009D02C9 /* LogUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogUtils.swift; sourceTree = "<group>"; };
+		073EBB101EAC6354009D02C9 /* Testing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Testing.swift; sourceTree = "<group>"; };
 		074C1CD71EAAE316009FA0F7 /* KDCircularProgress.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KDCircularProgress.swift; sourceTree = "<group>"; };
 		074C1CD91EAAED20009FA0F7 /* Charts.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Charts.xcodeproj; path = "Charts-master/Charts.xcodeproj"; sourceTree = "<group>"; };
 		075C8E0C1E80A57E00E88763 /* AniLog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AniLog.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -204,6 +206,7 @@
 				07D69A361EA42CE200863148 /* Utils.swift */,
 				073EBB0B1EAC50F7009D02C9 /* DateUtils.swift */,
 				073EBB0E1EAC58A1009D02C9 /* LogUtils.swift */,
+				073EBB101EAC6354009D02C9 /* Testing.swift */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -619,6 +622,7 @@
 				072799B91EA0686B00E01ADD /* RadioButton.swift in Sources */,
 				078C25E21EA69CAD00B31E91 /* TaskTagView.swift in Sources */,
 				079172221EAAAA5600FDDD36 /* AniLogTabBarController.swift in Sources */,
+				073EBB111EAC6354009D02C9 /* Testing.swift in Sources */,
 				074C1CD81EAAE316009FA0F7 /* KDCircularProgress.swift in Sources */,
 				0769272C1E859CC5007F3CE0 /* NavigationMenuTableViewController.swift in Sources */,
 				0727C98E1EA5E0CF00DBD413 /* FadingTableView.swift in Sources */,
