@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import Foundation
+import CoreData
 
 class TimerViewController: UIViewController {
 
@@ -36,7 +36,7 @@ class TimerViewController: UIViewController {
         
         taskToComplete.text = task.taskDescription
         
-        timeDuration = 1
+        timerDuration = 1
         initPickerView()
         initProgressView()
         initTimer()
@@ -56,6 +56,7 @@ class TimerViewController: UIViewController {
         }
     }
     
+    /** Initializes the progress view with default view settings */
     func initProgressView() {
         progressView.startAngle = -90
         progressView.progressThickness = 0.2
@@ -95,6 +96,11 @@ class TimerViewController: UIViewController {
         initTimer()
     }
     
+
+    /**
+        Updates the timer, updates the label, and moves the progress
+        view appropriately
+     */
     func updateAniTimer() {
         if (aniTimer.isComplete()) {
             endAniTimer()
