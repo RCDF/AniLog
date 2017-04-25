@@ -23,6 +23,8 @@ extension UIColor {
     
     static let forestGreen = UIColor(red: 33/255, green: 110/255, blue: 64/255, alpha: 1.0)
     
+    static let steelGray = UIColor(red: 179/255, green: 179/255, blue: 179/255, alpha: 1.0)
+    
     static let goldenYellow = UIColor(red: 255/255, green: 216/255, blue: 0/255, alpha: 1.0)
     
     static let peach = UIColor(red: 255/255, green: 191/255, blue: 120/255, alpha: 1.0)

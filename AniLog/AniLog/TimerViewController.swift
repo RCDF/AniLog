@@ -36,7 +36,7 @@ class TimerViewController: UIViewController {
         
         taskToComplete.text = task.taskDescription
         
-        timerDuration = 1
+        // timerDuration = 1
         initPickerView()
         initProgressView()
     }
@@ -86,6 +86,7 @@ class TimerViewController: UIViewController {
             (finished: Bool) -> Void in
             //Fade In
             // set the timerDuration value
+            self.timerDuration = 120
             self.initTimer()
             UIView.animate(withDuration: 0.8, delay: 0.3, options: UIViewAnimationOptions.curveEaseIn, animations: {
                 self.progressView.alpha = 1
