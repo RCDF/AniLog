@@ -18,6 +18,7 @@ class ChartDisplayViewController: UIViewController, ChartViewDelegate {
         
         /* TESTING: REMOVE BEFORE DEPLOYMENT */
         createMonthTestLogs()
+        getAvgHoursForMonth(year: 2017, month: 4)
 
         initializeChart()
     }

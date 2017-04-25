@@ -10,6 +10,7 @@ import Foundation
 
 let daysInWeek: Int = 7
 let daysInMonth: Int = 31
+let daysInYear: Int = 365
 
 extension Date {
     struct Gregorian {
@@ -18,6 +19,10 @@ extension Date {
 
     var startOfWeek: Date? {
         return Gregorian.calendar.date(from: Gregorian.calendar.dateComponents([.yearForWeekOfYear, .weekOfYear], from: self))
+    }
+    
+    var startOfDay: Date? {
+        return NSCalendar.current.startOfDay(for: self)
     }
 }
 
@@ -73,5 +78,9 @@ func getWeekDateStrings() -> [String] {
 /** Returns an array of date strings for the last thirty days */
 func getMonthDateStrings() -> [String] {
     return getDateStringsFor(days: daysInMonth)
+}
+
+func getYearDateStrings() -> [String] {
+    return getDateStringsFor(days: daysInYear)
 }
 

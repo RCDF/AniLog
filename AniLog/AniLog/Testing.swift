@@ -49,6 +49,14 @@ func createMonthTestLogs() {
     }
 }
 
+func createYearTestLogs() {
+    let yearStrings = getYearDateStrings()
+    for dateString in yearStrings {
+        let log = getLogFromString(dateString: dateString)
+        log?.totalHours = getRandomHours()
+    }
+}
+
 func getRandomHours() -> Double {
     return Double(arc4random_uniform(24) + 1)
 }

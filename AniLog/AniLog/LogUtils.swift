@@ -73,4 +73,18 @@ func getLogFor(date: Date) -> Log? {
     return getLogFromString(dateString: dateString)
 }
 
+/**
+    Retrieve the average number of hours committed based on
+    all the logs for the MONTH
+ 
+    - Parameter year: the year to query, of the form YYYY
+    - Parameter month: the month to query
+ */
+func getAvgHoursForMonth(year: Int, month: Int) -> Double {
+    let bottomRange: String = String(format: "%02d00%d", month, year)
+    print(bottomRange)
+    return 0
+    
+}
+
 
