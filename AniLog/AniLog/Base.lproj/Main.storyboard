@@ -622,37 +622,37 @@
                                     <action selector="willChangeRange:" destination="x4f-oJ-wZz" eventType="valueChanged" id="dVI-og-yqo"/>
                                 </connections>
                             </segmentedControl>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Zpu-HL-OQi" customClass="LineChartView" customModule="Charts">
-                                <rect key="frame" x="16" y="108" width="343" height="138"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zpu-HL-OQi" customClass="LineChartView" customModule="Charts">
+                                <rect key="frame" x="16" y="116" width="343" height="309"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xjd-P7-x2K">
                                 <rect key="frame" x="16" y="116" width="343" height="309"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uaT-6v-QLJ">
-                                        <rect key="frame" x="54.5" y="76.5" width="234.5" height="156.5"/>
+                                        <rect key="frame" x="38" y="73" width="268.5" height="164"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="J0V-ep-dbp">
-                                                <rect key="frame" x="122.5" y="20.5" width="92" height="84"/>
-                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="70"/>
+                                                <rect key="frame" x="144" y="20" width="104.5" height="95.5"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="80"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="RYo-Ao-UPa">
-                                                <rect key="frame" x="19.5" y="20" width="95" height="84"/>
-                                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="70"/>
+                                                <rect key="frame" x="20" y="20" width="108" height="95.5"/>
+                                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="80"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HOURS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EQA-Dt-oDy">
-                                                <rect key="frame" x="43" y="112" width="71.5" height="24"/>
-                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                <rect key="frame" x="67" y="123.5" width="61" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MINUTES" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V7l-Bc-HkY">
-                                                <rect key="frame" x="122" y="112" width="90" height="24"/>
-                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                <rect key="frame" x="170.5" y="123.5" width="78" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -660,12 +660,12 @@
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="J0V-ep-dbp" secondAttribute="trailing" constant="20" symbolic="YES" id="0hy-fz-V1Y"/>
+                                            <constraint firstItem="V7l-Bc-HkY" firstAttribute="trailing" secondItem="J0V-ep-dbp" secondAttribute="trailing" id="7b2-hd-1ZC"/>
                                             <constraint firstItem="J0V-ep-dbp" firstAttribute="centerY" secondItem="RYo-Ao-UPa" secondAttribute="centerY" id="DV0-EB-A42"/>
                                             <constraint firstAttribute="bottom" secondItem="EQA-Dt-oDy" secondAttribute="bottom" constant="20.5" id="ENv-hq-Tef"/>
                                             <constraint firstItem="V7l-Bc-HkY" firstAttribute="centerY" secondItem="EQA-Dt-oDy" secondAttribute="centerY" id="KEP-Pj-Tas"/>
-                                            <constraint firstItem="V7l-Bc-HkY" firstAttribute="leading" secondItem="EQA-Dt-oDy" secondAttribute="trailing" constant="7.5" id="YhT-Fb-yPg"/>
                                             <constraint firstItem="EQA-Dt-oDy" firstAttribute="trailing" secondItem="RYo-Ao-UPa" secondAttribute="trailing" id="dbh-2Q-ekJ"/>
-                                            <constraint firstItem="J0V-ep-dbp" firstAttribute="leading" secondItem="RYo-Ao-UPa" secondAttribute="trailing" constant="8" id="e0J-Jy-soh"/>
+                                            <constraint firstItem="J0V-ep-dbp" firstAttribute="leading" secondItem="RYo-Ao-UPa" secondAttribute="trailing" constant="16" id="e0J-Jy-soh"/>
                                             <constraint firstItem="J0V-ep-dbp" firstAttribute="height" secondItem="RYo-Ao-UPa" secondAttribute="height" id="kZz-mU-FLo"/>
                                             <constraint firstItem="RYo-Ao-UPa" firstAttribute="leading" secondItem="uaT-6v-QLJ" secondAttribute="leading" constant="20" symbolic="YES" id="kim-K3-xHy"/>
                                             <constraint firstItem="EQA-Dt-oDy" firstAttribute="top" secondItem="RYo-Ao-UPa" secondAttribute="bottom" constant="8" id="xCU-cC-aCf"/>
@@ -687,8 +687,8 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="Zpu-HL-OQi" firstAttribute="centerY" secondItem="xjd-P7-x2K" secondAttribute="centerY" id="714-sM-0ed"/>
                             <constraint firstItem="Zpu-HL-OQi" firstAttribute="leading" secondItem="4GO-d2-xcz" secondAttribute="leadingMargin" id="IOz-CW-F7L"/>
-                            <constraint firstItem="Zpu-HL-OQi" firstAttribute="top" secondItem="RpP-sD-Ydn" secondAttribute="bottom" constant="8" symbolic="YES" id="L04-tT-fCZ"/>
                             <constraint firstAttribute="leadingMargin" secondItem="RpP-sD-Ydn" secondAttribute="leading" id="RbT-1Y-Typ"/>
                             <constraint firstItem="RpP-sD-Ydn" firstAttribute="centerX" secondItem="4GO-d2-xcz" secondAttribute="centerX" id="ZI6-Ww-wbs"/>
                             <constraint firstItem="Zpu-HL-OQi" firstAttribute="trailing" secondItem="4GO-d2-xcz" secondAttribute="trailingMargin" id="Zc9-6T-wb6"/>
