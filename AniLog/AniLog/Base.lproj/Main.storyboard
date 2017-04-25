@@ -189,7 +189,7 @@
                                 <color key="backgroundColor" red="1" green="0.74901960779999999" blue="0.47058823529999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
                                 <inset key="contentEdgeInsets" minX="0.0" minY="7" maxX="0.0" maxY="7"/>
-                                <state key="normal" title="Add Task">
+                                <state key="normal" title="Save Task">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>

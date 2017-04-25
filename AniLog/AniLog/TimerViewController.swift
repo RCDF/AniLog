@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import UserNotifications
 
 class TimerViewController: UIViewController {
 
@@ -117,7 +118,9 @@ class TimerViewController: UIViewController {
                 self.progressView.alpha = 1
                 self.abortButton.alpha = 1
                 self.abortButton.isUserInteractionEnabled = true
-            }, completion: nil)
+            }, completion: { (finished: Bool) -> Void in
+                self.scheduleNotification()
+            })
         })
     }
     
@@ -168,6 +171,8 @@ class TimerViewController: UIViewController {
         - Parameter sender: button for force abort
      */
     @IBAction func abortTask(_ sender: UIButton) {
+        let center = UNUserNotificationCenter.current()
+        center.removeAllPendingNotificationRequests()
         updateTimer.invalidate()
     }
     
@@ -181,4 +186,40 @@ class TimerViewController: UIViewController {
         }
     }
     
+    // MARK: - Local Notifications
+
+    func scheduleNotification() {
+        let center = UNUserNotificationCenter.current()
+
+        let content = UNMutableNotificationContent()
+        content.title = "Time for a breather!"
+        content.body = "You've successfully completed your focus session!"
+        content.categoryIdentifier = "alarm"
+        content.sound = UNNotificationSound.default()
+        
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: TimeInterval(Int(timerDuration! * 60)), repeats: false)
+        let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
+        
+        center.delegate = self
+        center.add(request, withCompletionHandler: { (error) in
+            if let error = error {
+                print (error)
+            }
+        })
+    }
 }
+
+extension TimerViewController: UNUserNotificationCenterDelegate {
+    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+
+        print("Tapped in notification")
+        completionHandler()
+    }
+    
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+
+        print("Notification being triggered")
+        completionHandler([.alert, .sound, .badge])
+    }
+}
+

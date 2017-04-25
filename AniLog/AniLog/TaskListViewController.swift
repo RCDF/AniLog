@@ -185,7 +185,7 @@ class TaskListViewController: UIViewController, UITableViewDelegate, UITableView
     @IBAction func unwindToTaskList(segue: UIStoryboardSegue) {
         if (segue.identifier == "timerToTaskList") {
             if let src = segue.source as? TimerViewController {
-                if src.aniTimer.isComplete() {
+                if src.aniTimer != nil && src.aniTimer.isComplete() {
                     // deleteTask(row: selectedRow!)
                     // handle deletion here
                     // add task to completed task
