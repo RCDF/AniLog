@@ -56,9 +56,13 @@ class TimerViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        self.fadeStatusBar()
+    }
+    
     func initPickerView() {
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat =  "HH:mm"
+        dateFormatter.dateFormat = "HH:mm"
         
         if let date = dateFormatter.date(from: "00:30") {
             pickerView.setDate(date, animated: true)
@@ -109,24 +113,22 @@ class TimerViewController: UIViewController {
             self.setTimerDuration()
             self.initTimer()
             UIView.animate(withDuration: 0.8, delay: 0.3, options: UIViewAnimationOptions.curveEaseIn, animations: {
+                self.startAniTimer()
                 self.progressView.alpha = 1
                 self.abortButton.alpha = 1
                 self.abortButton.isUserInteractionEnabled = true
-                self.fadeStatusBar()
-            }, completion: {
-                (finished: Bool) -> Void in
-                self.startAniTimer()
-            })
+            }, completion: nil)
         })
     }
     
 
     /**
         Fires off the updateTimer that runs our AniTimer
-    */
+     */
     func startAniTimer() {
+        updateAniTimer()
         updateTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateAniTimer), userInfo: nil, repeats: true)
-    }
+        }
     
     /**
         Updates the timer, updates the label, and moves the progress

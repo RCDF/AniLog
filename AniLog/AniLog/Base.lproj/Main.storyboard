@@ -461,13 +461,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create the most awesome app ever" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fzn-gU-GgO">
-                                <rect key="frame" x="89" y="52" width="198" height="15"/>
-                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="12"/>
+                                <rect key="frame" x="54" y="52" width="268" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZAg-BT-Qps" customClass="KDCircularProgress" customModule="AniLog" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="91" width="375" height="375"/>
+                                <rect key="frame" x="0.0" y="96.5" width="375" height="375"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9eP-X5-wWl">
                                         <rect key="frame" x="104" y="164" width="156" height="48"/>
@@ -501,7 +501,7 @@
                                 </date>
                             </datePicker>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2et-sq-9Bh" userLabel="Abort button" customClass="RoundButton" customModule="AniLog" customModuleProvider="target">
-                                <rect key="frame" x="158" y="474" width="60" height="60"/>
+                                <rect key="frame" x="158" y="479.5" width="60" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="2et-sq-9Bh" secondAttribute="height" multiplier="1:1" id="ctb-q2-aop"/>
                                 </constraints>
@@ -522,8 +522,8 @@
                                     <segue destination="Xjz-6N-BFI" kind="unwind" identifier="timerToTaskList" unwindAction="unwindToTaskListWithSegue:" id="exN-oa-O21"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fI1-WP-TXi" userLabel="Abort button" customClass="RoundButton" customModule="AniLog" customModuleProvider="target">
-                                <rect key="frame" x="158" y="474" width="60" height="60"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fI1-WP-TXi" userLabel="Start button" customClass="RoundButton" customModule="AniLog" customModuleProvider="target">
+                                <rect key="frame" x="158" y="479.5" width="60" height="60"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                 <state key="normal" title="O">
                                     <color key="titleColor" red="0.20245933220000001" green="0.78558128240000002" blue="0.17075578850000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -550,13 +550,13 @@
                             <constraint firstItem="yUQ-bg-yiH" firstAttribute="centerX" secondItem="kb7-2Q-vXT" secondAttribute="centerX" id="7XA-ZP-qLH"/>
                             <constraint firstItem="ZAg-BT-Qps" firstAttribute="top" secondItem="fzn-gU-GgO" secondAttribute="bottom" constant="24" id="7st-TO-t9f"/>
                             <constraint firstAttribute="trailing" secondItem="ZAg-BT-Qps" secondAttribute="trailing" id="AH3-Qw-ffy"/>
+                            <constraint firstItem="2et-sq-9Bh" firstAttribute="centerX" secondItem="kb7-2Q-vXT" secondAttribute="centerX" id="Lg2-Yp-S8G"/>
                             <constraint firstItem="fI1-WP-TXi" firstAttribute="width" secondItem="2et-sq-9Bh" secondAttribute="width" id="PWh-3H-D0J"/>
                             <constraint firstItem="fI1-WP-TXi" firstAttribute="height" secondItem="2et-sq-9Bh" secondAttribute="height" id="U88-Pn-4yH"/>
                             <constraint firstItem="fI1-WP-TXi" firstAttribute="centerX" secondItem="2et-sq-9Bh" secondAttribute="centerX" id="eFc-2m-ucp"/>
                             <constraint firstItem="2et-sq-9Bh" firstAttribute="top" secondItem="ZAg-BT-Qps" secondAttribute="bottom" constant="8" id="eTB-IY-003"/>
                             <constraint firstItem="fzn-gU-GgO" firstAttribute="centerX" secondItem="kb7-2Q-vXT" secondAttribute="centerX" id="hk6-kc-74Z"/>
                             <constraint firstItem="ZAg-BT-Qps" firstAttribute="leading" secondItem="kb7-2Q-vXT" secondAttribute="leading" id="vIJ-Tb-iJU"/>
-                            <constraint firstItem="2et-sq-9Bh" firstAttribute="centerX" secondItem="yUQ-bg-yiH" secondAttribute="centerX" id="wtt-TC-0ce"/>
                             <constraint firstItem="fzn-gU-GgO" firstAttribute="top" secondItem="2VG-0H-Qn4" secondAttribute="bottom" constant="32" id="yif-Xv-fBb"/>
                         </constraints>
                     </view>
