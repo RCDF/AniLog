@@ -71,7 +71,7 @@ class AniTimer {
             hoursRemaining = hourDiff
         }
     }
-    
+
     func getTimeString() -> String {
         return String(format: "%02d:%02d:%02d", hoursRemaining, minutesRemaining, secondsRemaining)
     }

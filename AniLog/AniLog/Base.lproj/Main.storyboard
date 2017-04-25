@@ -623,7 +623,7 @@
                                 </connections>
                             </segmentedControl>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zpu-HL-OQi" customClass="LineChartView" customModule="Charts">
-                                <rect key="frame" x="16" y="108" width="343" height="309"/>
+                                <rect key="frame" x="16" y="108" width="343" height="247"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
                         </subviews>
@@ -634,7 +634,7 @@
                             <constraint firstAttribute="leadingMargin" secondItem="RpP-sD-Ydn" secondAttribute="leading" id="RbT-1Y-Typ"/>
                             <constraint firstItem="RpP-sD-Ydn" firstAttribute="centerX" secondItem="4GO-d2-xcz" secondAttribute="centerX" id="ZI6-Ww-wbs"/>
                             <constraint firstItem="Zpu-HL-OQi" firstAttribute="trailing" secondItem="4GO-d2-xcz" secondAttribute="trailingMargin" id="Zc9-6T-wb6"/>
-                            <constraint firstItem="Zpu-HL-OQi" firstAttribute="height" secondItem="4GO-d2-xcz" secondAttribute="height" multiplier="1/2" id="ev0-jP-7n9"/>
+                            <constraint firstItem="Zpu-HL-OQi" firstAttribute="height" secondItem="4GO-d2-xcz" secondAttribute="height" multiplier="2/5" id="ev0-jP-7n9"/>
                             <constraint firstAttribute="trailingMargin" secondItem="RpP-sD-Ydn" secondAttribute="trailing" id="gTf-ht-zjf"/>
                             <constraint firstItem="RpP-sD-Ydn" firstAttribute="top" secondItem="suI-lO-lEX" secondAttribute="bottom" constant="8" id="rHU-LK-owC"/>
                         </constraints>

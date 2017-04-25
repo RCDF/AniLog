@@ -111,6 +111,7 @@ class TimerViewController: UIViewController {
             self.pickerView.alpha = 0
             self.startButton.alpha = 0
             self.startButton.isUserInteractionEnabled = false
+            self.navigationItem.hidesBackButton = true
         }, completion: {
             (finished: Bool) -> Void in
             //Fade In
