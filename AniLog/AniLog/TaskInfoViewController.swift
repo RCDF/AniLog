@@ -32,6 +32,7 @@ class TaskInfoViewController: UIViewController, UITextFieldDelegate, UIGestureRe
     }
 
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         self.navigationController?.setNavigationBarHidden(false, animated: false)
         textField.becomeFirstResponder()
     }

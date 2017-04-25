@@ -34,6 +34,7 @@ class TaskListViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         self.navigationController?.setNavigationBarHidden(true, animated: true)
         updateDateLabels()
         fetchTasksFromCoreData()
@@ -112,7 +113,6 @@ class TaskListViewController: UIViewController, UITableViewDelegate, UITableView
     func editTask(row: Int) {
         selectedRow = row
         performSegue(withIdentifier: "segueToTaskInfo", sender: self)
-        // tableView.reloadData()
     }
     
     func deleteTask(row: Int) {
@@ -177,6 +177,8 @@ class TaskListViewController: UIViewController, UITableViewDelegate, UITableView
                 if let cellRow = selectedRow {
                     let task = tasksList[cellRow]
                     dest.task = task
+                    
+                    dest.hidesBottomBarWhenPushed = true
                 }
             }
         }

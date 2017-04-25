@@ -24,6 +24,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             // Enable or disable features based on authorization.
         }
         
+        CFNotificationCenterAddObserver(CFNotificationCenterGetDarwinNotifyCenter(), nil,
+            { (_, observer, name, _, _) in
+                let defaults = UserDefaults.standard
+                defaults.set(true, forKey: "displayStatusIsLocked")
+            }, "com.apple.springboard.lockcomplete" as CFString!, nil, .deliverImmediately)
+
+        
         return true
     }
 
@@ -35,10 +42,32 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationDidEnterBackground(_ application: UIApplication) {
         // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
         // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+
+        let defaults = UserDefaults.standard
+        let locked = defaults.bool(forKey: "displayStatusIsLocked")
+        if (locked) {
+            print("Sent to background by locking")
+        } else {
+            print("Sent to background by switching apps")
+            if let tabBarController = self.window?.rootViewController as? UITabBarController {
+                if (tabBarController.selectedIndex == 0) {
+                    if let navigationController = tabBarController.selectedViewController as? AniLogNavigationController {
+                        if let timerViewController = navigationController.topViewController as? TimerViewController {
+                            if (timerViewController.timerIsRunning) {
+                                timerViewController.endAniTimer(isAbort: true)
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 
     func applicationWillEnterForeground(_ application: UIApplication) {
         // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
+        
+        let defaults = UserDefaults.standard
+        defaults.set(false, forKey: "displayStatusIsLocked")
     }
 
     func applicationDidBecomeActive(_ application: UIApplication) {

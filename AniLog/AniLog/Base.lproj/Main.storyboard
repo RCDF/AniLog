@@ -442,14 +442,14 @@
                         <outlet property="tableView" destination="1pn-lC-oxm" id="5Ux-fH-Dug"/>
                         <outlet property="weekdayLabel" destination="nWz-87-CbZ" id="s8k-j7-XKD"/>
                         <outlet property="yearLabel" destination="MQs-od-dHH" id="QH1-Yz-VhH"/>
-                        <segue destination="e8e-YK-MeL" kind="showDetail" identifier="segueToTimer" id="nEd-SR-gMX"/>
+                        <segue destination="e8e-YK-MeL" kind="show" identifier="segueToTimer" id="IjN-hT-bEE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1044" y="636"/>
         </scene>
-        <!--Title-->
+        <!--Timer View Controller-->
         <scene sceneID="OIL-ac-2mz">
             <objects>
                 <viewController id="e8e-YK-MeL" customClass="TimerViewController" customModule="AniLog" customModuleProvider="target" sceneMemberID="viewController">
@@ -462,13 +462,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create the most awesome app ever" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fzn-gU-GgO">
-                                <rect key="frame" x="54" y="52" width="268" height="20.5"/>
+                                <rect key="frame" x="54" y="72" width="268" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZAg-BT-Qps" customClass="KDCircularProgress" customModule="AniLog" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="96.5" width="375" height="375"/>
+                                <rect key="frame" x="0.0" y="116.5" width="375" height="375"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9eP-X5-wWl">
                                         <rect key="frame" x="104" y="164" width="156" height="48"/>
@@ -496,13 +496,13 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="countDownTimer" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="yUQ-bg-yiH">
-                                <rect key="frame" x="28" y="226" width="320" height="216"/>
+                                <rect key="frame" x="28" y="196" width="320" height="216"/>
                                 <date key="date" timeIntervalSinceReferenceDate="514526190.24113399">
                                     <!--2017-04-22 03:56:30 +0000-->
                                 </date>
                             </datePicker>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2et-sq-9Bh" userLabel="Abort button" customClass="RoundButton" customModule="AniLog" customModuleProvider="target">
-                                <rect key="frame" x="158" y="479.5" width="60" height="60"/>
+                                <rect key="frame" x="158" y="499.5" width="60" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="2et-sq-9Bh" secondAttribute="height" multiplier="1:1" id="ctb-q2-aop"/>
                                 </constraints>
@@ -520,11 +520,10 @@
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="abortTask:" destination="e8e-YK-MeL" eventType="touchUpInside" id="PLO-tT-4vj"/>
-                                    <segue destination="Xjz-6N-BFI" kind="unwind" identifier="timerToTaskList" unwindAction="unwindToTaskListWithSegue:" id="exN-oa-O21"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fI1-WP-TXi" userLabel="Start button" customClass="RoundButton" customModule="AniLog" customModuleProvider="target">
-                                <rect key="frame" x="158" y="479.5" width="60" height="60"/>
+                                <rect key="frame" x="158" y="499.5" width="60" height="60"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                 <state key="normal" title="O">
                                     <color key="titleColor" red="0.20245933220000001" green="0.78558128240000002" blue="0.17075578850000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -538,7 +537,6 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="abortTask:" destination="e8e-YK-MeL" eventType="touchUpInside" id="IzN-lh-jD1"/>
                                     <action selector="startTask:" destination="e8e-YK-MeL" eventType="touchUpInside" id="Nt9-TZ-zqT"/>
                                 </connections>
                             </button>
@@ -546,22 +544,22 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="fI1-WP-TXi" firstAttribute="centerY" secondItem="2et-sq-9Bh" secondAttribute="centerY" id="1dC-h5-ZDa"/>
-                            <constraint firstItem="yUQ-bg-yiH" firstAttribute="centerY" secondItem="kb7-2Q-vXT" secondAttribute="centerY" id="20b-mj-4pz"/>
                             <constraint firstItem="ZAg-BT-Qps" firstAttribute="centerX" secondItem="kb7-2Q-vXT" secondAttribute="centerX" id="2pu-pr-c5t"/>
-                            <constraint firstItem="yUQ-bg-yiH" firstAttribute="centerX" secondItem="kb7-2Q-vXT" secondAttribute="centerX" id="7XA-ZP-qLH"/>
                             <constraint firstItem="ZAg-BT-Qps" firstAttribute="top" secondItem="fzn-gU-GgO" secondAttribute="bottom" constant="24" id="7st-TO-t9f"/>
                             <constraint firstAttribute="trailing" secondItem="ZAg-BT-Qps" secondAttribute="trailing" id="AH3-Qw-ffy"/>
                             <constraint firstItem="2et-sq-9Bh" firstAttribute="centerX" secondItem="kb7-2Q-vXT" secondAttribute="centerX" id="Lg2-Yp-S8G"/>
                             <constraint firstItem="fI1-WP-TXi" firstAttribute="width" secondItem="2et-sq-9Bh" secondAttribute="width" id="PWh-3H-D0J"/>
                             <constraint firstItem="fI1-WP-TXi" firstAttribute="height" secondItem="2et-sq-9Bh" secondAttribute="height" id="U88-Pn-4yH"/>
+                            <constraint firstItem="yUQ-bg-yiH" firstAttribute="centerY" secondItem="ZAg-BT-Qps" secondAttribute="centerY" id="dF7-ML-M3h"/>
                             <constraint firstItem="fI1-WP-TXi" firstAttribute="centerX" secondItem="2et-sq-9Bh" secondAttribute="centerX" id="eFc-2m-ucp"/>
                             <constraint firstItem="2et-sq-9Bh" firstAttribute="top" secondItem="ZAg-BT-Qps" secondAttribute="bottom" constant="8" id="eTB-IY-003"/>
                             <constraint firstItem="fzn-gU-GgO" firstAttribute="centerX" secondItem="kb7-2Q-vXT" secondAttribute="centerX" id="hk6-kc-74Z"/>
                             <constraint firstItem="ZAg-BT-Qps" firstAttribute="leading" secondItem="kb7-2Q-vXT" secondAttribute="leading" id="vIJ-Tb-iJU"/>
-                            <constraint firstItem="fzn-gU-GgO" firstAttribute="top" secondItem="2VG-0H-Qn4" secondAttribute="bottom" constant="32" id="yif-Xv-fBb"/>
+                            <constraint firstItem="yUQ-bg-yiH" firstAttribute="centerX" secondItem="ZAg-BT-Qps" secondAttribute="centerX" id="vkn-PN-8Ko"/>
+                            <constraint firstItem="fzn-gU-GgO" firstAttribute="top" secondItem="2VG-0H-Qn4" secondAttribute="bottom" constant="8" id="yif-Xv-fBb"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Title" id="s6m-N7-5My"/>
+                    <navigationItem key="navigationItem" id="s6m-N7-5My"/>
                     <connections>
                         <outlet property="abortButton" destination="2et-sq-9Bh" id="YIy-ww-jbi"/>
                         <outlet property="pickerView" destination="yUQ-bg-yiH" id="JPd-oh-lHY"/>
@@ -569,12 +567,13 @@
                         <outlet property="startButton" destination="fI1-WP-TXi" id="kge-nZ-avQ"/>
                         <outlet property="taskToComplete" destination="fzn-gU-GgO" id="Dhh-uf-w3e"/>
                         <outlet property="timerLabel" destination="9eP-X5-wWl" id="O25-sQ-tem"/>
+                        <segue destination="Xjz-6N-BFI" kind="unwind" identifier="timerToTaskList" unwindAction="unwindToTaskListWithSegue:" id="okg-Xc-zgu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4fk-Ao-zEK" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="Xjz-6N-BFI" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="677.60000000000002" y="1396.5517241379312"/>
+            <point key="canvasLocation" x="727" y="1397"/>
         </scene>
         <!--Ani Log Navigation Controller-->
         <scene sceneID="nmI-7G-6N4">

@@ -24,6 +24,7 @@ class TimerViewController: UIViewController {
     var task: Task!
     var timerDuration: Int16?
     var statusHidden: Bool = false
+    var timerIsRunning: Bool = false
     
     /** Animates status bar being hidden */
     override var preferredStatusBarUpdateAnimation: UIStatusBarAnimation {
@@ -58,6 +59,8 @@ class TimerViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.setNavigationBarHidden(false, animated: false)
         self.fadeStatusBar()
     }
     
@@ -104,7 +107,7 @@ class TimerViewController: UIViewController {
     
     @IBAction func startTask(_ sender: Any) {
         //Fade Out
-        UIView.animate(withDuration: 0.5, delay: 0.0, options: UIViewAnimationOptions.curveEaseOut, animations: {
+        UIView.animate(withDuration: 0.3, delay: 0.0, options: UIViewAnimationOptions.curveEaseOut, animations: {
             self.pickerView.alpha = 0
             self.startButton.alpha = 0
             self.startButton.isUserInteractionEnabled = false
@@ -113,7 +116,7 @@ class TimerViewController: UIViewController {
             //Fade In
             self.setTimerDuration()
             self.initTimer()
-            UIView.animate(withDuration: 0.8, delay: 0.3, options: UIViewAnimationOptions.curveEaseIn, animations: {
+            UIView.animate(withDuration: 0.5, delay: 0.2, options: UIViewAnimationOptions.curveEaseIn, animations: {
                 self.startAniTimer()
                 self.progressView.alpha = 1
                 self.abortButton.alpha = 1
@@ -129,6 +132,7 @@ class TimerViewController: UIViewController {
         Fires off the updateTimer that runs our AniTimer
      */
     func startAniTimer() {
+        timerIsRunning = true
         updateAniTimer()
         updateTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateAniTimer), userInfo: nil, repeats: true)
         }
@@ -139,7 +143,7 @@ class TimerViewController: UIViewController {
      */
     func updateAniTimer() {
         if (aniTimer.isComplete()) {
-            endAniTimer()
+            endAniTimer(isAbort: false)
         } else {
             aniTimer.updateRemainingTime()
             progressView.animate(toAngle: aniTimer.getPercentCompleted() * 360.0, duration: 1, completion: nil)
@@ -151,8 +155,16 @@ class TimerViewController: UIViewController {
         Invalidates the timer. If the timer was completed (not an abort),
         adds the number of minutes completed to the daily log
      */
-    func endAniTimer() {
-        if (aniTimer.isComplete()) {
+    func endAniTimer(isAbort: Bool) {
+        timerIsRunning = false
+        updateTimer.invalidate()
+        progressView.pauseAnimation()
+        
+        if (isAbort) {
+            let center = UNUserNotificationCenter.current()
+            center.removeAllPendingNotificationRequests()
+            displayAbortWarning()
+        } else if (aniTimer.isComplete()) {
             if let dayLog = getLogFor(date: Date()) {
                 let appDelegate = UIApplication.shared.delegate as! AppDelegate
                 let numHours = dayLog.totalHours
@@ -161,8 +173,6 @@ class TimerViewController: UIViewController {
                 appDelegate.saveContext()
             }
         }
-
-        updateTimer.invalidate()
     }
 
     /**
@@ -171,9 +181,7 @@ class TimerViewController: UIViewController {
         - Parameter sender: button for force abort
      */
     @IBAction func abortTask(_ sender: UIButton) {
-        let center = UNUserNotificationCenter.current()
-        center.removeAllPendingNotificationRequests()
-        updateTimer.invalidate()
+        endAniTimer(isAbort: true)
     }
     
     /**
@@ -184,6 +192,16 @@ class TimerViewController: UIViewController {
             self.statusHidden = !self.statusHidden
             self.setNeedsStatusBarAppearanceUpdate()
         }
+    }
+
+    // MARK: - Alert Generating Functions
+    
+    func displayAbortWarning() {
+        let alert = UIAlertController(title: "Aborting focus session", message: "Your focus session was aborted either manually or by exiting the app.", preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "Exit session", style: UIAlertActionStyle.destructive, handler:  { action in
+            self.performSegue(withIdentifier: "timerToTaskList", sender: self)
+        }))
+        self.present(alert, animated: true, completion: nil)
     }
     
     // MARK: - Local Notifications
