@@ -10,21 +10,22 @@ import UIKit
 import CoreData
 
 /**
-    Searches through CoreData for the Log with the given dateString
-    key. If one does not yet exist, a new Log is created for the given
-    dateString.
- 
+    Searches through CoreData for the Log with the given date key.
+    If one does not yet exist, a new Log is created for the given
+    date.
+     
     - Important: When you query for a range of dates using
-                 any of the DateUtils functions, recall that
-                 you still need to call a getLog function
-                 to get the actual Log instance
- 
-    - Parameter dateString: The unique dateString key for the Log
+    any of the DateUtils functions, recall that
+    you still need to call a getLog function
+    to get the actual Log instance
+     
+    - Parameter date: The unique dateString key for the Log
                             to retrieve
  */
-func getLogFromString(dateString: String) -> Log? {
+func getLogFor(date: Date) -> Log? {
+    let startOfDate = date.startOfDay
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-    let filterPred = NSPredicate(format: "date == %@", argumentArray: [dateString])
+    let filterPred = NSPredicate(format: "date == %@", argumentArray: [startOfDate])
     let fetchRequest: NSFetchRequest<Log> = Log.fetchRequest()
     fetchRequest.predicate = filterPred
     fetchRequest.fetchLimit = 1
@@ -36,13 +37,15 @@ func getLogFromString(dateString: String) -> Log? {
         if (fetchResults.count < 1) {
             let appDelegate = UIApplication.shared.delegate as! AppDelegate
             dayLog = Log(context: context)
-            dayLog?.setValue(dateString, forKey: "date")
+            dayLog?.setValue(startOfDate, forKey: "date")
+
+            print("Created new log: \(dayLog!.date)")
             appDelegate.saveContext()
             
         } else {
             dayLog = fetchResults[0]
         }
-
+        
         return dayLog
         
     } catch {
@@ -51,26 +54,20 @@ func getLogFromString(dateString: String) -> Log? {
 }
 
 /** 
-    Returns an array of logs with the given dateStrings
+    Returns an array of logs with the given dates
  
-    - Parameter dateStrings: A list of dateString keys to query for
+    - Parameter dates: A list of date keys to query for
  */
-func getLogsFromStrings(dateStrings: [String]) -> [Log] {
+func getLogsForDates(dates: [Date]) -> [Log] {
     var logs: [Log] = []
 
-    for str in dateStrings {
-        if let log = getLogFromString(dateString: str) {
+    for date in dates {
+        if let log = getLogFor(date: date) {
             logs.append(log)
         }
     }
     
     return logs
-}
-
-/* Retrieves the log for the given date */
-func getLogFor(date: Date) -> Log? {
-    let dateString = getDateString(date: date)
-    return getLogFromString(dateString: dateString)
 }
 
 /**
@@ -81,10 +78,30 @@ func getLogFor(date: Date) -> Log? {
     - Parameter month: the month to query
  */
 func getAvgHoursForMonth(year: Int, month: Int) -> Double {
-    let bottomRange: String = String(format: "%02d00%d", month, year)
-    print(bottomRange)
-    return 0
+    let monthString = String(format: "%02d%d", month, year)
+    if let month = getMonthFromString(monthString: monthString) {
+        let range = Calendar.current.range(of: .day, in: .month, for: month)!
+        let numDays = range.count
+
+        let monthStart = month.startOfMonth
+        let monthEnd = month.endOfMonth
+
+        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        let fetchRequest: NSFetchRequest<Log> = Log.fetchRequest()
+        fetchRequest.predicate = NSPredicate(format: "(date >= %@) AND (date <= %@)", monthStart as CVarArg, monthEnd as CVarArg)
+        
+        do {
+            let results = try context.fetch(fetchRequest)
+            let hours = results.map({ (log) -> Double in
+                log.totalHours
+            })
+            
+            let sumHours = hours.reduce(0, +)
+            return sumHours / Double(numDays)
+        } catch {
+            return 0
+        }
+    }
     
+    return 0
 }
-
-

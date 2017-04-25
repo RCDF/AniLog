@@ -11,42 +11,51 @@ import Foundation
 let daysInWeek: Int = 7
 let daysInMonth: Int = 31
 let daysInYear: Int = 365
+let monthsInYear: Int = 12
 
 extension Date {
     struct Gregorian {
         static let calendar = Calendar(identifier: .gregorian)
     }
 
+    var startOfMonth: Date {
+        let components = Calendar.current.dateComponents([.year, .month], from: self)
+        return Calendar.current.date(from: components)!.startOfDay
+    }
+    
+    var endOfMonth: Date {
+        var components = DateComponents()
+        components.month = 1
+        components.day = -1
+        return Calendar.current.date(byAdding: components, to: self.startOfMonth)!.startOfDay
+    }
+    
     var startOfWeek: Date? {
         return Gregorian.calendar.date(from: Gregorian.calendar.dateComponents([.yearForWeekOfYear, .weekOfYear], from: self))
     }
     
-    var startOfDay: Date? {
+    var startOfDay: Date {
         return NSCalendar.current.startOfDay(for: self)
     }
-}
+    
+    var prettyString: String {
+        let dateString = getDateString(date: self)
+        let monthIndexEnd = dateString.index(dateString.startIndex, offsetBy: 2)
+        let dayIndexEnd = dateString.index(monthIndexEnd, offsetBy: 2)
+        let dayIndexRange = monthIndexEnd..<dayIndexEnd
+        
+        let month = dateString.substring(to: monthIndexEnd)
+        let day = dateString.substring(with: dayIndexRange)
+        
+        return "\(month).\(day)"
+    }
 
-/**
-    Returns the date string of the date in MMddyyyy format
- 
-    - Parameter date: The date for which to format
- */
-func getDateString(date: Date) -> String {
-    let dateFormatter = DateFormatter()
-    dateFormatter.dateFormat = "MMddyyyy"
-    
-    return dateFormatter.string(from: date)
-}
-
-func dateStringPretty(_ dateString: String) -> String {
-    let monthIndexEnd = dateString.index(dateString.startIndex, offsetBy: 2)
-    let dayIndexEnd = dateString.index(monthIndexEnd, offsetBy: 2)
-    let dayIndexRange = monthIndexEnd..<dayIndexEnd
-    
-    let month = dateString.substring(to: monthIndexEnd)
-    let day = dateString.substring(with: dayIndexRange)
-    
-    return "\(month).\(day)"
+    func getDateString(date: Date) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MMddyyyy"
+        
+        return dateFormatter.string(from: date)
+    }
 }
 
 /**
@@ -56,31 +65,45 @@ func dateStringPretty(_ dateString: String) -> String {
     - Parameter days: The number of days to go back and retrieve
                       date strings for
  */
-func getDateStringsFor(days: Int) -> [String] {
-    var dateStrings: [String] = []
+func getDatesFor(days: Int) -> [Date] {
+    var dates: [Date] = []
     let calendar = Calendar.current
     
     var date = calendar.startOfDay(for: Date())
-    
+
     for _ in 1 ... days {
-        dateStrings.append(getDateString(date: date))
+        dates.append(date.startOfDay)
         date = calendar.date(byAdding: .day, value: -1, to: date)!
     }
     
-    return dateStrings.reversed()
+    return dates.reversed()
 }
 
-/** Returns an array of date strings for the last seven days */
-func getWeekDateStrings() -> [String] {
-    return getDateStringsFor(days: daysInWeek)
+/**
+    Return the Date for the month for the given month string
+ 
+    - Parameter monthString: The month to get a date for, of the
+                             form MMyyyy
+ */
+func getMonthFromString(monthString: String) -> Date? {
+    let dateFormatter = DateFormatter()
+    dateFormatter.dateFormat = "MMyyyy"
+    return dateFormatter.date(from: monthString)
 }
 
-/** Returns an array of date strings for the last thirty days */
-func getMonthDateStrings() -> [String] {
-    return getDateStringsFor(days: daysInMonth)
+
+/** Returns an array of dates for the last seven days */
+func getWeekDates() -> [Date] {
+    return getDatesFor(days: daysInWeek)
 }
 
-func getYearDateStrings() -> [String] {
-    return getDateStringsFor(days: daysInYear)
+/** Returns an array of dates for the last thirty days */
+func getMonthDates() -> [Date] {
+    return getDatesFor(days: daysInMonth)
+}
+
+/** Return an array of dates for the last 365 days */
+func getYearDates() -> [Date] {
+    return getDatesFor(days: daysInYear)
 }
 

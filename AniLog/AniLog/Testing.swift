@@ -8,52 +8,35 @@
 
 import Foundation
 
-let randomEnabled = false
+let randomEnabled = true
 
 func createWeekTestLogs() {
     if (randomEnabled) {
-        let weekStrings = getWeekDateStrings()
-        for dateString in weekStrings {
-            let log = getLogFromString(dateString: dateString)
+        let weekDates = getWeekDates()
+        for date in weekDates {
+            let log = getLogFor(date: date)
             log?.totalHours = getRandomHours()
         }
-    } else {
-        let l1 = getLogFromString(dateString: "04222017")
-        l1?.totalHours = 18.35
-        
-        let l2 = getLogFromString(dateString: "04212017")
-        l2?.totalHours = 18.47
-        
-        let l3 = getLogFromString(dateString: "04202017")
-        l3?.totalHours = 0.03
-
-        let l4 = getLogFromString(dateString: "04192017")
-        l4?.totalHours = 3.2
-        
-        let l5 = getLogFromString(dateString: "04182017")
-        l5?.totalHours = 3.7
-        
-        let l6 = getLogFromString(dateString: "04172017")
-        l6?.totalHours = 7.2
-        
-        let l7 = getLogFromString(dateString: "04162017")
-        l7?.totalHours = 5.41
     }
 }
 
 func createMonthTestLogs() {
-    let monthStrings = getMonthDateStrings()
-    for dateString in monthStrings {
-        let log = getLogFromString(dateString: dateString)
-        log?.totalHours = getRandomHours()
+    if (randomEnabled) {
+        let monthDates = getMonthDates()
+        for date in monthDates {
+            let log = getLogFor(date: date)
+            log?.totalHours = getRandomHours()
+        }
     }
 }
 
 func createYearTestLogs() {
-    let yearStrings = getYearDateStrings()
-    for dateString in yearStrings {
-        let log = getLogFromString(dateString: dateString)
-        log?.totalHours = getRandomHours()
+    if (randomEnabled) {
+        let yearDates = getYearDates()
+        for date in yearDates {
+            let log = getLogFor(date: date)
+            log?.totalHours = getRandomHours()
+        }
     }
 }
 
