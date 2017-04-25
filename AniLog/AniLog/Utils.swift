@@ -26,8 +26,8 @@ func getTagColor(_ tag_num: Int16) -> UIColor {
     case 4:
         return UIColor.forestGreen
     case 5:
-        return UIColor.goldenYellow
+        return UIColor.steelGray
     default:
-        return UIColor.lightGray    // should never enter
+        return UIColor.clear   // should never enter
     }
 }
