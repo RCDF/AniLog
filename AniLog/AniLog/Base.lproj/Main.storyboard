@@ -437,6 +437,7 @@
                     <connections>
                         <outlet property="dayLabel" destination="aEk-5a-YER" id="GRY-Hm-aLz"/>
                         <outlet property="monthLabel" destination="kbt-AK-xbI" id="dmM-SB-OxC"/>
+                        <outlet property="newTaskButton" destination="blE-Zq-xzu" id="mlu-DA-00g"/>
                         <outlet property="numTasksLabel" destination="fQ9-Tl-O8U" id="dVh-Wa-QAS"/>
                         <outlet property="tableView" destination="1pn-lC-oxm" id="5Ux-fH-Dug"/>
                         <outlet property="weekdayLabel" destination="nWz-87-CbZ" id="s8k-j7-XKD"/>

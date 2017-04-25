@@ -17,6 +17,7 @@ class TaskListViewController: UIViewController, UITableViewDelegate, UITableView
     @IBOutlet weak var monthLabel: UILabel!
     @IBOutlet weak var yearLabel: UILabel!
     @IBOutlet weak var weekdayLabel: UILabel!
+    @IBOutlet weak var newTaskButton: PlusButtonView!
 
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     var tasksList: [Task] = []
@@ -109,7 +110,9 @@ class TaskListViewController: UIViewController, UITableViewDelegate, UITableView
     // MARK: - Task Editting Handlers
     
     func editTask(row: Int) {
-        tableView.reloadData()
+        selectedRow = row
+        performSegue(withIdentifier: "segueToTaskInfo", sender: self)
+        // tableView.reloadData()
     }
     
     func deleteTask(row: Int) {
@@ -127,10 +130,10 @@ class TaskListViewController: UIViewController, UITableViewDelegate, UITableView
         updateNumTasks()
     }
     
-    func addTask(task: Task) {
-        tasksList.insert(task, at: 0)
+    func addTask(task: Task, row: Int) {
+        tasksList.insert(task, at: row)
         tableView.beginUpdates()
-        tableView.insertRows(at: [IndexPath(row: 0, section: 0)], with: .none)
+        tableView.insertRows(at: [IndexPath(row: row, section: 0)], with: .none)
         tableView.endUpdates()
         updateNumTasks()
     }
@@ -158,7 +161,16 @@ class TaskListViewController: UIViewController, UITableViewDelegate, UITableView
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "segueToTaskInfo" {
             if let dest = segue.destination as? TaskInfoViewController {
-                dest.inEditMode = false
+                if sender is PlusButtonView {
+                    dest.inEditMode = false
+                } else {
+                    dest.inEditMode = true
+                    if let cellRow = selectedRow {
+                        let task = tasksList[cellRow]
+                        dest.task = task
+                    }
+                }
+                
             }
         } else if segue.identifier == "segueToTimer" {
             if let dest = segue.destination as? TimerViewController {
@@ -176,15 +188,17 @@ class TaskListViewController: UIViewController, UITableViewDelegate, UITableView
                 if src.aniTimer.isComplete() {
                     // deleteTask(row: selectedRow!)
                     // handle deletion here
+                    // add task to completed task
                 }
             }
         } else if (segue.identifier == "taskInfoToList") {
             if let src = segue.source as? TaskInfoViewController {
                 if let editMode = src.inEditMode {
                     if (!editMode) {
-                        addTask(task: src.task!)
+                        addTask(task: src.task!, row: 0)
                     } else {
-                        
+                        fetchTasksFromCoreData()
+                        tableView.reloadData()
                     }
                 }
             }

@@ -15,18 +15,19 @@ class TaskInfoViewController: UIViewController, UITextFieldDelegate, UIGestureRe
     
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     var task: Task?
-    var tagNum: Int16 = 0   // default
-    var inEditMode: Bool?
+    var tagNum: Int16!
+    var inEditMode: Bool!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        if (inEditMode == true) {
+            initForEditMode()
+        } else {
+            initForNewTaskMode()
+        }
+        
         textField.delegate = self
-        
-        let tapDismiss = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
-        tapDismiss.delegate = self
-        // view.addGestureRecognizer(tapDismiss)
-        
         getCurrentButton()?.isSelected = true
     }
 
@@ -41,15 +42,17 @@ class TaskInfoViewController: UIViewController, UITextFieldDelegate, UIGestureRe
     }
     
     func initForEditMode() {
-        
+        if let task = task {
+            tagNum = task.tagNum
+            textField.text = task.taskDescription
+        } else {
+            initForNewTaskMode()
+        }
     }
     
     func initForNewTaskMode() {
-        
-    }
-    
-    func dismissKeyboard() {
-        textField.resignFirstResponder()
+        tagNum = 0
+        textField.text = ""
     }
     
     
@@ -57,23 +60,23 @@ class TaskInfoViewController: UIViewController, UITextFieldDelegate, UIGestureRe
     
     func commitTask() -> Bool {
         if let editMode = inEditMode {
-            if (!editMode) {
-                if let text = textField.text {
-                    if (text != "") {
-                        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-                        
+            if let text = textField.text {
+                if (text != "") {
+                    let appDelegate = UIApplication.shared.delegate as! AppDelegate
+                    if (!editMode) {
                         task = Task(context: context)
                         task?.taskDescription = text
                         task?.duration = 0
                         task?.tagNum = tagNum
                         appDelegate.saveContext()
-                        
-                        return true
                     } else {
-                        // Have alert that task cannot be empty
+                        task?.taskDescription = text
+                        task?.tagNum = tagNum
+                        appDelegate.saveContext()
                     }
-                }  
-            }
+                    return true
+                }
+            }  
         }
 
         return false
