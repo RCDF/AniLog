@@ -257,7 +257,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Uz6-za-rXD" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="MOS-p3-RZ4" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1392.8" y="1396.5517241379312"/>
+            <point key="canvasLocation" x="1269" y="1559"/>
         </scene>
         <!--Task List View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -447,7 +447,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1044" y="636"/>
+            <point key="canvasLocation" x="1044" y="716"/>
         </scene>
         <!--Timer View Controller-->
         <scene sceneID="OIL-ac-2mz">
@@ -573,7 +573,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4fk-Ao-zEK" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="Xjz-6N-BFI" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="727" y="1397"/>
+            <point key="canvasLocation" x="831" y="1559"/>
         </scene>
         <!--Ani Log Navigation Controller-->
         <scene sceneID="nmI-7G-6N4">
@@ -622,9 +622,67 @@
                                     <action selector="willChangeRange:" destination="x4f-oJ-wZz" eventType="valueChanged" id="dVI-og-yqo"/>
                                 </connections>
                             </segmentedControl>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zpu-HL-OQi" customClass="LineChartView" customModule="Charts">
-                                <rect key="frame" x="16" y="108" width="343" height="247"/>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Zpu-HL-OQi" customClass="LineChartView" customModule="Charts">
+                                <rect key="frame" x="16" y="108" width="343" height="138"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xjd-P7-x2K">
+                                <rect key="frame" x="16" y="116" width="343" height="309"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uaT-6v-QLJ">
+                                        <rect key="frame" x="54.5" y="76.5" width="234.5" height="156.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="J0V-ep-dbp">
+                                                <rect key="frame" x="122.5" y="20.5" width="92" height="84"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="70"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="RYo-Ao-UPa">
+                                                <rect key="frame" x="19.5" y="20" width="95" height="84"/>
+                                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="70"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HOURS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EQA-Dt-oDy">
+                                                <rect key="frame" x="43" y="112" width="71.5" height="24"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MINUTES" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V7l-Bc-HkY">
+                                                <rect key="frame" x="122" y="112" width="90" height="24"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="J0V-ep-dbp" secondAttribute="trailing" constant="20" symbolic="YES" id="0hy-fz-V1Y"/>
+                                            <constraint firstItem="J0V-ep-dbp" firstAttribute="centerY" secondItem="RYo-Ao-UPa" secondAttribute="centerY" id="DV0-EB-A42"/>
+                                            <constraint firstAttribute="bottom" secondItem="EQA-Dt-oDy" secondAttribute="bottom" constant="20.5" id="ENv-hq-Tef"/>
+                                            <constraint firstItem="V7l-Bc-HkY" firstAttribute="centerY" secondItem="EQA-Dt-oDy" secondAttribute="centerY" id="KEP-Pj-Tas"/>
+                                            <constraint firstItem="V7l-Bc-HkY" firstAttribute="leading" secondItem="EQA-Dt-oDy" secondAttribute="trailing" constant="7.5" id="YhT-Fb-yPg"/>
+                                            <constraint firstItem="EQA-Dt-oDy" firstAttribute="trailing" secondItem="RYo-Ao-UPa" secondAttribute="trailing" id="dbh-2Q-ekJ"/>
+                                            <constraint firstItem="J0V-ep-dbp" firstAttribute="leading" secondItem="RYo-Ao-UPa" secondAttribute="trailing" constant="8" id="e0J-Jy-soh"/>
+                                            <constraint firstItem="J0V-ep-dbp" firstAttribute="height" secondItem="RYo-Ao-UPa" secondAttribute="height" id="kZz-mU-FLo"/>
+                                            <constraint firstItem="RYo-Ao-UPa" firstAttribute="leading" secondItem="uaT-6v-QLJ" secondAttribute="leading" constant="20" symbolic="YES" id="kim-K3-xHy"/>
+                                            <constraint firstItem="EQA-Dt-oDy" firstAttribute="top" secondItem="RYo-Ao-UPa" secondAttribute="bottom" constant="8" id="xCU-cC-aCf"/>
+                                            <constraint firstItem="RYo-Ao-UPa" firstAttribute="top" secondItem="uaT-6v-QLJ" secondAttribute="top" constant="20" id="xjs-b9-0cc"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="0.74901960779999999" blue="0.47058823529999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="uaT-6v-QLJ" firstAttribute="centerX" secondItem="xjd-P7-x2K" secondAttribute="centerX" id="Mhf-W6-tbC"/>
+                                    <constraint firstItem="uaT-6v-QLJ" firstAttribute="centerY" secondItem="xjd-P7-x2K" secondAttribute="centerY" id="vWA-nc-W9d"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -634,19 +692,26 @@
                             <constraint firstAttribute="leadingMargin" secondItem="RpP-sD-Ydn" secondAttribute="leading" id="RbT-1Y-Typ"/>
                             <constraint firstItem="RpP-sD-Ydn" firstAttribute="centerX" secondItem="4GO-d2-xcz" secondAttribute="centerX" id="ZI6-Ww-wbs"/>
                             <constraint firstItem="Zpu-HL-OQi" firstAttribute="trailing" secondItem="4GO-d2-xcz" secondAttribute="trailingMargin" id="Zc9-6T-wb6"/>
-                            <constraint firstItem="Zpu-HL-OQi" firstAttribute="height" secondItem="4GO-d2-xcz" secondAttribute="height" multiplier="2/5" id="ev0-jP-7n9"/>
+                            <constraint firstItem="Zpu-HL-OQi" firstAttribute="height" secondItem="4GO-d2-xcz" secondAttribute="height" multiplier="1/2" id="ev0-jP-7n9"/>
                             <constraint firstAttribute="trailingMargin" secondItem="RpP-sD-Ydn" secondAttribute="trailing" id="gTf-ht-zjf"/>
+                            <constraint firstItem="xjd-P7-x2K" firstAttribute="width" secondItem="Zpu-HL-OQi" secondAttribute="width" id="hQy-hk-dnm"/>
+                            <constraint firstItem="xjd-P7-x2K" firstAttribute="top" secondItem="RpP-sD-Ydn" secondAttribute="bottom" constant="16" id="iUg-KE-rQG"/>
+                            <constraint firstItem="xjd-P7-x2K" firstAttribute="height" secondItem="Zpu-HL-OQi" secondAttribute="height" id="n8e-4q-apd"/>
+                            <constraint firstItem="xjd-P7-x2K" firstAttribute="centerX" secondItem="Zpu-HL-OQi" secondAttribute="centerX" id="ox6-gU-dDO"/>
                             <constraint firstItem="RpP-sD-Ydn" firstAttribute="top" secondItem="suI-lO-lEX" secondAttribute="bottom" constant="8" id="rHU-LK-owC"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Statistics" id="uuW-pa-i8J"/>
                     <connections>
+                        <outlet property="dayStatsView" destination="xjd-P7-x2K" id="RT0-jd-mQ7"/>
+                        <outlet property="hoursLabel" destination="RYo-Ao-UPa" id="KPm-Nh-JFE"/>
                         <outlet property="lineChartView" destination="Zpu-HL-OQi" id="SZu-dw-c1l"/>
+                        <outlet property="minutesLabel" destination="J0V-ep-dbp" id="64k-MS-WeC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SA7-LZ-CD0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2101.5999999999999" y="635.53223388305855"/>
+            <point key="canvasLocation" x="2102" y="716"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="25A-J7-CB2">

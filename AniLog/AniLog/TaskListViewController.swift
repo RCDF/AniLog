@@ -169,6 +169,8 @@ class TaskListViewController: UIViewController, UITableViewDelegate, UITableView
                         let task = tasksList[cellRow]
                         dest.task = task
                     }
+                    
+                    dest.hidesBottomBarWhenPushed = true
                 }
                 
             }
@@ -177,7 +179,6 @@ class TaskListViewController: UIViewController, UITableViewDelegate, UITableView
                 if let cellRow = selectedRow {
                     let task = tasksList[cellRow]
                     dest.task = task
-                    
                     dest.hidesBottomBarWhenPushed = true
                 }
             }

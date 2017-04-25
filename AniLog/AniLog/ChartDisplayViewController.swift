@@ -12,6 +12,21 @@ import Charts
 class ChartDisplayViewController: UIViewController, ChartViewDelegate {
     
     @IBOutlet weak var lineChartView: LineChartView!
+    @IBOutlet weak var dayStatsView: UIView!
+    @IBOutlet weak var hoursLabel: UILabel!
+    @IBOutlet weak var minutesLabel: UILabel!
+
+    var displayingDayStats: Bool = true {
+        didSet {
+            if displayingDayStats {
+                dayStatsView.alpha = 1
+                lineChartView.alpha = 0
+            } else {
+                dayStatsView.alpha = 0
+                lineChartView.alpha = 1
+            }
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,7 +34,7 @@ class ChartDisplayViewController: UIViewController, ChartViewDelegate {
         /* TESTING: REMOVE BEFORE DEPLOYMENT */
         createYearTestLogs()
 
-        initializeChart()
+        initializeLineChart()
     }
 
     override func didReceiveMemoryWarning() {
@@ -29,10 +44,10 @@ class ChartDisplayViewController: UIViewController, ChartViewDelegate {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        plotWeek()
+        plotDay()
     }
     
-    func initializeChart() {
+    func initializeLineChart() {
         lineChartView.noDataText = "There is no data to plot."
         lineChartView.noDataTextColor = UIColor.goldenYellow
 
@@ -61,7 +76,18 @@ class ChartDisplayViewController: UIViewController, ChartViewDelegate {
         lineChartView.xAxis.labelTextColor = UIColor.peach
         lineChartView.leftAxis.labelTextColor = UIColor.peach
         lineChartView.leftAxis.gridColor = UIColor.peach.withAlphaComponent(0.4)
-        // lineChartView.xAxis.labelRotationAngle = -90
+    }
+    
+    func plotDay() {
+        if let dayLog = getLogFor(date: Date()) {
+            let totalTime: Double = dayLog.totalHours
+            let minutePercentage: Double = totalTime - floor(totalTime)
+            let hours: Int = Int(floor(totalTime))
+            let minutes: Int = Int(floor(minutePercentage * 60.0))
+            
+            hoursLabel.text = String(format: "%02d", hours)
+            minutesLabel.text = String(format: "%02d", minutes)
+        }
     }
 
     func plotWeek() {
@@ -86,7 +112,6 @@ class ChartDisplayViewController: UIViewController, ChartViewDelegate {
         lineChartDataSet.setColor(UIColor.peach)
         lineChartDataSet.drawCirclesEnabled = false
         lineChartDataSet.drawValuesEnabled = false
-        lineChartDataSet.lineWidth = 1.5
 
         /* Create gradient fill layer */
         let gradientColors = [UIColor.peach.cgColor, UIColor.white.cgColor] as CFArray
@@ -219,18 +244,19 @@ class ChartDisplayViewController: UIViewController, ChartViewDelegate {
     @IBAction func willChangeRange(_ sender: UISegmentedControl) {
         switch sender.selectedSegmentIndex {
         case 0:
-            // day
+            displayingDayStats = true
+            plotDay()
             break
         case 1:
-            // week
+            displayingDayStats = false
             plotWeek()
             break
         case 2:
-            // month
+            displayingDayStats = false
             plotMonth()
             break
         case 3:
-            // year
+            displayingDayStats = false
             plotYear()
             break
         default:

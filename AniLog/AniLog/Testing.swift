@@ -8,10 +8,10 @@
 
 import Foundation
 
-let randomEnabled = true
+let inDemoMode = true
 
 func createWeekTestLogs() {
-    if (randomEnabled) {
+    if (inDemoMode) {
         let weekDates = getWeekDates()
         for date in weekDates {
             let log = getLogFor(date: date)
@@ -21,7 +21,7 @@ func createWeekTestLogs() {
 }
 
 func createMonthTestLogs() {
-    if (randomEnabled) {
+    if (inDemoMode) {
         let monthDates = getMonthDates()
         for date in monthDates {
             let log = getLogFor(date: date)
@@ -31,7 +31,7 @@ func createMonthTestLogs() {
 }
 
 func createYearTestLogs() {
-    if (randomEnabled) {
+    if (inDemoMode) {
         let yearDates = getYearDates()
         for date in yearDates {
             let log = getLogFor(date: date)
@@ -41,5 +41,5 @@ func createYearTestLogs() {
 }
 
 func getRandomHours() -> Double {
-    return Double(arc4random_uniform(24) + 1)
+    return Double(arc4random_uniform(24)) + (Double(arc4random()) / Double(UINT32_MAX))
 }
