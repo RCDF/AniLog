@@ -45,17 +45,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         let defaults = UserDefaults.standard
         let locked = defaults.bool(forKey: "displayStatusIsLocked")
-        if (locked) {
-            print("Sent to background by locking")
-        } else {
-            print("Sent to background by switching apps")
-            if let tabBarController = self.window?.rootViewController as? UITabBarController {
-                if (tabBarController.selectedIndex == 0) {
-                    if let navigationController = tabBarController.selectedViewController as? AniLogNavigationController {
-                        if let timerViewController = navigationController.topViewController as? TimerViewController {
-                            if (timerViewController.timerIsRunning) {
-                                timerViewController.endAniTimer(isAbort: true)
-                            }
+
+        if let tabBarController = self.window?.rootViewController as? UITabBarController {
+            if let navigationController = tabBarController.selectedViewController as? AniLogNavigationController {
+                if let timerViewController = navigationController.topViewController as? TimerViewController {
+                    if (locked) {
+                        timerViewController.pauseAniTimer()
+                        defaults.set(Date(), forKey: "enterBackgroundTime")
+                    } else {
+                        if (timerViewController.timerIsRunning) {
+                            timerViewController.stopAniTimer(isAbort: true)
                         }
                     }
                 }
@@ -65,8 +64,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillEnterForeground(_ application: UIApplication) {
         // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
-        
+
         let defaults = UserDefaults.standard
+        let locked = defaults.bool(forKey: "displayStatusIsLocked")
+        
+        if let tabBarController = self.window?.rootViewController as? UITabBarController {
+            if let navigationController = tabBarController.selectedViewController as? AniLogNavigationController {
+                if let timerViewController = navigationController.topViewController as? TimerViewController {
+                    if (locked) {
+                        
+                        print("Enter resume")
+                        
+                        let enterBackgroundDate: Date = defaults.object(forKey: "enterBackgroundTime") as! Date
+                        timerViewController.aniTimer.fastForward(pauseTime: enterBackgroundDate, resTime: Date())
+                        timerViewController.progressView.angle = 360.0 * timerViewController.aniTimer.getPercentCompleted()
+                        timerViewController.timerLabel.text = timerViewController.aniTimer.getTimeString()
+                        timerViewController.startAniTimer()
+                    }
+                }
+            }
+        }
+        
         defaults.set(false, forKey: "displayStatusIsLocked")
     }
 

@@ -135,7 +135,7 @@ class TimerViewController: UIViewController {
         timerIsRunning = true
         updateAniTimer()
         updateTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateAniTimer), userInfo: nil, repeats: true)
-        }
+    }
     
     /**
         Updates the timer, updates the label, and moves the progress
@@ -143,7 +143,7 @@ class TimerViewController: UIViewController {
      */
     func updateAniTimer() {
         if (aniTimer.isComplete()) {
-            endAniTimer(isAbort: false)
+            stopAniTimer(isAbort: false)
         } else {
             aniTimer.updateRemainingTime()
             progressView.animate(toAngle: aniTimer.getPercentCompleted() * 360.0, duration: 1, completion: nil)
@@ -151,11 +151,17 @@ class TimerViewController: UIViewController {
         }
     }
 
+    func pauseAniTimer() {
+        timerIsRunning = false
+        updateTimer.invalidate()
+        progressView.pauseAnimation()
+    }
+    
     /**
         Invalidates the timer. If the timer was completed (not an abort),
         adds the number of minutes completed to the daily log
      */
-    func endAniTimer(isAbort: Bool) {
+    func stopAniTimer(isAbort: Bool) {
         timerIsRunning = false
         updateTimer.invalidate()
         progressView.pauseAnimation()
@@ -181,7 +187,7 @@ class TimerViewController: UIViewController {
         - Parameter sender: button for force abort
      */
     @IBAction func abortTask(_ sender: UIButton) {
-        endAniTimer(isAbort: true)
+        stopAniTimer(isAbort: true)
     }
     
     /**

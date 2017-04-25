@@ -14,18 +14,16 @@ class AniTimer {
     private var hoursRemaining: Int16
     private var minutesRemaining: Int16
     private var secondsRemaining: Int16
-    private var complete: Bool
     
     init(duration: Int16) {
         self.timerDuration = duration
         self.hoursRemaining = duration / 60
         self.minutesRemaining = duration - (60 * hoursRemaining)
         self.secondsRemaining = 0
-        self.complete = false
     }
     
     func updateRemainingTime() {
-        if (!complete) {
+        if (!isComplete()) {
             if (secondsRemaining == 0) {
                 secondsRemaining = 59
                 if (minutesRemaining == 0 && hoursRemaining != 0) {
@@ -38,8 +36,39 @@ class AniTimer {
             } else {
                 secondsRemaining -= 1
             }
+        }
+    }
+    
+    func fastForward(pauseTime: Date, resTime: Date) {
+        let passedComponents = Calendar.current.dateComponents([.second, .minute, .hour], from: pauseTime, to: resTime)
+        
+        let hoursPassed = Int16(passedComponents.hour!)
+        let minutesPassed = Int16(passedComponents.minute!)
+        let secondsPassed = Int16(passedComponents.second!)
 
-            complete = (hoursRemaining == 0 && minutesRemaining == 0 && secondsRemaining == 0)
+        let secondDiff = secondsRemaining - secondsPassed
+        if (secondDiff < 0) {
+            secondsRemaining = secondDiff + secondsPerMinute
+            minutesRemaining -= 1
+        } else {
+            secondsRemaining = secondDiff
+        }
+        
+        let minuteDiff = minutesRemaining - minutesPassed
+        if (minuteDiff < 0) {
+            minutesRemaining = minuteDiff + minutesPerHour
+            hoursRemaining -= 1
+        } else {
+            minutesRemaining = minuteDiff
+        }
+        
+        let hourDiff = hoursRemaining - hoursPassed
+        if (hourDiff < 0) {
+            hoursRemaining = 0
+            minutesRemaining = 0
+            secondsRemaining = 0
+        } else {
+            hoursRemaining = hourDiff
         }
     }
     
@@ -57,6 +86,6 @@ class AniTimer {
     }
     
     func isComplete() -> Bool {
-        return complete
+        return (hoursRemaining == 0 && minutesRemaining == 0 && secondsRemaining == 0)
     }
 }
