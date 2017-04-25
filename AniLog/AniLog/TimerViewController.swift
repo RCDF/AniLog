@@ -36,7 +36,6 @@ class TimerViewController: UIViewController {
         
         taskToComplete.text = task.taskDescription
         
-        // timerDuration = 1
         initPickerView()
         initProgressView()
     }
@@ -76,6 +75,17 @@ class TimerViewController: UIViewController {
         }
     }
     
+    func setTimerDuration() {
+        let hours = Calendar.current.component(.hour, from: self.pickerView.date)
+        let minutes = Calendar.current.component(.minute, from: self.pickerView.date)
+        let int_h: Int = hours
+        let int_m: Int = minutes
+        let hours_int16: Int16 = Int16(int_h)
+        let minutes_int16: Int16 = Int16(int_m)
+        let hours_to_min = hours_int16 * 60
+        self.timerDuration = hours_to_min + minutes_int16
+    }
+    
     @IBAction func startTask(_ sender: Any) {
         //Fade Out
         UIView.animate(withDuration: 0.5, delay: 0.0, options: UIViewAnimationOptions.curveEaseOut, animations: {
@@ -85,8 +95,7 @@ class TimerViewController: UIViewController {
         }, completion: {
             (finished: Bool) -> Void in
             //Fade In
-            // set the timerDuration value
-            self.timerDuration = 120
+            self.setTimerDuration()
             self.initTimer()
             UIView.animate(withDuration: 0.8, delay: 0.3, options: UIViewAnimationOptions.curveEaseIn, animations: {
                 self.progressView.alpha = 1
