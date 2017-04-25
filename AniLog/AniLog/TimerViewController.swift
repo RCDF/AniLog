@@ -22,6 +22,17 @@ class TimerViewController: UIViewController {
     var aniTimer: AniTimer!
     var task: Task!
     var timerDuration: Int16?
+    var statusHidden: Bool = false
+    
+    /** Animates status bar being hidden */
+    override var preferredStatusBarUpdateAnimation: UIStatusBarAnimation {
+        return UIStatusBarAnimation.slide
+    }
+    
+    /** Hides the status bar */
+    override var prefersStatusBarHidden: Bool {
+        return statusHidden
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -101,6 +112,7 @@ class TimerViewController: UIViewController {
                 self.progressView.alpha = 1
                 self.abortButton.alpha = 1
                 self.abortButton.isUserInteractionEnabled = true
+                self.fadeStatusBar()
             }, completion: {
                 (finished: Bool) -> Void in
                 self.startAniTimer()
@@ -156,4 +168,15 @@ class TimerViewController: UIViewController {
     @IBAction func abortTask(_ sender: UIButton) {
         updateTimer.invalidate()
     }
+    
+    /**
+        Begins to animate hiding the status bar
+    */
+    func fadeStatusBar() {
+        UIView.animate(withDuration: 0.5) { () -> Void in
+            self.statusHidden = !self.statusHidden
+            self.setNeedsStatusBarAppearanceUpdate()
+        }
+    }
+    
 }
