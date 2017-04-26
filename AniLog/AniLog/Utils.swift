@@ -8,11 +8,6 @@
 
 import UIKit
 
-func trueMod(_ a: Int16, _ n: Int16) -> Int16 {
-    let r = a % n
-    return r >= 0 ? r : r + n
-}
-
 func getTagColor(_ tag_num: Int16) -> UIColor {
     switch tag_num {
     case 0:

@@ -22,7 +22,7 @@ class TimerViewController: UIViewController {
     var updateTimer: Timer = Timer()
     var aniTimer: AniTimer!
     var task: Task!
-    var timerDuration: Int16?
+    var timerDuration: Int?
     var statusHidden: Bool = false
     var timerIsRunning: Bool = false
     var markAsComplete: Bool = false
@@ -99,12 +99,8 @@ class TimerViewController: UIViewController {
     func setTimerDuration() {
         let hours = Calendar.current.component(.hour, from: self.pickerView.date)
         let minutes = Calendar.current.component(.minute, from: self.pickerView.date)
-        let int_h: Int = hours
-        let int_m: Int = minutes
-        let hours_int16: Int16 = Int16(int_h)
-        let minutes_int16: Int16 = Int16(int_m)
-        let hours_to_min = hours_int16 * 60
-        self.timerDuration = hours_to_min + minutes_int16
+        let hoursToMin = hours * 60
+        self.timerDuration = hoursToMin + minutes
     }
     
     @IBAction func startTask(_ sender: Any) {

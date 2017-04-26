@@ -8,8 +8,8 @@
 
 import Foundation
 
-let secondsPerMinute: Int16 = 60
-let minutesPerHour: Int16 = 60
+let secondsPerMinute: Int = 60
+let minutesPerHour: Int = 60
 
 let daysInWeek: Int = 7
 let daysInMonth: Int = 31

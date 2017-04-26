@@ -15,7 +15,7 @@ class TaskInfoViewController: UIViewController, UITextFieldDelegate, UIGestureRe
     
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     var task: Task?
-    var tagNum: Int16!
+    var tagNum: Int!
     var inEditMode: Bool!
     
     override func viewDidLoad() {
@@ -44,7 +44,7 @@ class TaskInfoViewController: UIViewController, UITextFieldDelegate, UIGestureRe
     
     func initForEditMode() {
         if let task = task {
-            tagNum = task.tagNum
+            tagNum = Int(task.tagNum)
             textField.text = task.taskDescription
         } else {
             initForNewTaskMode()
@@ -68,11 +68,11 @@ class TaskInfoViewController: UIViewController, UITextFieldDelegate, UIGestureRe
                         task = Task(context: context)
                         task?.taskDescription = text
                         task?.duration = 0
-                        task?.tagNum = tagNum
+                        task?.tagNum = Int16(tagNum)
                         appDelegate.saveContext()
                     } else {
                         task?.taskDescription = text
-                        task?.tagNum = tagNum
+                        task?.tagNum = Int16(tagNum)
                         appDelegate.saveContext()
                     }
                     return true
@@ -86,7 +86,7 @@ class TaskInfoViewController: UIViewController, UITextFieldDelegate, UIGestureRe
     @IBAction func setTagNum(sender: RadioButton) {
         getCurrentButton()?.isSelected = false
         sender.isSelected = true
-        tagNum = Int16(sender.tag)
+        tagNum = sender.tag
     }
     
     func getCurrentButton() -> RadioButton? {

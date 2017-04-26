@@ -10,12 +10,12 @@ import Foundation
 
 class AniTimer {
     
-    private var timerDuration: Int16
-    private var hoursRemaining: Int16
-    private var minutesRemaining: Int16
-    private var secondsRemaining: Int16
+    private var timerDuration: Int
+    private var hoursRemaining: Int
+    private var minutesRemaining: Int
+    private var secondsRemaining: Int
     
-    init(duration: Int16) {
+    init(duration: Int) {
         self.timerDuration = duration
         self.hoursRemaining = duration / 60
         self.minutesRemaining = duration - (60 * hoursRemaining)
@@ -42,9 +42,9 @@ class AniTimer {
     func fastForward(pauseTime: Date, resTime: Date) {
         let passedComponents = Calendar.current.dateComponents([.second, .minute, .hour], from: pauseTime, to: resTime)
         
-        let hoursPassed = Int16(passedComponents.hour!)
-        let minutesPassed = Int16(passedComponents.minute!)
-        let secondsPassed = Int16(passedComponents.second!)
+        let hoursPassed = passedComponents.hour!
+        let minutesPassed = passedComponents.minute!
+        let secondsPassed = passedComponents.second!
 
         let secondDiff = secondsRemaining - secondsPassed
         if (secondDiff < 0) {
@@ -77,12 +77,14 @@ class AniTimer {
     }
     
     func getPercentCompleted() -> Double {
-        var remaining: Double = 0
-        remaining += Double(secondsRemaining)
-        remaining += Double(minutesRemaining * 60)
-        remaining += Double(hoursRemaining * 3600)
+        var remaining = 0
+        remaining += secondsRemaining
+        remaining += minutesRemaining * 60
+        remaining += hoursRemaining * 3600
         
-        return 1 - (remaining / Double(timerDuration * 60))
+        let dRemaining = Double(remaining)
+
+        return 1 - (dRemaining / Double(timerDuration * 60))
     }
     
     func isComplete() -> Bool {
