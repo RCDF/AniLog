@@ -72,9 +72,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             if let navigationController = tabBarController.selectedViewController as? AniLogNavigationController {
                 if let timerViewController = navigationController.topViewController as? TimerViewController {
                     if (locked) {
-                        
-                        print("Enter resume")
-                        
                         let enterBackgroundDate: Date = defaults.object(forKey: "enterBackgroundTime") as! Date
                         timerViewController.aniTimer.fastForward(pauseTime: enterBackgroundDate, resTime: Date())
                         timerViewController.progressView.angle = 360.0 * timerViewController.aniTimer.getPercentCompleted()

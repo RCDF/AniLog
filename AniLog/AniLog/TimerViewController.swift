@@ -133,9 +133,11 @@ class TimerViewController: UIViewController {
         Fires off the updateTimer that runs our AniTimer
      */
     func startAniTimer() {
-        timerIsRunning = true
-        updateAniTimer()
-        updateTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateAniTimer), userInfo: nil, repeats: true)
+        if (!timerIsRunning) {
+            timerIsRunning = true
+            updateAniTimer()
+            updateTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateAniTimer), userInfo: nil, repeats: true)
+        }
     }
     
     /**
@@ -144,7 +146,9 @@ class TimerViewController: UIViewController {
      */
     func updateAniTimer() {
         if (aniTimer.isComplete()) {
-            stopAniTimer(isAbort: false)
+            if (timerIsRunning) {
+                stopAniTimer(isAbort: false)
+            }
         } else {
             aniTimer.updateRemainingTime()
             progressView.animate(toAngle: aniTimer.getPercentCompleted() * 360.0, duration: 1, completion: nil)
@@ -171,7 +175,7 @@ class TimerViewController: UIViewController {
             let center = UNUserNotificationCenter.current()
             center.removeAllPendingNotificationRequests()
             displayAbortWarning()
-        } else if (aniTimer.isComplete()) {
+        } else {
             if let dayLog = getLogFor(date: Date()) {
                 let appDelegate = UIApplication.shared.delegate as! AppDelegate
                 let numHours = dayLog.totalHours
