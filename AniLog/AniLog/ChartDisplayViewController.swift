@@ -33,7 +33,8 @@ class ChartDisplayViewController: UIViewController, ChartViewDelegate {
         
         /* TESTING: REMOVE BEFORE DEPLOYMENT */
         createYearTestLogs()
-
+        
+        initializeDayStatsView()
         initializeLineChart()
     }
 
@@ -45,6 +46,13 @@ class ChartDisplayViewController: UIViewController, ChartViewDelegate {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         plotDay()
+    }
+    
+    func initializeDayStatsView() {
+        dayStatsView.layer.shadowColor = UIColor.lightGray.cgColor
+        dayStatsView.layer.shadowOpacity = 0.7
+        dayStatsView.layer.shadowRadius = 3.0
+        dayStatsView.layer.shadowOffset = CGSize(width: 3, height: 3)
     }
     
     func initializeLineChart() {
@@ -220,14 +228,14 @@ class ChartDisplayViewController: UIViewController, ChartViewDelegate {
             let dataEntry = ChartDataEntry(x: Double(i), y: Double(avgHoursCommitted[i]))
             dataEntries.append(dataEntry)
         }
-        
+
         /* Set up data set */
         let lineChartDataSet = LineChartDataSet(values: dataEntries, label: "Hours committed")
         lineChartDataSet.setColor(UIColor.peach)
         lineChartDataSet.drawCirclesEnabled = false
         lineChartDataSet.drawValuesEnabled = false
         lineChartDataSet.lineWidth = 1.5
-        
+
         /* Create gradient fill layer */
         let gradientColors = [UIColor.peach.cgColor, UIColor.white.cgColor] as CFArray
         let colorLocations: [CGFloat] = [1.0, 0.0]

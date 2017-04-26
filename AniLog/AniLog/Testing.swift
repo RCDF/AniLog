@@ -8,7 +8,7 @@
 
 import Foundation
 
-let inDemoMode = true
+let inDemoMode = false
 
 func createWeekTestLogs() {
     if (inDemoMode) {

@@ -176,7 +176,7 @@ class TimerViewController: UIViewController {
                 let appDelegate = UIApplication.shared.delegate as! AppDelegate
                 let numHours = dayLog.totalHours
 
-                dayLog.totalHours = numHours + Double(timerDuration! / 60)
+                dayLog.totalHours = numHours + (Double(timerDuration!) / 60.0)
                 appDelegate.saveContext()
             }
         }

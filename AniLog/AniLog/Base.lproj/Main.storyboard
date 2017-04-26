@@ -179,7 +179,7 @@
                                 </constraints>
                             </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pencil" translatesAutoresizingMaskIntoConstraints="NO" id="zuw-un-1Eh">
-                                <rect key="frame" x="132.5" y="64" width="111" height="111"/>
+                                <rect key="frame" x="132.5" y="56" width="111" height="111"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="zuw-un-1Eh" secondAttribute="height" multiplier="1:1" id="gVc-aF-CFC"/>
                                 </constraints>
@@ -229,8 +229,8 @@
                             <constraint firstItem="zuw-un-1Eh" firstAttribute="centerX" secondItem="kAB-XM-o1a" secondAttribute="centerX" id="2yg-Nu-fqY"/>
                             <constraint firstItem="VFB-UA-Chw" firstAttribute="centerX" secondItem="kAB-XM-o1a" secondAttribute="centerX" id="8c2-i4-PTr"/>
                             <constraint firstItem="Eer-8g-YRU" firstAttribute="top" secondItem="VFB-UA-Chw" secondAttribute="bottom" constant="8" symbolic="YES" id="Anc-OY-Cld"/>
-                            <constraint firstItem="sSL-Yb-Ll4" firstAttribute="top" secondItem="zuw-un-1Eh" secondAttribute="bottom" constant="12" id="BJx-CR-dVl"/>
-                            <constraint firstItem="zuw-un-1Eh" firstAttribute="top" secondItem="ML9-Bi-WzE" secondAttribute="bottom" id="LLv-1c-bya"/>
+                            <constraint firstItem="sSL-Yb-Ll4" firstAttribute="top" secondItem="zuw-un-1Eh" secondAttribute="bottom" constant="20" id="BJx-CR-dVl"/>
+                            <constraint firstItem="zuw-un-1Eh" firstAttribute="top" secondItem="ML9-Bi-WzE" secondAttribute="bottom" constant="-8" id="LLv-1c-bya"/>
                             <constraint firstItem="cQa-52-1ht" firstAttribute="top" secondItem="sSL-Yb-Ll4" secondAttribute="bottom" constant="2" id="UCn-RL-Ut1"/>
                             <constraint firstItem="zuw-un-1Eh" firstAttribute="height" secondItem="kAB-XM-o1a" secondAttribute="height" multiplier="1/6" id="Wjy-vr-NWy"/>
                             <constraint firstItem="VFB-UA-Chw" firstAttribute="leading" secondItem="kAB-XM-o1a" secondAttribute="leading" constant="8" id="Xks-cc-ZTu"/>
@@ -257,7 +257,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Uz6-za-rXD" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="MOS-p3-RZ4" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1269" y="1559"/>
+            <point key="canvasLocation" x="1311" y="1558"/>
         </scene>
         <!--Task List View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -573,7 +573,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4fk-Ao-zEK" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="Xjz-6N-BFI" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="831" y="1559"/>
+            <point key="canvasLocation" x="588" y="1558"/>
         </scene>
         <!--Ani Log Navigation Controller-->
         <scene sceneID="nmI-7G-6N4">
@@ -681,6 +681,18 @@
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                         <integer key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="layer.shadowColor">
+                                        <color key="value" red="0.40069791666666665" green="0.40069791666666665" blue="0.40069791666666665" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.shadowOpacity">
+                                        <real key="value" value="0.69999999999999996"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.shadowRadius">
+                                        <integer key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="size" keyPath="layer.shadowOffset">
+                                        <size key="value" width="3" height="3"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
