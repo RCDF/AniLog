@@ -189,9 +189,10 @@ class TaskListViewController: UIViewController, UITableViewDelegate, UITableView
         if (segue.identifier == "timerToTaskList") {
             if let src = segue.source as? TimerViewController {
                 if src.aniTimer != nil && src.aniTimer.isComplete() {
-                    // deleteTask(row: selectedRow!)
-                    // handle deletion here
-                    // add task to completed task
+                    if (src.markAsComplete) {
+                        deleteTask(row: selectedRow!)
+                        // add task to completed task
+                    }
                 }
             }
         } else if (segue.identifier == "taskInfoToList") {

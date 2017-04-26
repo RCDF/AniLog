@@ -25,6 +25,7 @@ class TimerViewController: UIViewController {
     var timerDuration: Int16?
     var statusHidden: Bool = false
     var timerIsRunning: Bool = false
+    var markAsComplete: Bool = false
     
     /** Animates status bar being hidden */
     override var preferredStatusBarUpdateAnimation: UIStatusBarAnimation {
@@ -62,6 +63,7 @@ class TimerViewController: UIViewController {
         super.viewWillAppear(animated)
         self.navigationController?.setNavigationBarHidden(false, animated: false)
         self.fadeStatusBar()
+        markAsComplete = false
     }
     
     func initPickerView() {
@@ -179,9 +181,11 @@ class TimerViewController: UIViewController {
             if let dayLog = getLogFor(date: Date()) {
                 let appDelegate = UIApplication.shared.delegate as! AppDelegate
                 let numHours = dayLog.totalHours
-
                 dayLog.totalHours = numHours + (Double(timerDuration!) / 60.0)
+                task.duration += timerDuration!
                 appDelegate.saveContext()
+                
+                displayCompleteAlert()
             }
         }
     }
@@ -206,6 +210,21 @@ class TimerViewController: UIViewController {
     }
 
     // MARK: - Alert Generating Functions
+    
+    func displayCompleteAlert() {
+        let alert = UIAlertController(title: "Session complete", message: "Would you like to mark this task as complete?", preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "No", style: UIAlertActionStyle.cancel, handler:
+            { action in
+                self.performSegue(withIdentifier: "timerToTaskList", sender: self)
+        }))
+
+        alert.addAction(UIAlertAction(title: "Yes", style: UIAlertActionStyle.default, handler:  { action in
+            self.markAsComplete = true
+            self.performSegue(withIdentifier: "timerToTaskList", sender: self)
+        }))
+
+        self.present(alert, animated: true, completion: nil)
+    }
     
     func displayAbortWarning() {
         let alert = UIAlertController(title: "Aborting focus session", message: "Your focus session was aborted either manually or by exiting the app.", preferredStyle: UIAlertControllerStyle.alert)
